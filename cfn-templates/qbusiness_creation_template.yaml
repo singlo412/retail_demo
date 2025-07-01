@@ -1,0 +1,345 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CloudFormation template for Q Business Application with Index, S3 Bucket, and Q Apps'
+
+Parameters:
+  IDCUserName:
+    Type: String
+    Description: 'Identity Center User Name for Q Business Application'
+    Default: 'xxxxxxxxx@xxxxxxxxx.com'
+
+  IDCInstanceArn:
+    Type: String
+    Description: 'Identity Center Instance ARN'
+    Default: 'arn:aws:sso:::instance/ssoins-xxxxxxxxxxxxxxxx'
+
+Resources:
+  # S3 Bucket
+  QBusinessDataBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Sub 'qbiz-cloudformation-${AWS::AccountId}'
+      VersioningConfiguration:
+        Status: Enabled
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+  # S3 Bucket Policy
+  QBusinessDataBucketPolicy:
+    Type: 'AWS::S3::BucketPolicy'
+    Properties:
+      Bucket: !Ref QBusinessDataBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: !GetAtt QCloudformationBusinessServiceRole.Arn
+            Action: 
+              - s3:GetObject
+              - s3:ListBucket
+            Resource: 
+              - !Sub '${QBusinessDataBucket.Arn}/*'
+              - !GetAtt QBusinessDataBucket.Arn
+  
+  # Custom AWSQBusinessServiceRolePolicy
+  AWSQCloudformationBusinessServiceRolePolicy:
+    Type: 'AWS::IAM::ManagedPolicy'
+    Properties:
+      ManagedPolicyName: AWSQCloudformationBusinessServiceRolePolicy
+      Description: Provides necessary permissions for Q Business service
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action:
+              - s3:GetObject
+              - s3:ListBucket
+              - s3:GetBucketLocation
+            Resource:
+              - !Sub '${QBusinessDataBucket.Arn}/*'
+              - !GetAtt QBusinessDataBucket.Arn
+          - Effect: Allow
+            Action:
+              - logs:DescribeLogGroups
+            Resource:
+              - !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group::log-stream:'
+          - Effect: Allow
+            Action:
+              - logs:*
+            Resource:
+              - !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/qbusiness/*'
+
+  # IAM Role for Q Business Service
+  QCloudformationBusinessServiceRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: QCloudformationBusinessServiceRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: qbusiness.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - !Ref AWSQCloudformationBusinessServiceRolePolicy
+      Policies:
+        - PolicyName: S3Access
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:ListBucket
+                Resource:
+                  - !GetAtt QBusinessDataBucket.Arn
+                  - !Sub '${QBusinessDataBucket.Arn}/*'
+  
+  # Q Web Experience Role
+  QCloudformationWebExperienceRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Sid: ''
+            Effect: Allow
+            Principal:
+              Service: application.qbusiness.amazonaws.com
+            Action: 
+              - 'sts:AssumeRole'
+              - 'sts:SetContext'
+            Condition:
+              StringEquals:
+                "aws:SourceAccount": !Ref AWS::AccountId
+              ArnLike:
+                "aws:SourceArn": !Sub "arn:aws:qbusiness:${AWS::Region}:${AWS::AccountId}:application/*"
+      Policies:
+        - PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'qbusiness:*'
+                Resource: 
+                  - !Sub "arn:aws:qbusiness:${AWS::Region}:${AWS::AccountId}:application/*"
+              - Effect: Allow
+                Action:
+                  - 'qapps:*'
+                Resource: 
+                  - '*'
+          PolicyName: WebExperiencePolicy
+  
+  # Q Data Source Role
+  QCloudformationDataSourceRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Sid: ''
+            Effect: Allow
+            Principal:
+              Service: 
+                - qbusiness.amazonaws.com
+            Action: 'sts:AssumeRole'
+            Condition:
+              StringEquals:
+                "aws:SourceAccount": !Ref AWS::AccountId
+              ArnLike:
+                "aws:SourceArn": !Sub "arn:aws:qbusiness:${AWS::Region}:${AWS::AccountId}:application/*"
+      Policies:
+        - PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 's3:GetObject'
+                Resource: !Sub                
+                  - 'arn:aws:s3:::${bucket}/*'
+                  - bucket: !Ref QBusinessDataBucket
+              - Effect: Allow
+                Action:
+                  - 's3:ListBucket'
+                Resource: !Sub                
+                  - 'arn:aws:s3:::${bucket}'
+                  - bucket: !Ref QBusinessDataBucket
+              - Effect: Allow
+                Action:
+                  - 'qbusiness:BatchPutDocument'
+                  - 'qbusiness:BatchDeleteDocument'
+                  - 'qbusiness:PutGroup'
+                  - 'qbusiness:CreateUser'
+                  - 'qbusiness:DeleteGroup'
+                  - 'qbusiness:UpdateUser'
+                  - 'qbusiness:ListGroups'
+                Resource: 
+                  - !Sub "arn:aws:qbusiness:${AWS::Region}:${AWS::AccountId}:application/*"
+                  - !Sub "arn:aws:qbusiness:${AWS::Region}:${AWS::AccountId}:application/*/index/*"
+                  - !Sub "arn:aws:qbusiness:${AWS::Region}:${AWS::AccountId}:application/*/index/*/data-source/*"
+          PolicyName: DataSourcePolicy
+
+  # Q Business Application
+  QBusinessApplication:
+    Type: 'AWS::QBusiness::Application'
+    Properties:
+      DisplayName: qbiz-cloudformation-app
+      IdentityType: AWS_IAM_IDC
+      RoleArn: !GetAtt QCloudformationBusinessServiceRole.Arn
+      AttachmentsConfiguration:
+        AttachmentsControlMode: ENABLED
+      QAppsConfiguration:
+        QAppsControlMode: ENABLED
+      PersonalizationConfiguration:
+        PersonalizationControlMode: ENABLED
+      IdentityCenterInstanceArn: !Ref IDCInstanceArn
+
+  # Q Business Index
+  QBusinessIndex:
+    Type: 'AWS::QBusiness::Index'
+    DependsOn: QBusinessApplication
+    Properties:
+      ApplicationId: !Ref QBusinessApplication
+      DisplayName: qbiz-index
+      Type: ENTERPRISE
+      CapacityConfiguration:
+        Units: 1
+  
+  # Q Business Retriever
+  QBusinessRetriever:
+    Type: AWS::QBusiness::Retriever
+    Properties:
+      ApplicationId: !GetAtt  QBusinessApplication.ApplicationId
+      Configuration:
+        NativeIndexConfiguration:
+          IndexId: !GetAtt QBusinessIndex.IndexId
+      DisplayName: sample-insights-index
+      Type: NATIVE_INDEX
+
+  # Q Business Web Experience
+  QBusinessWebExperience:
+    Type: AWS::QBusiness::WebExperience
+    Properties:
+      ApplicationId: !GetAtt  QBusinessApplication.ApplicationId
+      RoleArn: !GetAtt QCloudformationWebExperienceRole.Arn
+      Title: Q Support Insights 
+
+  # S3 Data Sources
+  S3DataSourceClaudeSet1:
+    Type: 'AWS::QBusiness::DataSource'
+    DependsOn: QBusinessIndex
+    Properties:
+      ApplicationId: !GetAtt QBusinessApplication.ApplicationId
+      Configuration:
+        type: "S3"
+        version: "1.0.0"
+        syncMode: FULL_CRAWL
+        additionalProperties:
+          inclusionPrefixes:
+            - s3-claude-set1/
+        connectionConfiguration:
+          repositoryEndpointMetadata:
+            BucketName: !Ref QBusinessDataBucket
+        repositoryConfigurations:
+          document:
+            fieldMappings:
+              - dataSourceFieldName: "s3_document_id"
+                indexFieldName: "s3_document_id"
+                indexFieldType: "STRING"
+              - dataSourceFieldName: "services"
+                indexFieldName: "services"
+                indexFieldType: "STRING_LIST"
+      DisplayName: s3-claude-set1-datasource
+      SyncSchedule: 'cron(0 0 * * ? *)'
+      IndexId: !GetAtt QBusinessIndex.IndexId
+      RoleArn: !GetAtt QCloudformationDataSourceRole.Arn
+
+  S3DataSourceWebSearchSet1:
+    Type: 'AWS::QBusiness::DataSource'
+    DependsOn: QBusinessIndex
+    Properties:
+      ApplicationId: !GetAtt QBusinessApplication.ApplicationId
+      Configuration:
+        type: "S3"
+        version: "1.0.0"
+        syncMode: FULL_CRAWL
+        additionalProperties:
+          inclusionPrefixes:
+            - s3-web-search-set1/
+        connectionConfiguration:
+          repositoryEndpointMetadata:
+            BucketName: !Ref QBusinessDataBucket
+        repositoryConfigurations:
+          document:
+            fieldMappings:
+              - dataSourceFieldName: "s3_document_id"
+                indexFieldName: "s3_document_id"
+                indexFieldType: "STRING"
+              - dataSourceFieldName: "services"
+                indexFieldName: "services"
+                indexFieldType: "STRING_LIST"
+      DisplayName: s3-web-search-set1-datasource
+      SyncSchedule: 'cron(0 0 * * ? *)'
+      IndexId: !GetAtt QBusinessIndex.IndexId
+      RoleArn: !GetAtt QCloudformationDataSourceRole.Arn
+
+  S3DataSourceHackathon:
+    Type: 'AWS::QBusiness::DataSource'
+    DependsOn: QBusinessIndex
+    Properties:
+      ApplicationId: !GetAtt QBusinessApplication.ApplicationId
+      Configuration:
+        type: "S3"
+        version: "1.0.0"
+        syncMode: FULL_CRAWL
+        additionalProperties:
+          inclusionPrefixes:
+            - qbiz-application-ds/
+        connectionConfiguration:
+          repositoryEndpointMetadata:
+            BucketName: !Ref QBusinessDataBucket
+        repositoryConfigurations:
+          document:
+            fieldMappings:
+              - dataSourceFieldName: "s3_document_id"
+                indexFieldName: "s3_document_id"
+                indexFieldType: "STRING"
+              - dataSourceFieldName: "services"
+                indexFieldName: "services"
+                indexFieldType: "STRING_LIST"
+      DisplayName: qbiz-application-datasource
+      SyncSchedule: 'cron(0 0 * * ? *)'
+      IndexId: !GetAtt QBusinessIndex.IndexId
+      RoleArn: !GetAtt QCloudformationDataSourceRole.Arn
+
+Outputs:
+  ApplicationId:
+    Description: Q Business Application ID
+    Value: !Ref QBusinessApplication
+
+  IndexId:
+    Description: Q Business Index ID
+    Value: !Ref QBusinessIndex
+
+  S3BucketName:
+    Description: S3 Bucket Name
+    Value: !Ref QBusinessDataBucket
+
+  S3BucketArn:
+    Description: S3 Bucket ARN
+    Value: !GetAtt QBusinessDataBucket.Arn
+
+  DataSource1Id:
+    Description: Claude Set Data Source ID
+    Value: !Ref S3DataSourceClaudeSet1
+
+  DataSource2Id:
+    Description: Web Search Data Source ID
+    Value: !Ref S3DataSourceWebSearchSet1
+
+  DataSource3Id:
+    Description: Hackathon Data Source ID
+    Value: !Ref S3DataSourceHackathon

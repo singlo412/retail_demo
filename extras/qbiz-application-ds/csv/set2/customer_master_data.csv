@@ -1,0 +1,101 @@
+customer_id,customer_name,email,phone,address,state,zip_code,registration_date,segment,channel_preference,lifetime_value,nps,csi,customer_onboarding_date,customer_left_date
+CUS000001,Jeffery Price,katie53@example.org,790.832.4397x4939,45447 Ryan Springs Suite 790,TX,84597,2023-05-31,Standard,Email,3639.62,5,73.4,2023-06-19,
+CUS000002,Nicholas Gray,xblack@example.net,643-508-5855,7944 Rich Turnpike,CA,761,2021-03-10,Basic,Phone,8622.71,7,64.9,2021-03-25,
+CUS000003,Rebecca Swanson,jeffreyvelazquez@example.net,953-959-9455,22024 Harrison Roads,OH,89780,2020-05-19,Standard,Web Portal,2442.54,9,92.5,2020-05-27,
+CUS000004,Jason Davis,larsonjulie@example.com,(461)545-8192x45736,86781 Webb Tunnel Apt. 880,OH,43926,2022-03-08,Basic,Mobile App,9308.88,2,61.4,2022-03-22,
+CUS000005,Melanie Hall,bryan42@example.org,001-709-549-7737x926,55835 Christopher Parkways Suite 486,NY,6658,2023-07-31,Basic,Email,3037.12,0,70.6,2023-08-16,2024-09-28
+CUS000006,Tommy Mullins,jeremylee@example.org,789.655.7125,20878 Andersen Lock Suite 120,OH,37358,2020-09-09,Basic,Email,2426.7,0,69.9,2020-09-29,
+CUS000007,Eric Murray,etodd@example.org,4448888533,64048 Golden Mount Suite 491,NC,71620,2020-11-07,Standard,Web Portal,4144.6,7,75.7,2020-12-05,2022-02-05
+CUS000008,Paula Armstrong,alexandrabrooks@example.net,001-732-625-9158x901,949 Mueller Mission,IL,55788,2024-01-03,Premium,Phone,5525.87,8,76.2,2024-01-08,
+CUS000009,Charles Knight,lopezryan@example.net,429-460-2220,4479 Hinton Heights Suite 425,PA,1431,2022-04-22,Standard,SMS,8686.76,3,60.0,2022-04-26,
+CUS000010,Tracy Russell,donalddouglas@example.org,+1-416-902-8088,386 Brian Gateway,OH,3613,2022-01-29,Basic,SMS,3739.64,8,63.9,2022-02-04,
+CUS000011,Ronnie Foley,theresasaunders@example.com,001-302-453-9656x16734,627 Carol Vista,TX,95516,2020-12-27,Premium,Web Portal,8481.27,5,99.0,2021-01-10,
+CUS000012,Debra Copeland,iwatts@example.org,2112998470,753 Powell Manor Suite 888,OH,48532,2023-03-22,Premium,Email,2884.74,10,65.3,2023-03-31,
+CUS000013,Jared Lee,lewistina@example.net,(530)300-3184x29803,54024 Miller Track Suite 763,CA,97392,2020-06-26,Standard,SMS,6395.95,9,99.7,2020-07-01,
+CUS000014,Jennifer Lopez,justin73@example.net,(844)426-8500,240 Lewis Park,MI,53957,2020-12-07,Standard,SMS,7076.97,4,90.1,2020-12-17,
+CUS000015,Heather Morris,rtaylor@example.com,001-486-360-3476x372,943 Dawn Extension Apt. 032,NY,7296,2022-03-05,Premium,SMS,6757.11,8,72.5,2022-03-23,2023-05-23
+CUS000016,Olivia Jackson,cameron79@example.org,221-911-5321,517 Lester Brook,NY,45824,2024-10-29,Premium,Email,1763.41,5,95.5,2024-11-21,
+CUS000017,Laura Anderson,snyderallen@example.org,001-291-530-2287,4207 Craig Causeway,IL,87941,2024-11-06,Basic,Web Portal,7657.41,3,65.0,2024-11-23,
+CUS000018,Emily Lee,lgarcia@example.com,001-253-242-2328,693 Kathryn Extension,MI,13040,2022-04-20,Basic,SMS,2236.92,5,85.7,2022-05-02,
+CUS000019,Tina Johnson,ninavaldez@example.net,(231)366-2867,3594 Long Wall Suite 248,IL,59664,2020-05-02,Basic,Web Portal,3302.08,1,61.3,2020-05-19,
+CUS000020,Robin Sanchez DDS,hleon@example.net,840.275.8291x602,63649 Robinson Court,NC,68007,2022-03-11,Basic,Mobile App,8980.13,10,61.8,2022-03-20,
+CUS000021,Eric Brown,swade@example.org,(597)477-8610x0354,873 Paul Lakes,PA,23098,2021-09-15,Premium,Mobile App,8947.22,3,81.1,2021-09-25,
+CUS000022,Ashley Tapia,kleinalexis@example.net,(712)428-6986,290 Hodges Pine,CA,62332,2020-12-21,Premium,SMS,2992.92,7,67.0,2020-12-29,
+CUS000023,Jessica Adams,cassandralewis@example.com,234.763.3597,245 Hall Cove,OH,68000,2022-05-24,Premium,Web Portal,5960.67,9,92.1,2022-05-25,
+CUS000024,Brandon Chandler,alexis38@example.com,351.396.9839,574 Gonzales Lodge Apt. 681,NY,50595,2022-08-15,Basic,SMS,6563.64,7,79.1,2022-08-27,
+CUS000025,Greg Stewart,mmooney@example.net,(854)434-3185x09095,554 Phillips Spring,MI,15443,2024-09-06,Premium,Web Portal,5457.36,8,93.5,2024-09-18,2024-10-01
+CUS000026,Michelle Little,dawsonsean@example.net,205-245-0698x19170,305 Newton Bypass,GA,97684,2025-01-11,Standard,Web Portal,8889.91,10,81.2,2025-02-09,
+CUS000027,Danielle Bradley,xbrown@example.org,926-974-2026,8148 John Course Suite 159,OH,93208,2021-11-03,Basic,Phone,8813.08,10,66.1,2021-11-17,2024-06-23
+CUS000028,Dr. Erin Walsh MD,gwendolynmccall@example.org,211-876-2897,4548 Rose Corner,OH,18262,2021-01-02,Premium,Phone,7975.41,10,60.1,2021-01-23,
+CUS000029,Mary Paul,jessicacampos@example.net,922-725-6691x3632,248 Schaefer Alley,CA,37784,2021-02-11,Premium,Mobile App,1451.43,10,80.6,2021-02-20,
+CUS000030,Maria Smith,xcaldwell@example.com,364.952.6118,56818 Wright Drives,FL,87432,2024-08-22,Standard,Email,5748.11,9,64.9,2024-09-02,
+CUS000031,Stephanie Miller,rebecca67@example.com,920-370-9307x3788,3219 Rodriguez Passage Suite 363,GA,65982,2021-01-15,Basic,Email,4017.71,7,88.3,2021-01-28,
+CUS000032,Jenna Roberts,desiree75@example.org,7345406388,57334 Cooper Island,NC,91067,2023-07-28,Premium,Email,1957.5,3,75.5,2023-08-13,2024-01-13
+CUS000033,Stephen Bartlett,charlesdiaz@example.org,001-822-314-9599x84436,32833 Harris Fall,OH,60446,2023-09-16,Standard,Web Portal,2137.66,4,64.0,2023-10-04,
+CUS000034,Manuel Bryant,dylanduran@example.org,333-468-9096x1713,81729 Mccall Meadows,CA,18767,2024-05-10,Basic,SMS,2796.34,9,85.1,2024-06-08,
+CUS000035,Jaime Martinez,darrenromero@example.com,9185514892,0435 Mullins Canyon,GA,52421,2024-08-11,Standard,Phone,1195.37,9,97.1,2024-09-10,
+CUS000036,Jordan Rosales,faithmartinez@example.net,876.252.9918,4716 Felicia Trafficway Apt. 051,PA,71934,2020-07-28,Standard,Phone,3715.29,5,95.7,2020-08-20,2023-02-11
+CUS000037,Susan Moore,johnsonbruce@example.net,+1-547-922-6062,536 Elizabeth Via,GA,79799,2022-03-02,Standard,SMS,9820.51,8,96.4,2022-03-08,
+CUS000038,Joanne Lynch,perkinsrobert@example.net,874-999-8103,811 Leonard Ford Apt. 102,TX,13199,2022-06-07,Premium,Phone,7642.74,5,90.7,2022-06-17,
+CUS000039,Maureen Li,brianhull@example.org,+1-765-482-7143x5442,06077 Marcus Bypass,NC,11386,2025-01-14,Standard,Email,751.15,8,81.8,2025-01-31,
+CUS000040,April Mclaughlin,skinnerkatie@example.com,(684)233-5018x950,9433 Jackie Key,PA,94637,2021-06-12,Basic,SMS,9224.52,9,62.2,2021-06-30,
+CUS000041,Michelle Johnson,williamsjulie@example.org,001-685-434-8050x3550,312 Mathew Route Suite 835,IL,26186,2022-07-01,Basic,Mobile App,4253.7,0,61.4,2022-07-06,
+CUS000042,Jay Patterson,martinezpaul@example.com,+1-407-688-0491x25023,19899 Mark Way Suite 871,NY,61962,2024-05-01,Standard,Mobile App,4281.09,4,77.4,2024-05-18,
+CUS000043,Kelly Lawrence,samuelcampbell@example.org,545-611-6101x7015,1002 John Row Apt. 424,CA,48174,2020-08-02,Standard,Email,4133.22,3,92.6,2020-08-13,2025-02-11
+CUS000044,Jaime Wolf,scolon@example.com,376-435-5279,28472 Anderson Bypass,MI,78623,2024-08-23,Basic,Web Portal,1521.1,5,91.6,2024-09-04,
+CUS000045,Jesse Alexander,scottflores@example.com,(674)756-5276x127,14062 Oliver Spurs,NY,90789,2022-09-03,Basic,Web Portal,9202.67,1,80.6,2022-09-30,
+CUS000046,Megan Garcia,ashley85@example.net,001-697-355-4743x977,0384 Michelle Cape,GA,6159,2021-02-14,Premium,Email,3987.14,6,78.9,2021-03-05,2024-05-19
+CUS000047,Alexander Williamson,emily05@example.org,+1-201-810-7529x142,46161 Ortega Fork Apt. 399,FL,87219,2023-12-23,Basic,Email,6150.41,4,88.4,2024-01-19,
+CUS000048,Kathleen Hansen,jonathan73@example.net,(342)634-2420,1997 Shelly Shore,NC,13453,2022-02-12,Standard,SMS,2686.51,1,65.8,2022-02-15,
+CUS000049,Renee Ramirez,lstone@example.net,473-397-4991,8581 Katelyn Pike Apt. 739,TX,89292,2021-04-12,Standard,Web Portal,9416.52,9,67.6,2021-04-30,
+CUS000050,Miranda Garrett,ryan03@example.com,+1-542-704-6377,739 Garcia Spur Apt. 819,IL,43832,2024-04-10,Basic,Phone,9947.44,8,69.6,2024-04-27,
+CUS000051,Kayla Price,vanessadickerson@example.net,996.842.2617x644,563 Jones Fields Suite 934,IL,66181,2024-02-28,Basic,SMS,1414.63,5,89.6,2024-03-11,
+CUS000052,Justin Park,brittanyburnett@example.net,711.602.9050,28803 Kyle Island,TX,59535,2023-05-16,Standard,Mobile App,9244.44,8,84.5,2023-06-12,2024-09-08
+CUS000053,John King Jr.,jennifer76@example.org,635.466.8156x1699,92512 Armstrong Station,CA,82004,2022-06-29,Standard,SMS,4128.68,8,79.4,2022-07-24,2023-04-26
+CUS000054,Joshua York,beckyjacobs@example.org,+1-379-228-8189x5217,00532 Matthew Fork Suite 143,PA,47748,2023-08-04,Standard,SMS,3452.2,5,99.4,2023-08-23,
+CUS000055,Jessica Smith,donnaturner@example.org,001-687-643-3934,3345 Angela Lane Suite 782,PA,13459,2022-07-04,Premium,Email,7797.91,0,84.5,2022-07-05,2024-05-03
+CUS000056,Tyler Davis,jacobwood@example.org,666-299-0747x9333,5399 Pierce Gardens Suite 720,MI,93859,2021-04-28,Standard,Phone,1319.98,10,60.8,2021-05-12,
+CUS000057,Christopher Johnson,gregorymcneil@example.org,(883)293-8584,647 Mcgee Manors,NC,3081,2020-07-14,Basic,Email,4357.08,10,63.4,2020-07-29,
+CUS000058,Charles Gay,josephstevens@example.net,(229)215-7809x0363,6387 Susan Roads,NY,12398,2021-06-26,Standard,Phone,4557.76,10,79.6,2021-07-26,
+CUS000059,Willie Hogan,jennifer01@example.net,+1-894-593-3558x4391,604 Jones Courts Apt. 869,NC,50025,2020-07-08,Premium,Email,4440.84,0,87.9,2020-07-19,
+CUS000060,Austin English,rgonzales@example.org,(253)834-3903x165,50318 Kenneth Burg Suite 855,CA,13634,2021-05-20,Premium,Mobile App,9022.61,5,67.7,2021-05-22,
+CUS000061,Robert Giles,christineoconnor@example.org,+1-942-913-4649,8595 Joshua Pine,FL,8460,2025-02-05,Standard,Web Portal,1005.39,4,86.2,2025-02-14,2025-03-28
+CUS000062,George Johnston,snydermichael@example.com,7866004461,9634 Thomas Vista,GA,30212,2023-11-17,Premium,SMS,4335.1,4,62.9,2023-11-25,
+CUS000063,Veronica Brown,melanieswanson@example.net,226-528-5577x0953,6888 Emily Underpass,PA,62517,2022-12-10,Standard,Email,7904.63,2,97.6,2023-01-07,
+CUS000064,Lisa Stein,sarahbarton@example.net,001-973-731-4945x90124,93926 Jason Common Suite 790,NC,64333,2024-08-03,Premium,Phone,3673.64,3,69.0,2024-08-07,
+CUS000065,Chase Melton,michaelberry@example.org,877-508-7555x6790,0316 Wendy Club Apt. 476,PA,47748,2022-04-03,Premium,SMS,1408.47,1,84.8,2022-05-01,
+CUS000066,Scott Neal,kelseymaynard@example.net,371-465-3138,712 Andrew Ranch,GA,20257,2022-06-20,Premium,SMS,2331.74,10,85.6,2022-07-19,
+CUS000067,Jeanne White,lori61@example.org,794.269.6301x0344,4937 Brown Turnpike Suite 240,GA,22633,2022-08-02,Basic,Mobile App,4214.1,1,94.3,2022-08-30,
+CUS000068,Timothy Henry,joel89@example.com,(312)534-6975,165 Walker Mill,FL,28164,2022-04-13,Basic,SMS,2562.15,6,96.5,2022-05-01,2023-06-25
+CUS000069,Brenda Maynard,sherrisimon@example.com,(513)433-2129,56017 Michelle Trace Apt. 592,GA,34436,2021-01-15,Premium,SMS,6052.25,9,74.0,2021-01-25,
+CUS000070,Charles Ferguson,klewis@example.org,(273)326-6953,17993 Lee Cove Apt. 976,GA,78958,2024-10-02,Premium,Phone,8053.4,6,92.2,2024-10-26,
+CUS000071,Ashley Reeves,meghanallen@example.com,669.232.5740x516,085 Aaron Crescent Apt. 676,TX,72833,2023-07-31,Standard,Email,2325.0,6,89.2,2023-08-23,
+CUS000072,Steven Jones,ewilkins@example.org,205-690-8164x2078,022 Brennan Vista,CA,17829,2023-05-15,Basic,SMS,8120.48,5,96.4,2023-06-14,
+CUS000073,Richard Harris,anna97@example.com,309-823-7795,598 Smith Mission Suite 623,MI,38412,2020-07-27,Premium,SMS,539.08,7,94.3,2020-08-12,
+CUS000074,William Lang,anthony94@example.org,490.434.5187x348,42549 Zavala Lakes Suite 652,PA,95804,2020-07-27,Standard,SMS,4580.84,0,75.5,2020-08-08,2020-12-07
+CUS000075,Steve Jackson,lmack@example.com,307.517.0600x966,10585 Shaun Squares Suite 674,GA,15292,2022-05-06,Basic,Phone,4822.9,7,88.9,2022-05-30,
+CUS000076,Sue Smith,christopherharris@example.org,590.231.4869,8996 Amanda Plaza,IL,87655,2024-10-10,Premium,SMS,5617.71,10,67.1,2024-10-30,
+CUS000077,Cody Reynolds PhD,mcdanielmichael@example.com,001-502-466-0712x27836,17316 Ashley Ridges Suite 345,GA,96214,2022-01-01,Basic,Email,9379.37,9,67.3,2022-01-30,
+CUS000078,Kara Dixon,hshelton@example.com,3945989777,783 Hudson Mill Suite 171,IL,82067,2022-02-27,Premium,SMS,4839.57,6,80.3,2022-02-28,2022-12-14
+CUS000079,Janet Rodriguez,smithmatthew@example.com,+1-398-667-0481x40218,34676 Chan Brooks,MI,84827,2023-01-01,Basic,Phone,5694.86,2,69.9,2023-01-28,
+CUS000080,Mariah Harper,nicholaswilliams@example.com,2706568270,84198 Mitchell Light,NC,33049,2022-11-23,Basic,Web Portal,7739.43,9,89.5,2022-12-12,2023-02-12
+CUS000081,Frank Bradley,sharischmidt@example.com,489-410-2256,335 Kyle Crescent Apt. 760,CA,50288,2020-09-18,Standard,SMS,5333.79,7,73.9,2020-09-21,
+CUS000082,Ryan Simon,veleztiffany@example.net,954-898-9268,3913 Chambers Park Apt. 634,TX,84765,2021-03-27,Premium,Mobile App,9731.8,7,67.9,2021-04-11,
+CUS000083,Juan Daugherty,chull@example.com,(332)886-0971,808 Joseph Center Suite 987,MI,34756,2024-03-14,Premium,Phone,624.77,2,84.1,2024-04-02,
+CUS000084,Todd Stewart,colemansamantha@example.net,936-470-2575x96554,3563 Ashley Wall Apt. 125,NY,55506,2025-02-15,Standard,Email,7679.56,10,95.0,2025-03-14,2025-03-30
+CUS000085,Jonathan Harris,cartererin@example.com,6312343018,65310 Smith Causeway,IL,6993,2021-12-07,Standard,Email,311.87,10,91.7,2021-12-08,
+CUS000086,Nicole Lee,mcclurecharles@example.org,753-621-4373,023 Melissa Crossroad Apt. 855,IL,26873,2020-12-09,Standard,SMS,3835.94,5,79.7,2020-12-18,
+CUS000087,Joseph Anderson,qreed@example.com,001-765-320-9595,99137 Scott Streets Suite 891,IL,59985,2022-04-13,Premium,Mobile App,7241.8,3,60.3,2022-04-24,
+CUS000088,Michael Taylor,harrisbrenda@example.org,001-412-420-3767x7985,50544 Penny Isle Suite 526,GA,26782,2021-03-04,Basic,Web Portal,1588.26,10,71.6,2021-03-09,
+CUS000089,Taylor Santana,tinajones@example.net,(825)212-8557,890 Fuller Harbor Apt. 884,TX,10562,2020-05-02,Basic,SMS,4883.67,5,76.7,2020-05-26,2023-08-06
+CUS000090,Shannon Moore,dawnpatterson@example.com,+1-457-357-1724x360,9210 Morris Turnpike Suite 212,IL,77455,2024-03-28,Premium,Web Portal,8075.34,6,95.2,2024-04-14,
+CUS000091,Calvin Bruce,adouglas@example.net,001-977-503-0373x6544,7372 Marshall Haven,PA,94811,2022-01-21,Basic,Phone,9370.16,6,87.7,2022-02-17,
+CUS000092,David Brown,harrisonseth@example.com,595.496.7580x1539,441 Nichols Glen,PA,48310,2021-12-11,Basic,Web Portal,9886.86,10,79.3,2021-12-29,
+CUS000093,Veronica Werner,bryanrios@example.net,001-888-393-1348x544,443 Evans Pine Apt. 602,IL,72354,2022-02-11,Basic,Web Portal,7541.52,3,89.0,2022-02-23,
+CUS000094,Judy Conrad,rachel21@example.org,(503)230-7367,91800 Tony Lights Suite 800,TX,87955,2025-02-04,Premium,Phone,4626.9,8,74.4,2025-02-05,
+CUS000095,Christopher Cummings,campbelldarrell@example.com,(728)297-2212,1425 Williams Mountain,TX,29128,2023-01-03,Basic,Phone,4748.91,5,61.0,2023-01-05,
+CUS000096,Adam Bryant,cjohns@example.com,(787)273-2465x76281,997 Debra Road,IL,43297,2024-03-22,Standard,SMS,6095.64,3,76.6,2024-03-28,2024-11-04
+CUS000097,Gregory Elliott,sarah59@example.org,001-404-976-9605,728 Laurie Cape,TX,99693,2020-08-27,Standard,Web Portal,2596.12,7,83.4,2020-09-10,
+CUS000098,Charles Thompson,nathanieltran@example.com,(327)844-3955,4693 Ashley Centers,GA,28973,2022-05-26,Standard,SMS,3625.09,9,71.2,2022-06-09,
+CUS000099,Haley Keller,victor99@example.com,(944)826-6066x1871,385 Diana Mountain,NY,98288,2024-03-13,Basic,Email,6728.23,9,63.2,2024-04-12,2024-08-25
+CUS000100,David White,lopezdawn@example.net,843-636-8156x9613,14536 Holly Trail,MI,84489,2024-07-03,Basic,Web Portal,295.46,3,79.5,2024-07-10,

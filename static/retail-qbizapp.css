@@ -1,0 +1,65 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+.tabs {
+  width: 100%;
+}
+/* Hide radio buttons */
+.tabs input[type="radio"] {
+  display: none;
+}
+/* Style tab labels */
+.tabs label {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 2px;
+  font-size: 16px;
+  transition: background 0.2s;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+/* Active tab label */
+.tabs input[type="radio"]:checked + label {
+  background: #007bff;
+  color: #fff;
+}
+/* Hide all tab content by default */
+.tab-content {
+  display: none;
+  padding: 20px;
+  background: #f9f9f9;
+  border-top: 2px solid #007bff;
+}
+/* Show content of checked tab */
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5,
+#tab6:checked ~ #content6,
+#tab7:checked ~ #content7 {
+  display: block;
+}
+.iframes-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  resize: both;
+  overflow: auto;
+}
+.iframes-row iframe {
+  border: 1px solid #ccc;
+  background: #fff;
+}
+/* Responsive for small screens */
+@media (max-width: 1000px) {
+  .iframes-row {
+    flex-direction: column;
+  }
+  .iframes-row iframe {
+    width: 100%;
+    max-width: 100%;
+  }
+}

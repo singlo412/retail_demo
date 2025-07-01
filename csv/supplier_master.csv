@@ -1,0 +1,31 @@
+supplier_id,supplier_name,region,country,base_tariff,credit_terms,lead_time_days,minimum_order_value,supplier_rating,active_since,quality_score,delivery_reliability,financial_stability
+S0001,Jones Inc Inc.,Europe,Spain,12.4,30,55,6129.89,4.4,2017-12-29,89.3,88.6,78.6
+S0002,"Baker, Price and Smith Corp.",Europe,Poland,9.32,30,101,7361.58,3.7,2016-07-15,82.8,92.4,90.1
+S0003,"White, Harmon and Hull Industries",Europe,Italy,8.49,30,14,7355.85,3.2,2015-12-31,91.7,90.1,74.4
+S0004,Obrien-Bell Industries,North America,Mexico,2.48,60,70,9260.22,3.7,2016-11-16,91.2,88.4,75.8
+S0005,"Waller, Calderon and Paul Corp.",South America,Peru,19.8,30,28,7204.86,4.1,2018-06-03,83.5,85.5,81.3
+S0006,Hall Inc Ltd.,Asia,Indonesia,19.39,90,86,4640.87,4.4,2019-05-11,98.4,90.9,90.0
+S0007,Smith-Lawrence Ltd.,Asia,Bangladesh,24.87,45,49,8617.0,3.2,2018-02-15,93.5,85.3,74.1
+S0008,Campbell-Clark International,North America,USA,8.44,45,18,6586.32,3.8,2022-04-21,95.0,93.4,94.2
+S0009,Rodgers PLC Industries,Europe,Spain,13.35,45,68,6420.35,4.0,2020-05-19,91.1,91.2,93.1
+S0010,Rosario and Sons Ltd.,Asia,Indonesia,8.85,30,103,3968.86,3.0,2019-12-12,99.4,95.8,70.7
+S0011,"Drake, Johnson and Martinez Ltd.",Europe,Poland,7.69,60,92,2390.64,3.3,2021-01-31,98.0,91.0,92.9
+S0012,White-Simon Corp.,North America,Canada,5.7,60,120,5490.25,3.7,2020-04-17,89.8,93.2,82.1
+S0013,Martin-Myers Corp.,North America,USA,6.68,45,26,4759.32,3.4,2023-05-25,98.1,98.9,93.4
+S0014,"Smith, White and Nguyen Inc.",Europe,Italy,6.93,45,79,4681.89,3.7,2018-06-15,88.6,95.7,85.5
+S0015,"Vasquez, King and Sanders Industries",South America,Peru,12.5,60,28,5443.04,3.5,2018-01-10,89.8,85.8,87.8
+S0016,Mcpherson LLC Ltd.,Europe,Italy,13.96,30,65,7844.83,3.6,2022-05-10,97.3,87.2,76.2
+S0017,"Frederick, Hayes and Watson International",South America,Peru,19.57,45,58,3454.82,4.6,2015-05-04,94.1,90.4,80.1
+S0018,"Boyd, Roberts and Gutierrez Industries",North America,Mexico,6.24,30,106,9393.06,4.1,2018-02-13,91.0,93.1,74.8
+S0019,Davis LLC Corp.,Europe,France,8.79,90,85,4362.72,4.5,2019-03-29,99.2,96.4,82.2
+S0020,Johnson LLC Corp.,South America,Chile,9.62,60,16,4270.08,3.7,2015-05-17,97.5,90.7,79.9
+S0021,Jimenez LLC Industries,South America,Colombia,19.82,90,71,4508.25,4.8,2016-01-21,89.4,89.2,78.9
+S0022,Anderson Ltd Inc.,Asia,Malaysia,20.09,60,114,7052.63,3.3,2019-08-04,87.0,97.9,70.3
+S0023,"Johnson, Yoder and Miller Ltd.",North America,Canada,7.79,90,74,5233.33,4.1,2021-03-04,88.0,95.1,75.8
+S0024,"Allison, Parker and Aguilar International",South America,Chile,10.92,90,48,4698.75,4.1,2018-10-03,82.3,90.8,87.5
+S0025,"Burns, Lowe and Johnson Ltd.",Europe,Germany,3.23,90,61,1358.25,4.2,2017-11-25,90.9,90.9,78.4
+S0026,"Watson, Church and Robinson Ltd.",Asia,Malaysia,6.72,45,92,8707.5,3.7,2023-03-25,92.2,91.9,90.8
+S0027,Thompson LLC Industries,Europe,Netherlands,8.36,90,55,7350.68,4.1,2019-05-04,87.4,90.4,85.9
+S0028,Taylor-Hamilton International,Europe,Poland,8.52,30,110,3671.51,4.8,2018-01-16,99.1,98.1,70.6
+S0029,Garrett Group Inc.,North America,Canada,0.6,45,74,8258.86,3.2,2020-02-21,86.2,87.8,88.0
+S0030,Wilson-Gonzalez Corp.,North America,USA,6.58,60,37,3073.99,3.4,2020-02-24,99.2,91.4,93.4

@@ -1,0 +1,21 @@
+age_segment,channel,revenue,quantity
+Baby Boomers,Affiliate Marketing,2540006.23,5198
+Baby Boomers,Display Ads,2664180.28,5755
+Baby Boomers,Email Marketing,3094296.11,6564
+Baby Boomers,Paid Search,2994788.24,6257
+Baby Boomers,Social Media,2423071.52,5120
+Gen X,Affiliate Marketing,2402983.34,5292
+Gen X,Display Ads,2821938.98,6063
+Gen X,Email Marketing,2751676.49,6276
+Gen X,Paid Search,2926968.4,6513
+Gen X,Social Media,2524436.9,5560
+Gen Z,Affiliate Marketing,2284017.16,5461
+Gen Z,Display Ads,2339266.45,5783
+Gen Z,Email Marketing,2235955.76,5296
+Gen Z,Paid Search,2058741.36,5101
+Gen Z,Social Media,2828583.13,6973
+Millennials,Affiliate Marketing,2498207.93,5532
+Millennials,Display Ads,2431052.24,5396
+Millennials,Email Marketing,2624887.61,5725
+Millennials,Paid Search,2831940.19,6031
+Millennials,Social Media,2734077.52,6033

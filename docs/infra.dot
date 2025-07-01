@@ -1,0 +1,76 @@
+digraph INFRA {
+  node [ color = "black", fillcolor = "#E6E6E6", height =1, style = "filled,bold,rounded", fontname = "Arial" ];
+  "S3Bucket" [ label = "S3Bucket
+(AWS::S3::Bucket)", shape =cylinder, fillcolor = "#FFF5CD" ];
+  "BucketPolicy" [ label = "BucketPolicy
+(AWS::S3::BucketPolicy)", shape =cylinder, fillcolor = "#FFF5CD" ];
+  "CloudFrontOriginAccessControl" [ label = "CloudFrontOriginAccessControl
+(AWS::CloudFront::OriginAccessControl)", shape =rectangle, fillcolor = "#E78F81" ];
+  "CloudFrontDistribution" [ label = "CloudFrontDistribution
+(AWS::CloudFront::Distribution)", shape =rectangle, fillcolor = "#E78F81" ];
+  "QBusinessDataBucket" [ label = "QBusinessDataBucket
+(AWS::S3::Bucket)", shape =cylinder, fillcolor = "#FFF5CD" ];
+  "QBusinessDataBucketPolicy" [ label = "QBusinessDataBucketPolicy
+(AWS::S3::BucketPolicy)", shape =cylinder, fillcolor = "#FFF5CD" ];
+  "AWSQCloudformationBusinessServiceRolePolicy" [ label = "AWSQCloudformationBusinessServiceRolePolicy
+(AWS::IAM::ManagedPolicy)", shape =rectangle ];
+  "QCloudformationBusinessServiceRole" [ label = "QCloudformationBusinessServiceRole
+(AWS::IAM::Role)", shape =rectangle ];
+  "QCloudformationWebExperienceRole" [ label = "QCloudformationWebExperienceRole
+(AWS::IAM::Role)", shape =rectangle ];
+  "QCloudformationDataSourceRole" [ label = "QCloudformationDataSourceRole
+(AWS::IAM::Role)", shape =rectangle ];
+  "QBusinessApplication" [ label = "QBusinessApplication
+(AWS::QBusiness::Application)", shape =rectangle ];
+  "QBusinessIndex" [ label = "QBusinessIndex
+(AWS::QBusiness::Index)", shape =rectangle ];
+  "QBusinessRetriever" [ label = "QBusinessRetriever
+(AWS::QBusiness::Retriever)", shape =rectangle ];
+  "QBusinessWebExperience" [ label = "QBusinessWebExperience
+(AWS::QBusiness::WebExperience)", shape =rectangle ];
+  "S3DataSourceClaudeSet1" [ label = "S3DataSourceClaudeSet1
+(AWS::QBusiness::DataSource)", shape =rectangle ];
+  "S3DataSourceWebSearchSet1" [ label = "S3DataSourceWebSearchSet1
+(AWS::QBusiness::DataSource)", shape =rectangle ];
+  "S3DataSourceHackathon" [ label = "S3DataSourceHackathon
+(AWS::QBusiness::DataSource)", shape =rectangle ];
+  "import2589158f01754110b565FCF416" [ label = "import2589158f01754110b565FCF416
+(AWS::QuickSight::DataSource)", shape =rectangle ];
+  "30de13fcf01f4db484a4646056" [ label = "30de13fcf01f4db484a4646056
+(AWS::QuickSight::DataSet)", shape =rectangle ];
+  "5cd9926267084614817b58B263" [ label = "5cd9926267084614817b58B263
+(AWS::QuickSight::DataSet)", shape =rectangle ];
+  "import6b855d2502af47cc818aCDE137" [ label = "import6b855d2502af47cc818aCDE137
+(AWS::QuickSight::DataSource)", shape =rectangle ];
+  "769456ab82514baf8ff0606F4D" [ label = "769456ab82514baf8ff0606F4D
+(AWS::QuickSight::DataSet)", shape =rectangle ];
+  "BucketPolicy" -> "S3Bucket";
+  "BucketPolicy" -> "CloudFrontDistribution";
+  "CloudFrontDistribution" -> "S3Bucket";
+  "CloudFrontDistribution" -> "CloudFrontOriginAccessControl";
+  "QBusinessDataBucketPolicy" -> "QBusinessDataBucket";
+  "QBusinessDataBucketPolicy" -> "QCloudformationBusinessServiceRole";
+  "QCloudformationBusinessServiceRole" -> "AWSQCloudformationBusinessServiceRolePolicy";
+  "QCloudformationBusinessServiceRole" -> "QBusinessDataBucket";
+  "QCloudformationDataSourceRole" -> "QBusinessDataBucket";
+  "QBusinessApplication" -> "QCloudformationBusinessServiceRole";
+  "QBusinessIndex" -> "QBusinessApplication";
+  "QBusinessRetriever" -> "QBusinessApplication";
+  "QBusinessRetriever" -> "QBusinessIndex";
+  "QBusinessWebExperience" -> "QBusinessApplication";
+  "QBusinessWebExperience" -> "QCloudformationWebExperienceRole";
+  "S3DataSourceClaudeSet1" -> "QBusinessApplication";
+  "S3DataSourceClaudeSet1" -> "QBusinessIndex";
+  "S3DataSourceClaudeSet1" -> "QCloudformationDataSourceRole";
+  "S3DataSourceClaudeSet1" -> "QBusinessDataBucket";
+  "S3DataSourceWebSearchSet1" -> "QBusinessApplication";
+  "S3DataSourceWebSearchSet1" -> "QBusinessIndex";
+  "S3DataSourceWebSearchSet1" -> "QCloudformationDataSourceRole";
+  "S3DataSourceWebSearchSet1" -> "QBusinessDataBucket";
+  "S3DataSourceHackathon" -> "QBusinessApplication";
+  "S3DataSourceHackathon" -> "QBusinessIndex";
+  "S3DataSourceHackathon" -> "QCloudformationDataSourceRole";
+  "S3DataSourceHackathon" -> "QBusinessDataBucket";
+  "30de13fcf01f4db484a4646056" -> "import2589158f01754110b565FCF416";
+  "769456ab82514baf8ff0606F4D" -> "import6b855d2502af47cc818aCDE137";
+}

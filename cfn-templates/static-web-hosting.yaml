@@ -1,0 +1,84 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'S3 static website with CloudFront distribution'
+
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+
+  BucketPolicy:
+    Type: 'AWS::S3::BucketPolicy'
+    Properties:
+      Bucket: !Ref S3Bucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: 's3:GetObject'
+            Resource: !Join
+              - ''
+              - - !GetAtt S3Bucket.Arn
+                - '/*'
+            Condition:
+              StringEquals:
+                'AWS:SourceArn': !Join
+                  - ''
+                  - - 'arn:aws:cloudfront::' 
+                    - !Ref 'AWS::AccountId'
+                    - ':distribution/'
+                    - !Ref CloudFrontDistribution
+
+  CloudFrontOriginAccessControl:
+    Type: 'AWS::CloudFront::OriginAccessControl'
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub '${AWS::StackName}-OAC'
+        Description: 'Origin Access Control for S3'
+        SigningProtocol: sigv4
+        SigningBehavior: always
+        OriginAccessControlOriginType: s3
+
+  CloudFrontDistribution:
+    Type: 'AWS::CloudFront::Distribution'
+    Properties:
+      DistributionConfig:
+        Origins:
+          - DomainName: !GetAtt S3Bucket.RegionalDomainName
+            Id: S3Origin
+            OriginAccessControlId: !Ref CloudFrontOriginAccessControl
+            S3OriginConfig:
+              OriginAccessIdentity: ''
+        Enabled: true
+        DefaultRootObject: index.html
+        DefaultCacheBehavior:
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          CachedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          TargetOriginId: S3Origin
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: none
+          ViewerProtocolPolicy: redirect-to-https
+        PriceClass: PriceClass_100
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: true
+
+Outputs:
+  BucketName:
+    Description: 'Name of S3 bucket'
+    Value: !Ref S3Bucket
+
+  CloudFrontDomainName:
+    Description: 'Domain name of CloudFront distribution'
+    Value: !GetAtt CloudFrontDistribution.DomainName

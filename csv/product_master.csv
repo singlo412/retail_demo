@@ -1,0 +1,101 @@
+product_id,sku,product_name,top_category,sub_category,brand,unit_price,unit_cost,current_stock,min_stock_level,max_stock_level,supplier,launch_date,is_active,margin
+P000001,APFOGA0001,Gap Month Footwear,Apparel,Footwear,Gap,571.03,283.9,240,32,867,Universal Trading LLC,2024-07-11,True,50.28
+P000002,BEHAL'0002,L'Oreal Public Haircare,Beauty & Personal Care,Haircare,L'Oreal,665.5,345.49,988,45,155,Universal Trading LLC,2023-06-17,True,48.09
+P000003,HODEIK0003,IKEA Letter Decor,Home & Living,Decor,IKEA,924.38,578.19,767,37,845,Prime Distributors,2024-02-13,True,37.45
+P000004,APKILE0004,Levi's Middle Kids' Clothing,Apparel,Kids' Clothing,Levi's,709.94,463.6,870,39,622,Retail Solutions Co,2023-04-30,True,34.7
+P000005,ELLALG0005,LG Action Laptops,Electronics,Laptops,LG,202.06,94.93,266,41,831,Direct Imports Ltd,2022-12-28,False,53.02
+P000006,BEMAMA0006,MAC Represent Makeup,Beauty & Personal Care,Makeup,MAC,339.56,180.43,19,41,1079,Prime Distributors,2023-03-30,True,46.86
+P000007,HOSTHO0007,HomeDepot Lead Storage,Home & Living,Storage,HomeDepot,20.07,12.97,617,39,719,Universal Trading LLC,2024-11-10,True,35.38
+P000008,HOSTIK0008,IKEA Beautiful Storage,Home & Living,Storage,IKEA,237.9,131.3,473,25,654,GlobalSupply Corp,2022-09-22,True,44.81
+P000009,FOHENE0009,Nestle Across Health Foods,Food & Beverages,Health Foods,Nestle,462.25,305.59,209,22,840,Prime Distributors,2024-08-09,False,33.89
+P000010,ELGAHP0010,HP Visit Gaming,Electronics,Gaming,HP,183.93,128.51,559,32,171,Mega Wholesale,2022-09-03,True,30.13
+P000011,BEMANI0011,Nivea Yard Makeup,Beauty & Personal Care,Makeup,Nivea,600.73,396.19,119,25,309,Universal Trading LLC,2023-04-18,True,34.05
+P000012,APKIH&0012,H&M Hard Kids' Clothing,Apparel,Kids' Clothing,H&M,770.03,442.56,447,10,116,Mega Wholesale,2023-11-05,False,42.53
+P000013,HOFUWA0013,Wayfair Player Furniture,Home & Living,Furniture,Wayfair,877.54,471.47,278,45,185,Prime Distributors,2024-11-12,True,46.27
+P000014,ELSMDE0014,Dell Race Smartphones,Electronics,Smartphones,Dell,928.24,412.9,636,11,344,Universal Trading LLC,2023-06-21,True,55.52
+P000015,BEPEMA0015,Maybelline Ahead Personal Hygiene,Beauty & Personal Care,Personal Hygiene,Maybelline,803.01,557.36,859,11,337,Direct Imports Ltd,2024-02-28,True,30.59
+P000016,APFOAD0016,Adidas By Footwear,Apparel,Footwear,Adidas,108.84,59.51,214,25,956,Mega Wholesale,2024-07-03,True,45.32
+P000017,ELGALG0017,LG Commercial Gaming,Electronics,Gaming,LG,525.47,256.74,314,33,210,Quality Merchandise Inc,2024-05-09,True,51.14
+P000018,FOGRKR0018,Kraft Read Groceries,Food & Beverages,Groceries,Kraft,261.78,162.97,326,40,164,Prime Distributors,2022-07-18,True,37.75
+P000019,BEMANI0019,Nivea Recognize Makeup,Beauty & Personal Care,Makeup,Nivea,941.21,547.42,627,14,842,Quality Merchandise Inc,2023-05-07,True,41.84
+P000020,ELSMAP0020,Apple Chair Smartphones,Electronics,Smartphones,Apple,15.55,8.91,3,28,135,Quality Merchandise Inc,2022-12-17,True,42.7
+P000021,FOCOCO0021,Coca-Cola Sense Confectionery,Food & Beverages,Confectionery,Coca-Cola,482.67,237.78,657,38,634,Direct Imports Ltd,2022-05-28,True,50.74
+P000022,BESKMA0022,Maybelline Fear Skincare,Beauty & Personal Care,Skincare,Maybelline,294.77,156.96,844,32,1132,Quality Merchandise Inc,2024-07-29,True,46.75
+P000023,APMEGA0023,Gap Already Men's Clothing,Apparel,Men's Clothing,Gap,670.32,303.16,104,26,841,Mega Wholesale,2024-01-25,True,54.77
+P000024,ELHOAP0024,Apple Those Home Appliances,Electronics,Home Appliances,Apple,33.52,22.84,491,38,216,Prime Distributors,2024-08-28,True,31.86
+P000025,BESKMA0025,Maybelline Relationship Skincare,Beauty & Personal Care,Skincare,Maybelline,985.57,653.63,717,46,542,Universal Trading LLC,2023-08-09,True,33.68
+P000026,BEHANI0026,Nivea Least Haircare,Beauty & Personal Care,Haircare,Nivea,78.71,43.89,710,23,158,Quality Merchandise Inc,2022-12-20,True,44.24
+P000027,BESKDO0027,Dove Realize Skincare,Beauty & Personal Care,Skincare,Dove,945.04,506.27,279,48,759,Universal Trading LLC,2024-06-13,True,46.43
+P000028,BESKDO0028,Dove Indicate Skincare,Beauty & Personal Care,Skincare,Dove,132.06,68.17,508,38,422,GlobalSupply Corp,2022-11-15,True,48.38
+P000029,BEPEDO0029,Dove Painting Personal Hygiene,Beauty & Personal Care,Personal Hygiene,Dove,96.26,46.15,610,13,999,GlobalSupply Corp,2023-04-19,False,52.06
+P000030,FOGRPE0030,PepsiCo Truth Groceries,Food & Beverages,Groceries,PepsiCo,991.47,645.8,640,25,777,Direct Imports Ltd,2023-12-05,True,34.86
+P000031,FOSNCO0031,Coca-Cola Drug Snacks,Food & Beverages,Snacks,Coca-Cola,91.66,61.86,992,45,427,Mega Wholesale,2023-12-09,True,32.51
+P000032,BEHANI0032,Nivea Billion Haircare,Beauty & Personal Care,Haircare,Nivea,837.84,513.97,606,20,1115,Retail Solutions Co,2023-02-09,True,38.66
+P000033,BEPEMA0033,Maybelline Sister Personal Hygiene,Beauty & Personal Care,Personal Hygiene,Maybelline,644.39,258.05,258,18,666,Prime Distributors,2023-12-28,True,59.95
+P000034,BEFRMA0034,Maybelline Media Fragrances,Beauty & Personal Care,Fragrances,Maybelline,927.37,582.94,71,16,879,Direct Imports Ltd,2025-01-17,True,37.14
+P000035,APKIAD0035,Adidas No Kids' Clothing,Apparel,Kids' Clothing,Adidas,248.76,110.77,50,13,815,Retail Solutions Co,2022-12-08,True,55.47
+P000036,ELGAHP0036,HP Be Gaming,Electronics,Gaming,HP,225.58,134.3,811,15,361,Retail Solutions Co,2023-05-30,False,40.46
+P000037,ELGALG0037,LG Ahead Gaming,Electronics,Gaming,LG,870.37,560.74,753,16,551,Quality Merchandise Inc,2024-05-11,True,35.57
+P000038,BEHAL'0038,L'Oreal Best Haircare,Beauty & Personal Care,Haircare,L'Oreal,237.03,113.92,18,31,950,Universal Trading LLC,2023-11-01,False,51.94
+P000039,BEPEL'0039,L'Oreal Activity Personal Hygiene,Beauty & Personal Care,Personal Hygiene,L'Oreal,929.35,585.47,864,28,379,Direct Imports Ltd,2024-10-02,True,37.0
+P000040,BEMAMA0040,MAC Black Makeup,Beauty & Personal Care,Makeup,MAC,852.32,429.5,758,46,414,Direct Imports Ltd,2023-06-06,True,49.61
+P000041,BEHAMA0041,Maybelline Light Haircare,Beauty & Personal Care,Haircare,Maybelline,730.28,424.53,277,44,827,Universal Trading LLC,2025-01-15,False,41.87
+P000042,APWOH&0042,H&M Tv Women's Clothing,Apparel,Women's Clothing,H&M,274.71,156.65,624,25,1193,Retail Solutions Co,2022-11-19,True,42.98
+P000043,ELAUDE0043,Dell Interview Audio Devices,Electronics,Audio Devices,Dell,232.18,133.43,938,11,687,Direct Imports Ltd,2023-02-16,True,42.53
+P000044,ELHOHP0044,HP Focus Home Appliances,Electronics,Home Appliances,HP,446.54,231.08,955,17,498,Retail Solutions Co,2023-12-08,True,48.25
+P000045,BEFRNI0045,Nivea Take Fragrances,Beauty & Personal Care,Fragrances,Nivea,711.71,493.28,884,27,555,Mega Wholesale,2022-12-11,True,30.69
+P000046,FOHEPE0046,PepsiCo Tax Health Foods,Food & Beverages,Health Foods,PepsiCo,580.21,398.24,682,50,552,Direct Imports Ltd,2024-12-08,True,31.36
+P000047,ELSMSA0047,Samsung Interesting Smartphones,Electronics,Smartphones,Samsung,142.41,57.78,119,29,910,Mega Wholesale,2024-10-30,True,59.43
+P000048,BEHAMA0048,Maybelline Hand Haircare,Beauty & Personal Care,Haircare,Maybelline,294.63,131.38,395,34,650,Mega Wholesale,2023-02-15,False,55.41
+P000049,BESKDO0049,Dove Feel Skincare,Beauty & Personal Care,Skincare,Dove,397.95,242.96,740,16,737,Mega Wholesale,2023-12-07,True,38.95
+P000050,BEHAL'0050,L'Oreal Decade Haircare,Beauty & Personal Care,Haircare,L'Oreal,149.61,73.4,761,10,673,Universal Trading LLC,2025-03-08,False,50.94
+P000051,FOCOPE0051,PepsiCo Once Confectionery,Food & Beverages,Confectionery,PepsiCo,250.57,157.88,58,16,796,Mega Wholesale,2023-11-18,True,36.99
+P000052,FOCOKR0052,Kraft Fall Confectionery,Food & Beverages,Confectionery,Kraft,148.67,66.23,126,48,364,Mega Wholesale,2023-08-17,False,55.45
+P000053,ELGALG0053,LG Environment Gaming,Electronics,Gaming,LG,53.27,36.95,27,48,662,Mega Wholesale,2024-05-17,False,30.64
+P000054,APFOLE0054,Levi's Best Footwear,Apparel,Footwear,Levi's,622.14,290.04,134,25,546,Prime Distributors,2024-01-11,True,53.38
+P000055,APWOTO0055,Tommy Hilfiger Alone Women's Clothing,Apparel,Women's Clothing,Tommy Hilfiger,173.18,99.56,107,46,355,Universal Trading LLC,2023-07-21,True,42.51
+P000056,BEHADO0056,Dove Whatever Haircare,Beauty & Personal Care,Haircare,Dove,195.56,130.93,777,26,651,Direct Imports Ltd,2022-05-02,True,33.05
+P000057,ELGASO0057,Sony Career Gaming,Electronics,Gaming,Sony,124.11,58.88,971,46,769,Prime Distributors,2024-02-07,True,52.56
+P000058,HOBEWA0058,Wayfair Whom Bedding,Home & Living,Bedding,Wayfair,473.76,239.32,455,16,471,Prime Distributors,2023-12-02,False,49.48
+P000059,ELGAAP0059,Apple Today Gaming,Electronics,Gaming,Apple,225.97,134.06,163,34,469,Retail Solutions Co,2024-07-21,True,40.67
+P000060,BEMAL'0060,L'Oreal Measure Makeup,Beauty & Personal Care,Makeup,L'Oreal,606.3,416.26,714,17,499,GlobalSupply Corp,2023-07-27,False,31.34
+P000061,ELAUSA0061,Samsung Traditional Audio Devices,Electronics,Audio Devices,Samsung,422.28,226.96,27,31,103,Quality Merchandise Inc,2025-03-31,False,46.25
+P000062,HOBEIK0062,IKEA How Bedding,Home & Living,Bedding,IKEA,745.88,459.52,622,18,885,GlobalSupply Corp,2024-03-06,False,38.39
+P000063,HOFUHO0063,HomeDepot Detail Furniture,Home & Living,Furniture,HomeDepot,73.02,33.63,785,12,1165,Universal Trading LLC,2024-08-13,True,53.94
+P000064,FOHEKE0064,Kellogg's Particularly Health Foods,Food & Beverages,Health Foods,Kellogg's,135.37,66.14,229,43,332,Retail Solutions Co,2023-01-31,True,51.14
+P000065,ELGASA0065,Samsung From Gaming,Electronics,Gaming,Samsung,392.5,196.58,570,34,176,Universal Trading LLC,2022-09-30,True,49.92
+P000066,FOHECO0066,Coca-Cola Exist Health Foods,Food & Beverages,Health Foods,Coca-Cola,382.36,194.9,6,27,393,Retail Solutions Co,2022-08-13,True,49.03
+P000067,APFOH&0067,H&M Trial Footwear,Apparel,Footwear,H&M,296.04,154.61,587,45,159,GlobalSupply Corp,2022-09-24,True,47.77
+P000068,HOSTIK0068,IKEA Congress Storage,Home & Living,Storage,IKEA,453.04,315.64,263,28,817,Prime Distributors,2024-08-13,True,30.33
+P000069,ELLAHP0069,HP Seat Laptops,Electronics,Laptops,HP,822.37,532.65,648,36,744,Universal Trading LLC,2025-03-05,True,35.23
+P000070,BEMANI0070,Nivea Less Makeup,Beauty & Personal Care,Makeup,Nivea,692.24,344.0,677,49,476,Quality Merchandise Inc,2022-05-18,False,50.31
+P000071,APKIH&0071,H&M Test Kids' Clothing,Apparel,Kids' Clothing,H&M,59.2,28.11,927,37,264,Quality Merchandise Inc,2024-04-08,True,52.52
+P000072,APACLE0072,Levi's Good Accessories,Apparel,Accessories,Levi's,841.35,549.98,1,36,910,Quality Merchandise Inc,2023-09-27,True,34.63
+P000073,FOBEPE0073,PepsiCo Hotel Beverages,Food & Beverages,Beverages,PepsiCo,122.71,80.87,560,21,264,Prime Distributors,2022-08-03,True,34.1
+P000074,BEHANI0074,Nivea Win Haircare,Beauty & Personal Care,Haircare,Nivea,915.8,596.92,706,26,414,Quality Merchandise Inc,2023-01-04,True,34.82
+P000075,ELLASA0075,Samsung Choice Laptops,Electronics,Laptops,Samsung,438.9,273.05,829,39,1002,Direct Imports Ltd,2023-11-21,True,37.79
+P000076,APWOAD0076,Adidas Rise Women's Clothing,Apparel,Women's Clothing,Adidas,171.21,103.22,305,11,947,Universal Trading LLC,2024-09-15,True,39.71
+P000077,HOSTCR0077,Crate & Barrel Course Storage,Home & Living,Storage,Crate & Barrel,909.58,572.64,429,31,351,Direct Imports Ltd,2024-12-25,True,37.04
+P000078,HOKICR0078,Crate & Barrel Goal Kitchen,Home & Living,Kitchen,Crate & Barrel,475.26,279.32,34,24,172,Universal Trading LLC,2023-08-19,True,41.23
+P000079,APKINI0079,Nike Change Kids' Clothing,Apparel,Kids' Clothing,Nike,565.57,312.06,625,24,579,Prime Distributors,2023-06-11,True,44.82
+P000080,FOCOKE0080,Kellogg's Partner Confectionery,Food & Beverages,Confectionery,Kellogg's,425.06,253.9,412,42,1146,GlobalSupply Corp,2023-05-14,False,40.27
+P000081,BEFRMA0081,Maybelline Draw Fragrances,Beauty & Personal Care,Fragrances,Maybelline,834.21,491.5,598,47,941,Retail Solutions Co,2024-05-09,True,41.08
+P000082,BEPEL'0082,L'Oreal Choice Personal Hygiene,Beauty & Personal Care,Personal Hygiene,L'Oreal,797.58,453.52,0,13,451,Retail Solutions Co,2022-05-11,True,43.14
+P000083,ELLAHP0083,HP Outside Laptops,Electronics,Laptops,HP,854.01,376.06,629,41,557,Quality Merchandise Inc,2024-01-26,True,55.97
+P000084,BEPENI0084,Nivea Worry Personal Hygiene,Beauty & Personal Care,Personal Hygiene,Nivea,205.66,141.23,860,29,527,Quality Merchandise Inc,2023-09-18,True,31.33
+P000085,BEMAMA0085,MAC Activity Makeup,Beauty & Personal Care,Makeup,MAC,591.78,406.89,676,30,445,Retail Solutions Co,2024-08-18,True,31.24
+P000086,BEMADO0086,Dove When Makeup,Beauty & Personal Care,Makeup,Dove,949.25,539.03,914,19,327,Quality Merchandise Inc,2022-12-18,True,43.22
+P000087,BESKMA0087,MAC Risk Skincare,Beauty & Personal Care,Skincare,MAC,16.49,8.67,542,35,1106,Retail Solutions Co,2022-10-29,True,47.42
+P000088,ELLASO0088,Sony Mention Laptops,Electronics,Laptops,Sony,730.81,474.78,872,36,835,Retail Solutions Co,2024-09-05,False,35.03
+P000089,HOKIIK0089,IKEA Miss Kitchen,Home & Living,Kitchen,IKEA,385.38,244.16,589,11,409,Prime Distributors,2024-05-20,True,36.64
+P000090,FOHEKR0090,Kraft Husband Health Foods,Food & Beverages,Health Foods,Kraft,890.09,373.12,818,41,846,Retail Solutions Co,2023-08-18,True,58.08
+P000091,HODEWA0091,Wayfair One Decor,Home & Living,Decor,Wayfair,204.84,142.46,740,13,912,Direct Imports Ltd,2023-01-16,True,30.45
+P000092,FOCONE0092,Nestle Eight Confectionery,Food & Beverages,Confectionery,Nestle,162.46,78.86,183,36,1003,Quality Merchandise Inc,2024-07-04,True,51.46
+P000093,ELAUSO0093,Sony Certainly Audio Devices,Electronics,Audio Devices,Sony,475.81,242.83,160,49,718,Universal Trading LLC,2022-12-16,True,48.96
+P000094,FOCONE0094,Nestle Challenge Confectionery,Food & Beverages,Confectionery,Nestle,341.12,179.04,984,25,1064,Direct Imports Ltd,2023-06-30,True,47.51
+P000095,FOSNKR0095,Kraft Environment Snacks,Food & Beverages,Snacks,Kraft,544.11,244.9,127,25,974,Prime Distributors,2024-04-10,False,54.99
+P000096,FOCOKE0096,Kellogg's Likely Confectionery,Food & Beverages,Confectionery,Kellogg's,118.09,66.75,243,28,782,Prime Distributors,2022-06-20,True,43.48
+P000097,FOBEKR0097,Kraft Decision Beverages,Food & Beverages,Beverages,Kraft,812.5,554.95,953,22,1138,Retail Solutions Co,2023-06-03,True,31.7
+P000098,ELSMHP0098,HP Find Smartphones,Electronics,Smartphones,HP,647.23,406.73,806,44,447,Prime Distributors,2022-11-24,False,37.16
+P000099,APFOLE0099,Levi's Play Footwear,Apparel,Footwear,Levi's,579.66,274.26,765,11,321,Quality Merchandise Inc,2023-08-30,True,52.69
+P000100,HOFUWA0100,Wayfair Husband Furniture,Home & Living,Furniture,Wayfair,776.96,499.34,772,31,141,Direct Imports Ltd,2023-06-17,True,35.73
