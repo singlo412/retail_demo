@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q Business for Retail Intelligence Portal</title>
+  <link rel="stylesheet" href="retail-qbizapp.css">
+</head>
+<body>
+  <div style="padding-left: 2%;">
+    <h2> Welcome to the Q Business for Retail Intelligence Portal! </h2>
+    <p><i>An AI-Powered Retail Intelligence Platform, Empowering retail 
+    decision-makers with real-time insights and predictive analytics 
+    across the entire retail value chain</i></p>
+  </div>
+  <br/>
+  <div class="tabs" style="padding-left: 2%">
+    <!-- Tab selectors -->
+    <input type="radio" id="tab1" name="tabgroup" checked>
+    <label for="tab1">Dashboard</label>
+    <input type="radio" id="tab2" name="tabgroup">
+    <label for="tab2">Product Insights</label>
+    <input type="radio" id="tab3" name="tabgroup">
+    <label for="tab3">Sales Insights</label>
+    <input type="radio" id="tab4" name="tabgroup">
+    <label for="tab4">Inventory and Supply Chain</label>
+    <input type="radio" id="tab5" name="tabgroup">
+    <label for="tab5">Customer Service</label>
+    <input type="radio" id="tab6" name="tabgroup">
+    <label for="tab6">Marketing Performance</label>
+    <input type="radio" id="tab7" name="tabgroup">
+    <label for="tab7">Vendor Management</label>
+
+    <!-- Tab contents -->
+    <div id="content1" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="60%" height="1000" src="{{urls["embedded"]["quicksight_dashboard"]}}" title="Dashboard"></iframe>
+        <iframe width="30%" height="1000" src="{{urls["embedded"]["qbusiness_chatbot"]}}" title="Chat Assistant"></iframe>
+      </div>
+    </div>
+    <div id="content2" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="650" src="{{urls["qapp"]["Top 5 Products by Profit"]}}" title="Top 5 products by Profit"></iframe>
+        <iframe width="40%" height="650" src="{{urls["qapp"]["Top 5 Products by Revenue"]}}" title="Top 5 products by Revenue"></iframe>
+      </div>
+    </div>
+    <div id="content3" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="650" src="{{urls["qapp"]["New Product Launch"]}}" title="New Product Launch"></iframe>
+        <iframe width="40%" height="650" src="{{urls["qapp"]["Product Sales Analysis App"]}}" title="Product Sales Analysis"></iframe>
+      </div>
+    </div>
+    <div id="content4" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Inventory Status Checker"]}}" title="Inventory Status"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Product Demand Planning"]}}" title="Product Demand Forecast"></iframe>
+      </div>
+    </div>
+    <div id="content5" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Customer Satisfaction Analysis"]}}" title="Customer Sentiment Analysis"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Product Recommendation"]}}" title="Alternate Product Recommendation"></iframe>
+      </div>
+    </div>
+    <div id="content6" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Ad Spend vs Revenue Analysis"]}}" title="Ad Spend vs Revenue"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Campaign Performance Analysis"]}}" title="Campaign Performance"></iframe>
+      </div>
+    </div>
+    <div id="content7" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Top Products Affected by Tariff Increase"]}}" title="Products affected by tarrif"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Alternative Supplier Recommendation"]}}" title="Alternate Supplier Search"></iframe>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

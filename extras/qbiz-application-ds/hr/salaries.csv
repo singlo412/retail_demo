@@ -1,0 +1,301 @@
+employee_id,title,hire_date,salary
+EMP001,Software Engineer,2020-03-15,87500
+EMP002,Marketing Coordinator,2021-06-22,62000
+EMP003,Data Analyst,2019-11-08,76000
+EMP004,HR Specialist,2018-04-17,69500
+EMP005,Project Manager,2017-09-30,98000
+EMP006,Customer Support Representative,2022-01-12,52000
+EMP007,Senior Software Engineer,2016-08-05,115000
+EMP008,Financial Analyst,2020-10-24,78000
+EMP009,Graphic Designer,2021-03-19,65000
+EMP010,Sales Associate,2019-05-27,72000
+EMP011,Operations Manager,2015-12-03,105000
+EMP012,UX Designer,2020-07-14,82000
+EMP013,IT Support Technician,2022-02-08,58000
+EMP014,Business Analyst,2019-08-22,81000
+EMP015,Content Writer,2021-11-30,61000
+EMP016,Product Manager,2018-02-18,108000
+EMP017,Quality Assurance Engineer,2020-05-05,79000
+EMP018,Administrative Assistant,2021-09-13,53000
+EMP019,DevOps Engineer,2019-01-25,93000
+EMP020,Social Media Specialist,2020-11-14,64000
+EMP021,Data Scientist,2018-07-11,96000
+EMP022,Accountant,2019-03-29,72000
+EMP023,Customer Success Manager,2020-09-08,84000
+EMP024,Frontend Developer,2021-02-17,83000
+EMP025,Research Analyst,2017-11-22,79500
+EMP026,Technical Writer,2022-04-05,67000
+EMP027,Systems Administrator,2018-10-09,85000
+EMP028,Executive Assistant,2020-01-15,61000
+EMP029,Sales Manager,2016-05-23,112000
+EMP030,UI Designer,2021-08-11,76000
+EMP031,Network Engineer,2019-04-18,88000
+EMP032,Marketing Manager,2017-03-07,104000
+EMP033,Junior Software Developer,2022-01-31,65000
+EMP034,Human Resources Manager,2016-09-14,97000
+EMP035,Business Development Representative,2020-06-19,68000
+EMP036,Senior Data Analyst,2018-11-27,92000
+EMP037,Office Manager,2019-10-04,66000
+EMP038,Backend Developer,2021-05-12,89000
+EMP039,Financial Manager,2015-08-16,118000
+EMP040,Customer Service Representative,2022-03-22,54000
+EMP041,Senior Product Manager,2017-01-09,124000
+EMP042,Security Analyst,2019-06-14,86000
+EMP043,Content Marketing Manager,2018-12-05,93000
+EMP044,Database Administrator,2020-04-23,92000
+EMP045,Sales Representative,2021-07-19,67000
+EMP046,Technical Support Specialist,2019-09-26,63000
+EMP047,Senior UX Designer,2017-06-11,98000
+EMP048,Quality Assurance Analyst,2022-02-28,71000
+EMP049,Operations Analyst,2020-08-07,75000
+EMP050,Mobile Developer,2018-05-17,86000
+EMP051,Recruiter,2021-01-22,69000
+EMP052,Supply Chain Analyst,2019-12-09,77000
+EMP053,Senior Marketing Specialist,2017-04-25,88000
+EMP054,IT Project Manager,2016-11-08,107000
+EMP055,Junior Data Scientist,2022-03-14,78000
+EMP056,Public Relations Specialist,2020-02-20,74000
+EMP057,Engineering Manager,2015-07-31,129000
+EMP058,Compliance Officer,2019-11-16,89000
+EMP059,Web Designer,2021-04-05,73000
+EMP060,Account Manager,2018-09-22,92000
+EMP061,Software Architect,2016-03-18,125000
+EMP062,Training Coordinator,2021-10-11,66000
+EMP063,Market Research Analyst,2019-07-29,78000
+EMP064,Full Stack Developer,2020-05-13,94000
+EMP065,Payroll Specialist,2018-01-15,65000
+EMP066,Product Marketing Manager,2017-08-21,103000
+EMP067,Help Desk Technician,2022-01-17,55000
+EMP068,Senior Financial Analyst,2019-02-05,96000
+EMP069,Copywriter,2021-06-09,68000
+EMP070,Systems Engineer,2017-12-14,91000
+EMP071,HR Coordinator,2020-09-21,59000
+EMP072,Digital Marketing Specialist,2019-05-03,76000
+EMP073,Infrastructure Engineer,2018-07-26,93000
+EMP074,Office Assistant,2022-04-11,49000
+EMP075,Senior Business Analyst,2016-10-19,109000
+EMP076,Junior Graphic Designer,2021-03-08,58000
+EMP077,Project Coordinator,2019-08-15,67000
+EMP078,Software Development Manager,2015-09-22,132000
+EMP079,Inventory Specialist,2020-11-05,60000
+EMP080,Sales Operations Analyst,2018-04-09,82000
+EMP081,Cloud Engineer,2019-10-28,95000
+EMP082,Administrative Coordinator,2021-08-24,56000
+EMP083,Senior Software Developer,2017-05-15,116000
+EMP084,Brand Manager,2020-03-31,98000
+EMP085,Hardware Engineer,2018-12-19,89000
+EMP086,Social Media Manager,2019-06-07,81000
+EMP087,Accounting Manager,2016-07-13,108000
+EMP088,Customer Experience Specialist,2022-02-14,63000
+EMP089,Development Operations Engineer,2020-10-09,97000
+EMP090,Event Coordinator,2021-05-26,64000
+EMP091,Senior Systems Administrator,2017-02-28,104000
+EMP092,Research Scientist,2019-09-12,106000
+EMP093,Email Marketing Specialist,2020-07-07,73000
+EMP094,Risk Analyst,2018-11-01,84000
+EMP095,Junior Web Developer,2022-01-04,62000
+EMP096,Facilities Manager,2016-12-08,86000
+EMP097,Technical Recruiter,2021-04-19,72000
+EMP098,Customer Support Manager,2018-03-26,93000
+EMP099,Machine Learning Engineer,2019-11-22,112000
+EMP100,Benefits Specialist,2020-08-18,69000
+EMP101,Quality Control Manager,2017-07-05,101000
+EMP102,Junior Business Analyst,2021-09-27,67000
+EMP103,Senior Technical Writer,2018-06-14,85000
+EMP104,Procurement Specialist,2020-01-29,74000
+EMP105,Mobile App Designer,2019-12-16,84000
+EMP106,Legal Assistant,2022-03-07,59000
+EMP107,Director of Engineering,2014-11-03,158000
+EMP108,Marketing Analyst,2021-02-08,75000
+EMP109,Network Administrator,2018-08-21,82000
+EMP110,Content Strategist,2019-04-11,88000
+EMP111,Senior Product Designer,2017-09-18,107000
+EMP112,Inside Sales Representative,2021-11-15,64000
+EMP113,Test Engineer,2020-06-02,83000
+EMP114,Finance Director,2015-05-19,145000
+EMP115,Desktop Support Technician,2022-02-21,57000
+EMP116,Operations Director,2016-04-07,138000
+EMP117,SEO Specialist,2021-07-26,77000
+EMP118,Solutions Architect,2018-10-15,122000
+EMP119,Corporate Trainer,2020-04-08,79000
+EMP120,Logistics Coordinator,2019-08-05,65000
+EMP121,Security Engineer,2017-11-09,99000
+EMP122,Collections Specialist,2022-01-10,61000
+EMP123,Product Owner,2019-03-14,105000
+EMP124,Staff Accountant,2020-10-30,75000
+EMP125,API Developer,2018-05-22,90000
+EMP126,Communications Manager,2016-08-29,102000
+EMP127,Junior Account Manager,2021-04-13,66000
+EMP128,Data Engineer,2019-09-05,97000
+EMP129,Executive Assistant to CEO,2020-02-11,76000
+EMP130,Supply Chain Manager,2017-06-22,110000
+EMP131,Customer Onboarding Specialist,2021-10-18,69000
+EMP132,Frontend Team Lead,2018-01-08,112000
+EMP133,Media Planner,2020-07-27,81000
+EMP134,IT Manager,2016-02-15,115000
+EMP135,Human Resources Generalist,2019-11-04,72000
+EMP136,Associate Software Engineer,2022-03-02,68000
+EMP137,Senior Marketing Manager,2017-03-23,119000
+EMP138,Application Support Analyst,2021-05-17,70000
+EMP139,Contracts Administrator,2019-01-31,76000
+EMP140,Senior QA Engineer,2018-09-10,99000
+EMP141,Customer Insights Analyst,2020-11-24,79000
+EMP142,Director of Product Management,2015-10-13,152000
+EMP143,Telecommunications Specialist,2021-08-05,73000
+EMP144,Accounts Payable Clerk,2019-06-20,58000
+EMP145,DevOps Team Lead,2018-03-12,118000
+EMP146,Visual Designer,2020-09-15,80000
+EMP147,Corporate Development Analyst,2017-12-07,95000
+EMP148,Junior HR Specialist,2022-01-24,60000
+EMP149,Technical Account Manager,2019-08-30,94000
+EMP150,Credit Analyst,2021-03-01,71000
+EMP151,Principal Software Engineer,2016-05-16,135000
+EMP152,Digital Content Producer,2020-04-27,78000
+EMP153,Audit Manager,2017-08-03,114000
+EMP154,IT Business Analyst,2019-12-02,85000
+EMP155,Customer Service Manager,2018-11-19,91000
+EMP156,Growth Marketing Specialist,2021-06-28,76000
+EMP157,Database Engineer,2020-01-13,96000
+EMP158,Compensation Analyst,2019-07-08,81000
+EMP159,Senior Mobile Developer,2017-04-11,108000
+EMP160,Office Operations Coordinator,2022-02-07,59000
+EMP161,Director of Sales,2015-06-26,148000
+EMP162,User Experience Researcher,2021-09-09,86000
+EMP163,Network Security Engineer,2018-02-01,102000
+EMP164,Content Editor,2020-08-11,72000
+EMP165,Senior Accountant,2019-05-14,88000
+EMP166,Product Support Specialist,2022-04-18,66000
+EMP167,Regional Sales Manager,2016-11-22,127000
+EMP168,UI/UX Developer,2021-01-05,87000
+EMP169,Workforce Analyst,2019-10-10,77000
+EMP170,Engineering Team Lead,2017-07-28,122000
+EMP171,Digital Project Manager,2020-05-25,92000
+EMP172,Account Executive,2018-12-13,94000
+EMP173,Junior Marketing Coordinator,2022-03-17,56000
+EMP174,Senior Infrastructure Engineer,2016-09-01,117000
+EMP175,Billing Coordinator,2021-04-22,63000
+EMP176,Business Intelligence Analyst,2019-02-19,89000
+EMP177,Technical Support Engineer,2020-12-08,74000
+EMP178,Purchasing Manager,2018-06-05,98000
+EMP179,Social Media Coordinator,2022-01-19,58000
+EMP180,Software QA Manager,2017-01-17,106000
+EMP181,Budget Analyst,2020-09-03,83000
+EMP182,Senior Customer Success Manager,2019-04-01,103000
+EMP183,IT Infrastructure Manager,2016-06-09,121000
+EMP184,Junior Copywriter,2021-11-08,57000
+EMP185,Data Analytics Manager,2017-10-26,116000
+EMP186,Maintenance Technician,2022-04-01,55000
+EMP187,Strategic Account Manager,2019-07-22,111000
+EMP188,Embedded Software Engineer,2020-03-16,95000
+EMP189,Talent Acquisition Specialist,2018-09-07,77000
+EMP190,Senior Project Coordinator,2021-02-23,80000
+EMP191,Chief Marketing Officer,2014-08-14,198000
+EMP192,Shipping Coordinator,2019-12-11,59000
+EMP193,Lead Developer,2017-05-30,124000
+EMP194,Public Relations Manager,2020-10-21,96000
+EMP195,Financial Reporting Analyst,2021-07-06,82000
+EMP196,Technical Sales Engineer,2018-08-16,99000
+EMP197,Operations Coordinator,2022-02-01,64000
+EMP198,Senior Data Engineer,2016-12-20,126000
+EMP199,Corporate Receptionist,2020-06-15,50000
+EMP200,Director of Human Resources,2015-11-17,142000
+EMP201,eCommerce Specialist,2021-09-20,73000
+EMP202,Systems Integration Engineer,2019-03-25,90000
+EMP203,Creative Director,2017-02-13,128000
+EMP204,Helpdesk Manager,2020-12-17,87000
+EMP205,Financial Controller,2018-04-30,119000
+EMP206,Customer Relationship Manager,2019-10-15,92000
+EMP207,Associate Data Analyst,2022-03-14,67000
+EMP208,Senior Marketing Director,2015-03-09,159000
+EMP209,Java Developer,2021-06-07,89000
+EMP210,Corporate Communications Specialist,2020-02-24,77000
+EMP211,Regional Manager,2016-10-31,130000
+EMP212,Test Automation Engineer,2019-09-17,93000
+EMP213,Accounts Receivable Specialist,2021-01-12,62000
+EMP214,Director of Operations,2015-08-03,147000
+EMP215,Field Service Technician,2022-02-14,58000
+EMP216,Lead UX Researcher,2018-07-19,101000
+EMP217,Implementation Specialist,2020-11-10,80000
+EMP218,Compliance Manager,2017-04-18,113000
+EMP219,Associate Project Manager,2021-08-16,78000
+EMP220,Technical Director,2016-01-27,138000
+EMP221,Administrative Services Manager,2020-05-04,86000
+EMP222,Python Developer,2019-11-25,92000
+EMP223,Revenue Manager,2018-03-06,96000
+EMP224,Employee Relations Specialist,2021-10-04,75000
+EMP225,Chief Operations Officer,2014-05-23,210000
+EMP226,Warehouse Supervisor,2022-01-10,70000
+EMP227,Senior UX Strategist,2017-11-13,109000
+EMP228,Corporate Accountant,2020-08-25,84000
+EMP229,Inside Sales Manager,2018-10-01,105000
+EMP230,Junior Software Tester,2021-03-29,64000
+EMP231,Senior Technical Support Engineer,2019-05-06,91000
+EMP232,Email Developer,2022-04-04,71000
+EMP233,Director of Finance,2015-12-14,156000
+EMP234,Customer Support Specialist,2020-07-20,63000
+EMP235,Platform Engineer,2019-01-08,98000
+EMP236,Physical Security Manager,2017-08-10,95000
+EMP237,Marketing Operations Specialist,2021-05-03,79000
+EMP238,SQL Developer,2018-12-03,88000
+EMP239,Travel Coordinator,2022-03-21,56000
+EMP240,Chief Financial Officer,2014-09-29,220000
+EMP241,Junior Product Manager,2021-09-01,74000
+EMP242,Network Operations Engineer,2019-06-18,94000
+EMP243,Learning & Development Manager,2016-07-25,107000
+EMP244,Web Content Manager,2020-04-13,86000
+EMP245,Production Manager,2017-09-07,104000
+EMP246,Inventory Control Analyst,2021-11-22,68000
+EMP247,Senior Risk Manager,2018-01-29,125000
+EMP248,Solutions Consultant,2020-10-05,97000
+EMP249,Telecommunications Engineer,2019-08-14,90000
+EMP250,District Manager,2016-03-01,131000
+EMP251,Internal Communications Specialist,2022-01-17,72000
+EMP252,C++ Developer,2020-06-29,93000
+EMP253,Category Manager,2018-05-10,99000
+EMP254,Diversity & Inclusion Specialist,2021-04-12,78000
+EMP255,Desktop Engineer,2019-12-05,76000
+EMP256,Strategic Planning Manager,2017-06-19,120000
+EMP257,Associate Software Architect,2022-03-08,105000
+EMP258,Sales Operations Manager,2016-09-15,114000
+EMP259,Digital Analyst,2021-08-02,76000
+EMP260,Technical Program Manager,2018-04-23,115000
+EMP261,Claims Processor,2022-02-18,57000
+EMP262,Senior Android Developer,2019-02-11,102000
+EMP263,Treasury Analyst,2020-09-21,83000
+EMP264,Documentation Specialist,2021-07-19,65000
+EMP265,IT Security Manager,2017-03-13,123000
+EMP266,Brand Strategist,2020-01-06,92000
+EMP267,Performance Marketing Manager,2018-11-05,106000
+EMP268,Junior Systems Administrator,2022-04-11,63000
+EMP269,Plant Manager,2016-05-02,117000
+EMP270,Research Associate,2021-10-07,71000
+EMP271,iOS Developer,2019-09-23,94000
+EMP272,Learning Experience Designer,2020-05-18,82000
+EMP273,Vendor Management Specialist,2018-07-02,79000
+EMP274,Associate Creative Director,2017-10-16,113000
+EMP275,Benefits Administrator,2021-02-15,69000
+EMP276,Information Security Analyst,2019-04-15,97000
+EMP277,Client Services Coordinator,2022-01-13,61000
+EMP278,Principal Product Manager,2015-09-07,143000
+EMP279,Junior Content Writer,2021-12-06,55000
+EMP280,Manufacturing Engineer,2020-03-23,86000
+EMP281,Digital Marketing Manager,2018-08-27,104000
+EMP282,Proposal Writer,2022-03-28,68000
+EMP283,Cloud Solutions Architect,2017-12-19,131000
+EMP284,Staff Engineer,2019-07-01,111000
+EMP285,Sustainability Coordinator,2021-06-14,74000
+EMP286,Director of Customer Success,2016-11-07,139000
+EMP287,Asset Manager,2020-10-26,90000
+EMP288,Cross-Platform Developer,2019-01-14,96000
+EMP289,Pricing Analyst,2021-03-15,77000
+EMP290,Senior Project Director,2015-07-06,147000
+EMP291,Junior UI Designer,2022-02-28,60000
+EMP292,Technical Architect,2018-06-11,132000
+EMP293,Ethics Officer,2020-04-20,93000
+EMP294,Field Marketing Manager,2017-05-08,108000
+EMP295,Scrum Master,2021-08-23,89000
+EMP296,Telecommunications Manager,2018-09-24,101000
+EMP297,Business Operations Analyst,2020-12-01,84000
+EMP298,Employee Experience Manager,2019-11-05,98000
+EMP299,Director of Business Development,2016-02-22,148000
+EMP300,Front Desk Coordinator,2021-05-24,52000

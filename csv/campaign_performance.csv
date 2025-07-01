@@ -1,0 +1,264 @@
+date,channel,campaign_name,campaign_type,target_category,spend,impressions,clicks
+2024-10-05 11:48:19.990260,Social Media,Social Media Campaign October,Conversion,Beauty & Personal Care,165.5,3132,70
+2024-10-06 11:48:19.990260,Paid Search,Paid Search Campaign October,Conversion,Home & Living,57.96,909,23
+2024-10-06 11:48:19.990260,Display Ads,Display Ads Campaign October,Retargeting,Apparel,37.05,1149,32
+2024-10-07 11:48:19.990260,Paid Search,Paid Search Campaign October,Conversion,Beauty & Personal Care,164.0,1611,78
+2024-10-08 11:48:19.990260,Paid Search,Paid Search Campaign October,Retargeting,Electronics,147.01,1290,36
+2024-10-08 11:48:19.990260,Social Media,Social Media Campaign October,Retargeting,Apparel,229.24,6010,256
+2024-10-08 11:48:19.990260,Email Marketing,Email Marketing Campaign October,Awareness,Electronics,52.01,6433,363
+2024-10-09 11:48:19.990260,Paid Search,Paid Search Campaign October,Conversion,Apparel,79.12,950,38
+2024-10-09 11:48:19.990260,Social Media,Social Media Campaign October,Retargeting,Electronics,46.12,4499,52
+2024-10-09 11:48:19.990260,Display Ads,Display Ads Campaign October,Awareness,Electronics,37.29,1669,84
+2024-10-10 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign October,Retargeting,Electronics,99.52,1562,59
+2024-10-12 11:48:19.990260,Paid Search,Paid Search Campaign October,Retargeting,Electronics,94.31,987,41
+2024-10-12 11:48:19.990260,Display Ads,Display Ads Campaign October,Conversion,Electronics,80.81,2710,143
+2024-10-12 11:48:19.990260,Email Marketing,Email Marketing Campaign October,Retargeting,Electronics,16.94,4177,103
+2024-10-14 11:48:19.990260,Paid Search,Paid Search Campaign October,Awareness,Food & Beverages,142.55,2283,52
+2024-10-14 11:48:19.990260,Display Ads,Display Ads Campaign October,Retargeting,Electronics,150.32,4047,95
+2024-10-15 11:48:19.990260,Social Media,Social Media Campaign October,Conversion,Food & Beverages,54.5,4662,74
+2024-10-15 11:48:19.990260,Display Ads,Display Ads Campaign October,Conversion,Food & Beverages,212.79,3879,217
+2024-10-16 11:48:19.990260,Paid Search,Paid Search Campaign October,Conversion,Apparel,109.44,980,42
+2024-10-16 11:48:19.990260,Display Ads,Display Ads Campaign October,Retargeting,Beauty & Personal Care,27.48,3085,21
+2024-10-16 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign October,Conversion,Home & Living,22.23,3597,26
+2024-10-18 11:48:19.990260,Email Marketing,Email Marketing Campaign October,Conversion,Apparel,39.81,1538,55
+2024-10-18 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign October,Retargeting,Food & Beverages,98.68,9082,143
+2024-10-20 11:48:19.990260,Display Ads,Display Ads Campaign October,Awareness,Apparel,56.94,1962,55
+2024-10-21 11:48:19.990260,Paid Search,Paid Search Campaign October,Awareness,Beauty & Personal Care,177.76,9074,282
+2024-10-22 11:48:19.990260,Social Media,Social Media Campaign October,Awareness,Beauty & Personal Care,54.81,2419,54
+2024-10-22 11:48:19.990260,Email Marketing,Email Marketing Campaign October,Awareness,Home & Living,26.78,7548,168
+2024-10-23 11:48:19.990260,Social Media,Social Media Campaign October,Awareness,Home & Living,62.99,3355,63
+2024-10-24 11:48:19.990260,Paid Search,Paid Search Campaign October,Awareness,Food & Beverages,90.49,3169,106
+2024-10-24 11:48:19.990260,Display Ads,Display Ads Campaign October,Awareness,Beauty & Personal Care,64.21,9505,261
+2024-10-25 11:48:19.990260,Social Media,Social Media Campaign October,Awareness,Food & Beverages,112.74,2712,47
+2024-10-27 11:48:19.990260,Paid Search,Paid Search Campaign October,Awareness,Apparel,35.43,1460,15
+2024-10-27 11:48:19.990260,Social Media,Social Media Campaign October,Conversion,Home & Living,85.41,3027,109
+2024-10-27 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign October,Conversion,Apparel,14.7,1188,32
+2024-10-28 11:48:19.990260,Social Media,Social Media Campaign October,Awareness,Home & Living,155.55,6587,375
+2024-10-28 11:48:19.990260,Email Marketing,Email Marketing Campaign October,Conversion,Apparel,36.36,2290,71
+2024-10-29 11:48:19.990260,Social Media,Social Media Campaign October,Awareness,Beauty & Personal Care,96.33,7816,292
+2024-10-30 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign October,Retargeting,Food & Beverages,144.54,1030,49
+2024-10-31 11:48:19.990260,Paid Search,Paid Search Campaign October,Retargeting,Home & Living,70.04,761,22
+2024-10-31 11:48:19.990260,Social Media,Social Media Campaign October,Awareness,Beauty & Personal Care,120.69,6746,298
+2024-10-31 11:48:19.990260,Display Ads,Display Ads Campaign October,Awareness,Apparel,49.96,11596,196
+2024-10-31 11:48:19.990260,Email Marketing,Email Marketing Campaign October,Conversion,Electronics,86.59,6502,378
+2024-11-01 11:48:19.990260,Display Ads,Display Ads Campaign November,Awareness,Apparel,52.35,3379,76
+2024-11-01 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Retargeting,Electronics,153.57,2545,178
+2024-11-02 11:48:19.990260,Paid Search,Paid Search Campaign November,Awareness,Food & Beverages,46.69,601,20
+2024-11-03 11:48:19.990260,Social Media,Social Media Campaign November,Awareness,Home & Living,61.64,1873,42
+2024-11-03 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Conversion,Beauty & Personal Care,114.09,811,33
+2024-11-04 11:48:19.990260,Paid Search,Paid Search Campaign November,Awareness,Apparel,161.44,4613,200
+2024-11-05 11:48:19.990260,Paid Search,Paid Search Campaign November,Retargeting,Apparel,34.88,925,10
+2024-11-05 11:48:19.990260,Email Marketing,Email Marketing Campaign November,Retargeting,Food & Beverages,18.5,2469,43
+2024-11-05 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Retargeting,Home & Living,86.2,2482,189
+2024-11-07 11:48:19.990260,Paid Search,Paid Search Campaign November,Conversion,Apparel,162.17,1925,63
+2024-11-07 11:48:19.990260,Display Ads,Display Ads Campaign November,Awareness,Beauty & Personal Care,25.72,1558,47
+2024-11-07 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Retargeting,Food & Beverages,39.62,2214,33
+2024-11-08 11:48:19.990260,Paid Search,Paid Search Campaign November,Retargeting,Food & Beverages,103.48,2117,42
+2024-11-08 11:48:19.990260,Email Marketing,Email Marketing Campaign November,Conversion,Food & Beverages,87.62,5479,288
+2024-11-09 11:48:19.990260,Social Media,Social Media Campaign November,Retargeting,Apparel,48.98,2880,70
+2024-11-10 11:48:19.990260,Paid Search,Paid Search Campaign November,Retargeting,Electronics,83.23,2277,67
+2024-11-11 11:48:19.990260,Email Marketing,Email Marketing Campaign November,Conversion,Apparel,98.99,19854,1028
+2024-11-12 11:48:19.990260,Social Media,Social Media Campaign November,Retargeting,Apparel,162.69,1949,46
+2024-11-12 11:48:19.990260,Email Marketing,Email Marketing Campaign November,Conversion,Beauty & Personal Care,135.41,14021,625
+2024-11-13 11:48:19.990260,Social Media,Social Media Campaign November,Conversion,Beauty & Personal Care,148.44,5514,200
+2024-11-15 11:48:19.990260,Email Marketing,Email Marketing Campaign November,Awareness,Electronics,23.11,3826,80
+2024-11-15 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Awareness,Apparel,119.92,3152,155
+2024-11-16 11:48:19.990260,Display Ads,Display Ads Campaign November,Retargeting,Beauty & Personal Care,34.57,3329,46
+2024-11-16 11:48:19.990260,Email Marketing,Email Marketing Campaign November,Awareness,Food & Beverages,72.36,3916,131
+2024-11-16 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Conversion,Apparel,28.02,1347,33
+2024-11-17 11:48:19.990260,Social Media,Social Media Campaign November,Conversion,Electronics,164.2,2766,106
+2024-11-17 11:48:19.990260,Display Ads,Display Ads Campaign November,Conversion,Home & Living,19.16,1120,23
+2024-11-17 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Retargeting,Home & Living,37.8,800,21
+2024-11-18 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Conversion,Home & Living,30.18,828,25
+2024-11-19 11:48:19.990260,Paid Search,Paid Search Campaign November,Awareness,Beauty & Personal Care,102.61,1421,36
+2024-11-19 11:48:19.990260,Display Ads,Display Ads Campaign November,Awareness,Beauty & Personal Care,35.32,4352,70
+2024-11-21 11:48:19.990260,Paid Search,Paid Search Campaign November,Awareness,Home & Living,62.88,975,27
+2024-11-21 11:48:19.990260,Email Marketing,Email Marketing Campaign November,Awareness,Electronics,22.03,8357,309
+2024-11-21 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Conversion,Apparel,55.69,3898,47
+2024-11-23 11:48:19.990260,Social Media,Social Media Campaign November,Conversion,Electronics,115.42,2437,97
+2024-11-23 11:48:19.990260,Display Ads,Display Ads Campaign November,Awareness,Beauty & Personal Care,38.29,4359,84
+2024-11-25 11:48:19.990260,Paid Search,Paid Search Campaign November,Retargeting,Beauty & Personal Care,94.88,1620,40
+2024-11-27 11:48:19.990260,Paid Search,Paid Search Campaign November,Conversion,Home & Living,173.48,2075,102
+2024-11-27 11:48:19.990260,Display Ads,Display Ads Campaign November,Retargeting,Beauty & Personal Care,49.54,1354,29
+2024-11-27 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Retargeting,Home & Living,24.61,782,11
+2024-11-28 11:48:19.990260,Social Media,Social Media Campaign November,Awareness,Beauty & Personal Care,164.23,6935,250
+2024-11-28 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Conversion,Beauty & Personal Care,99.08,5176,148
+2024-11-30 11:48:19.990260,Paid Search,Paid Search Campaign November,Conversion,Food & Beverages,24.61,1775,48
+2024-11-30 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign November,Awareness,Apparel,89.14,1912,71
+2024-12-01 11:48:19.990260,Display Ads,Display Ads Campaign December,Conversion,Apparel,33.05,6511,112
+2024-12-02 11:48:19.990260,Social Media,Social Media Campaign December,Awareness,Home & Living,119.9,3935,64
+2024-12-02 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign December,Awareness,Apparel,101.26,1980,49
+2024-12-03 11:48:19.990260,Display Ads,Display Ads Campaign December,Awareness,Electronics,31.83,2222,40
+2024-12-03 11:48:19.990260,Email Marketing,Email Marketing Campaign December,Conversion,Beauty & Personal Care,43.5,4840,126
+2024-12-04 11:48:19.990260,Email Marketing,Email Marketing Campaign December,Retargeting,Beauty & Personal Care,71.1,9526,186
+2024-12-05 11:48:19.990260,Social Media,Social Media Campaign December,Awareness,Food & Beverages,276.78,3172,140
+2024-12-06 11:48:19.990260,Paid Search,Paid Search Campaign December,Retargeting,Electronics,141.11,1592,61
+2024-12-06 11:48:19.990260,Social Media,Social Media Campaign December,Awareness,Home & Living,57.95,3533,136
+2024-12-06 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign December,Conversion,Home & Living,107.73,2284,123
+2024-12-07 11:48:19.990260,Email Marketing,Email Marketing Campaign December,Awareness,Home & Living,36.71,4573,74
+2024-12-08 11:48:19.990260,Display Ads,Display Ads Campaign December,Awareness,Beauty & Personal Care,32.42,1518,33
+2024-12-08 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign December,Awareness,Home & Living,38.57,884,33
+2024-12-09 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign December,Retargeting,Apparel,127.69,1735,60
+2024-12-10 11:48:19.990260,Paid Search,Paid Search Campaign December,Conversion,Beauty & Personal Care,178.07,4659,252
+2024-12-10 11:48:19.990260,Social Media,Social Media Campaign December,Conversion,Apparel,241.34,4195,88
+2024-12-11 11:48:19.990260,Paid Search,Paid Search Campaign December,Conversion,Electronics,56.08,8314,124
+2024-12-11 11:48:19.990260,Display Ads,Display Ads Campaign December,Conversion,Beauty & Personal Care,26.32,6196,72
+2024-12-13 11:48:19.990260,Paid Search,Paid Search Campaign December,Conversion,Electronics,41.74,2368,39
+2024-12-13 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign December,Conversion,Electronics,77.65,4275,95
+2024-12-15 11:48:19.990260,Social Media,Social Media Campaign December,Awareness,Home & Living,81.68,1868,57
+2024-12-15 11:48:19.990260,Display Ads,Display Ads Campaign December,Conversion,Home & Living,20.01,781,12
+2024-12-15 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign December,Awareness,Electronics,120.79,1386,42
+2024-12-16 11:48:19.990260,Display Ads,Display Ads Campaign December,Awareness,Apparel,75.53,2007,90
+2024-12-16 11:48:19.990260,Email Marketing,Email Marketing Campaign December,Awareness,Apparel,68.14,5483,159
+2024-12-17 11:48:19.990260,Paid Search,Paid Search Campaign December,Awareness,Apparel,171.78,1944,50
+2024-12-17 11:48:19.990260,Email Marketing,Email Marketing Campaign December,Retargeting,Home & Living,17.8,1957,53
+2024-12-18 11:48:19.990260,Social Media,Social Media Campaign December,Conversion,Beauty & Personal Care,120.01,6772,215
+2024-12-20 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign December,Conversion,Apparel,83.72,1403,55
+2024-12-22 11:48:19.990260,Paid Search,Paid Search Campaign December,Retargeting,Apparel,51.95,1866,25
+2024-12-22 11:48:19.990260,Display Ads,Display Ads Campaign December,Retargeting,Electronics,63.94,3103,80
+2024-12-23 11:48:19.990260,Display Ads,Display Ads Campaign December,Awareness,Electronics,104.56,1683,90
+2024-12-23 11:48:19.990260,Email Marketing,Email Marketing Campaign December,Awareness,Food & Beverages,44.64,13637,192
+2024-12-24 11:48:19.990260,Display Ads,Display Ads Campaign December,Awareness,Apparel,61.95,4294,156
+2024-12-24 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign December,Conversion,Beauty & Personal Care,75.69,1352,36
+2024-12-25 11:48:19.990260,Paid Search,Paid Search Campaign December,Awareness,Food & Beverages,26.26,1155,9
+2024-12-25 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign December,Retargeting,Beauty & Personal Care,110.53,1263,58
+2024-12-27 11:48:19.990260,Paid Search,Paid Search Campaign December,Conversion,Beauty & Personal Care,126.35,1651,49
+2024-12-27 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign December,Retargeting,Home & Living,65.73,6343,190
+2024-12-28 11:48:19.990260,Paid Search,Paid Search Campaign December,Retargeting,Food & Beverages,76.35,1034,38
+2024-12-28 11:48:19.990260,Email Marketing,Email Marketing Campaign December,Retargeting,Apparel,36.97,3882,66
+2024-12-29 11:48:19.990260,Email Marketing,Email Marketing Campaign December,Awareness,Electronics,18.73,2642,69
+2024-12-30 11:48:19.990260,Social Media,Social Media Campaign December,Retargeting,Apparel,130.02,14226,309
+2024-12-30 11:48:19.990260,Email Marketing,Email Marketing Campaign December,Awareness,Food & Beverages,57.98,9754,192
+2024-12-30 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign December,Conversion,Apparel,81.52,3316,127
+2024-12-31 11:48:19.990260,Social Media,Social Media Campaign December,Retargeting,Home & Living,63.9,4746,61
+2025-01-01 11:48:19.990260,Social Media,Social Media Campaign January,Awareness,Home & Living,47.12,9002,103
+2025-01-01 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign January,Awareness,Apparel,108.72,2362,60
+2025-01-02 11:48:19.990260,Display Ads,Display Ads Campaign January,Retargeting,Home & Living,189.84,2856,174
+2025-01-03 11:48:19.990260,Display Ads,Display Ads Campaign January,Conversion,Home & Living,211.86,2960,172
+2025-01-03 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign January,Retargeting,Food & Beverages,149.83,1674,89
+2025-01-05 11:48:19.990260,Social Media,Social Media Campaign January,Awareness,Beauty & Personal Care,139.2,5165,174
+2025-01-06 11:48:19.990260,Social Media,Social Media Campaign January,Conversion,Apparel,70.96,4858,38
+2025-01-07 11:48:19.990260,Display Ads,Display Ads Campaign January,Awareness,Food & Beverages,22.08,2650,26
+2025-01-08 11:48:19.990260,Paid Search,Paid Search Campaign January,Retargeting,Beauty & Personal Care,42.18,1402,12
+2025-01-08 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign January,Retargeting,Home & Living,33.17,1268,19
+2025-01-09 11:48:19.990260,Paid Search,Paid Search Campaign January,Retargeting,Apparel,78.36,1812,62
+2025-01-10 11:48:19.990260,Paid Search,Paid Search Campaign January,Awareness,Apparel,201.62,9459,610
+2025-01-13 11:48:19.990260,Social Media,Social Media Campaign January,Awareness,Beauty & Personal Care,132.42,4681,141
+2025-01-13 11:48:19.990260,Email Marketing,Email Marketing Campaign January,Conversion,Apparel,35.05,3903,60
+2025-01-14 11:48:19.990260,Social Media,Social Media Campaign January,Conversion,Beauty & Personal Care,243.59,12319,849
+2025-01-14 11:48:19.990260,Email Marketing,Email Marketing Campaign January,Conversion,Food & Beverages,50.93,11325,396
+2025-01-14 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign January,Retargeting,Electronics,33.25,1184,52
+2025-01-15 11:48:19.990260,Display Ads,Display Ads Campaign January,Retargeting,Food & Beverages,62.1,1826,52
+2025-01-15 11:48:19.990260,Email Marketing,Email Marketing Campaign January,Retargeting,Beauty & Personal Care,26.8,3003,51
+2025-01-16 11:48:19.990260,Paid Search,Paid Search Campaign January,Conversion,Electronics,134.86,4902,86
+2025-01-17 11:48:19.990260,Display Ads,Display Ads Campaign January,Awareness,Apparel,128.54,4234,123
+2025-01-19 11:48:19.990260,Email Marketing,Email Marketing Campaign January,Conversion,Apparel,74.8,9957,488
+2025-01-19 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign January,Retargeting,Beauty & Personal Care,28.16,837,14
+2025-01-20 11:48:19.990260,Email Marketing,Email Marketing Campaign January,Conversion,Apparel,130.59,16929,808
+2025-01-21 11:48:19.990260,Paid Search,Paid Search Campaign January,Conversion,Electronics,38.76,2019,29
+2025-01-21 11:48:19.990260,Social Media,Social Media Campaign January,Conversion,Beauty & Personal Care,250.7,4488,161
+2025-01-22 11:48:19.990260,Social Media,Social Media Campaign January,Conversion,Apparel,268.94,18687,670
+2025-01-22 11:48:19.990260,Display Ads,Display Ads Campaign January,Conversion,Apparel,46.37,1823,59
+2025-01-24 11:48:19.990260,Display Ads,Display Ads Campaign January,Awareness,Home & Living,33.49,1773,64
+2025-01-24 11:48:19.990260,Email Marketing,Email Marketing Campaign January,Retargeting,Electronics,14.48,6948,96
+2025-01-24 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign January,Conversion,Electronics,57.71,4776,98
+2025-01-25 11:48:19.990260,Email Marketing,Email Marketing Campaign January,Awareness,Home & Living,24.08,7906,63
+2025-01-26 11:48:19.990260,Display Ads,Display Ads Campaign January,Conversion,Home & Living,46.71,3119,66
+2025-01-26 11:48:19.990260,Email Marketing,Email Marketing Campaign January,Conversion,Home & Living,28.17,3876,126
+2025-01-27 11:48:19.990260,Display Ads,Display Ads Campaign January,Conversion,Food & Beverages,43.79,8390,211
+2025-01-28 11:48:19.990260,Paid Search,Paid Search Campaign January,Retargeting,Home & Living,88.74,1450,46
+2025-01-28 11:48:19.990260,Social Media,Social Media Campaign January,Retargeting,Electronics,230.07,5043,182
+2025-01-28 11:48:19.990260,Display Ads,Display Ads Campaign January,Awareness,Food & Beverages,90.8,2765,76
+2025-01-29 11:48:19.990260,Social Media,Social Media Campaign January,Conversion,Beauty & Personal Care,136.5,2239,88
+2025-01-29 11:48:19.990260,Email Marketing,Email Marketing Campaign January,Conversion,Electronics,46.64,15624,443
+2025-01-30 11:48:19.990260,Paid Search,Paid Search Campaign January,Retargeting,Apparel,66.28,1892,73
+2025-01-30 11:48:19.990260,Social Media,Social Media Campaign January,Conversion,Food & Beverages,121.1,2775,97
+2025-01-30 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign January,Awareness,Food & Beverages,32.74,891,22
+2025-01-31 11:48:19.990260,Social Media,Social Media Campaign January,Awareness,Apparel,138.32,3002,117
+2025-02-01 11:48:19.990260,Paid Search,Paid Search Campaign February,Awareness,Apparel,64.76,2655,42
+2025-02-02 11:48:19.990260,Paid Search,Paid Search Campaign February,Conversion,Electronics,144.95,1261,52
+2025-02-03 11:48:19.990260,Social Media,Social Media Campaign February,Conversion,Beauty & Personal Care,192.19,4112,152
+2025-02-03 11:48:19.990260,Display Ads,Display Ads Campaign February,Retargeting,Home & Living,164.49,5016,169
+2025-02-03 11:48:19.990260,Email Marketing,Email Marketing Campaign February,Conversion,Electronics,50.39,25607,242
+2025-02-04 11:48:19.990260,Paid Search,Paid Search Campaign February,Conversion,Beauty & Personal Care,149.75,7232,240
+2025-02-04 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign February,Awareness,Home & Living,181.57,6802,489
+2025-02-05 11:48:19.990260,Paid Search,Paid Search Campaign February,Awareness,Home & Living,68.29,1723,28
+2025-02-05 11:48:19.990260,Display Ads,Display Ads Campaign February,Awareness,Home & Living,66.73,7291,248
+2025-02-06 11:48:19.990260,Paid Search,Paid Search Campaign February,Conversion,Beauty & Personal Care,136.82,1674,93
+2025-02-06 11:48:19.990260,Social Media,Social Media Campaign February,Awareness,Beauty & Personal Care,276.2,2477,91
+2025-02-07 11:48:19.990260,Social Media,Social Media Campaign February,Awareness,Beauty & Personal Care,69.53,5261,62
+2025-02-07 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign February,Conversion,Beauty & Personal Care,66.92,2527,108
+2025-02-08 11:48:19.990260,Display Ads,Display Ads Campaign February,Conversion,Food & Beverages,51.89,1507,50
+2025-02-08 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign February,Awareness,Food & Beverages,22.28,2981,44
+2025-02-09 11:48:19.990260,Paid Search,Paid Search Campaign February,Conversion,Beauty & Personal Care,123.23,866,35
+2025-02-11 11:48:19.990260,Paid Search,Paid Search Campaign February,Awareness,Electronics,166.0,9224,418
+2025-02-11 11:48:19.990260,Social Media,Social Media Campaign February,Conversion,Food & Beverages,23.29,4047,32
+2025-02-11 11:48:19.990260,Display Ads,Display Ads Campaign February,Conversion,Apparel,96.62,1473,53
+2025-02-12 11:48:19.990260,Social Media,Social Media Campaign February,Retargeting,Beauty & Personal Care,96.85,5003,85
+2025-02-12 11:48:19.990260,Display Ads,Display Ads Campaign February,Conversion,Home & Living,189.1,3945,125
+2025-02-14 11:48:19.990260,Paid Search,Paid Search Campaign February,Awareness,Home & Living,93.53,876,38
+2025-02-14 11:48:19.990260,Display Ads,Display Ads Campaign February,Conversion,Apparel,49.18,2020,36
+2025-02-14 11:48:19.990260,Email Marketing,Email Marketing Campaign February,Awareness,Apparel,63.17,5042,195
+2025-02-15 11:48:19.990260,Display Ads,Display Ads Campaign February,Awareness,Beauty & Personal Care,88.98,2630,81
+2025-02-16 11:48:19.990260,Display Ads,Display Ads Campaign February,Awareness,Food & Beverages,51.05,9737,183
+2025-02-17 11:48:19.990260,Social Media,Social Media Campaign February,Awareness,Electronics,265.2,4754,168
+2025-02-17 11:48:19.990260,Display Ads,Display Ads Campaign February,Awareness,Apparel,115.8,1291,66
+2025-02-18 11:48:19.990260,Display Ads,Display Ads Campaign February,Retargeting,Food & Beverages,50.75,6295,232
+2025-02-19 11:48:19.990260,Social Media,Social Media Campaign February,Conversion,Food & Beverages,225.92,8672,306
+2025-02-20 11:48:19.990260,Paid Search,Paid Search Campaign February,Awareness,Beauty & Personal Care,66.21,5161,158
+2025-02-20 11:48:19.990260,Email Marketing,Email Marketing Campaign February,Awareness,Home & Living,32.69,7033,184
+2025-02-21 11:48:19.990260,Social Media,Social Media Campaign February,Retargeting,Food & Beverages,154.39,13617,431
+2025-02-21 11:48:19.990260,Display Ads,Display Ads Campaign February,Awareness,Home & Living,48.92,1547,30
+2025-02-21 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign February,Awareness,Food & Beverages,68.01,2381,30
+2025-02-22 11:48:19.990260,Social Media,Social Media Campaign February,Conversion,Beauty & Personal Care,88.69,9135,222
+2025-02-25 11:48:19.990260,Paid Search,Paid Search Campaign February,Awareness,Electronics,49.93,755,18
+2025-02-25 11:48:19.990260,Email Marketing,Email Marketing Campaign February,Awareness,Electronics,37.52,8604,114
+2025-02-26 11:48:19.990260,Social Media,Social Media Campaign February,Awareness,Food & Beverages,166.26,3638,96
+2025-02-26 11:48:19.990260,Email Marketing,Email Marketing Campaign February,Awareness,Apparel,47.9,11654,182
+2025-02-26 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign February,Retargeting,Apparel,18.6,1386,24
+2025-02-27 11:48:19.990260,Social Media,Social Media Campaign February,Awareness,Beauty & Personal Care,135.8,2109,84
+2025-02-28 11:48:19.990260,Social Media,Social Media Campaign February,Conversion,Electronics,319.07,4183,162
+2025-03-01 11:48:19.990260,Email Marketing,Email Marketing Campaign March,Awareness,Food & Beverages,12.64,3841,82
+2025-03-01 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign March,Awareness,Home & Living,28.87,1876,12
+2025-03-02 11:48:19.990260,Social Media,Social Media Campaign March,Awareness,Beauty & Personal Care,106.5,2552,114
+2025-03-02 11:48:19.990260,Display Ads,Display Ads Campaign March,Retargeting,Electronics,106.59,5123,181
+2025-03-03 11:48:19.990260,Social Media,Social Media Campaign March,Awareness,Food & Beverages,124.62,2455,105
+2025-03-03 11:48:19.990260,Display Ads,Display Ads Campaign March,Conversion,Food & Beverages,83.62,834,67
+2025-03-04 11:48:19.990260,Social Media,Social Media Campaign March,Awareness,Beauty & Personal Care,298.55,3738,169
+2025-03-05 11:48:19.990260,Display Ads,Display Ads Campaign March,Awareness,Beauty & Personal Care,21.66,2683,57
+2025-03-06 11:48:19.990260,Paid Search,Paid Search Campaign March,Conversion,Apparel,36.8,813,22
+2025-03-07 11:48:19.990260,Email Marketing,Email Marketing Campaign March,Conversion,Food & Beverages,45.84,8737,152
+2025-03-07 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign March,Conversion,Beauty & Personal Care,93.15,5166,184
+2025-03-08 11:48:19.990260,Social Media,Social Media Campaign March,Conversion,Beauty & Personal Care,172.71,2875,51
+2025-03-08 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign March,Retargeting,Apparel,47.91,2834,108
+2025-03-09 11:48:19.990260,Social Media,Social Media Campaign March,Retargeting,Electronics,124.6,2338,46
+2025-03-09 11:48:19.990260,Display Ads,Display Ads Campaign March,Retargeting,Home & Living,33.95,2495,47
+2025-03-10 11:48:19.990260,Social Media,Social Media Campaign March,Conversion,Food & Beverages,318.63,8592,383
+2025-03-11 11:48:19.990260,Paid Search,Paid Search Campaign March,Awareness,Electronics,41.92,1956,38
+2025-03-12 11:48:19.990260,Paid Search,Paid Search Campaign March,Conversion,Electronics,131.52,3637,116
+2025-03-12 11:48:19.990260,Display Ads,Display Ads Campaign March,Retargeting,Food & Beverages,107.33,2306,77
+2025-03-13 11:48:19.990260,Social Media,Social Media Campaign March,Conversion,Home & Living,100.79,4311,108
+2025-03-13 11:48:19.990260,Email Marketing,Email Marketing Campaign March,Conversion,Home & Living,107.28,10511,313
+2025-03-14 11:48:19.990260,Social Media,Social Media Campaign March,Conversion,Beauty & Personal Care,184.47,4038,163
+2025-03-14 11:48:19.990260,Email Marketing,Email Marketing Campaign March,Conversion,Electronics,73.36,7057,249
+2025-03-15 11:48:19.990260,Paid Search,Paid Search Campaign March,Awareness,Food & Beverages,53.34,841,28
+2025-03-16 11:48:19.990260,Paid Search,Paid Search Campaign March,Awareness,Home & Living,134.43,1874,57
+2025-03-17 11:48:19.990260,Paid Search,Paid Search Campaign March,Conversion,Electronics,53.93,1355,12
+2025-03-18 11:48:19.990260,Paid Search,Paid Search Campaign March,Awareness,Apparel,97.67,5428,101
+2025-03-18 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign March,Retargeting,Food & Beverages,36.85,1534,24
+2025-03-19 11:48:19.990260,Paid Search,Paid Search Campaign March,Conversion,Electronics,101.81,878,38
+2025-03-19 11:48:19.990260,Email Marketing,Email Marketing Campaign March,Conversion,Electronics,58.39,7461,323
+2025-03-20 11:48:19.990260,Paid Search,Paid Search Campaign March,Retargeting,Apparel,188.03,3284,92
+2025-03-21 11:48:19.990260,Display Ads,Display Ads Campaign March,Conversion,Home & Living,146.18,2545,119
+2025-03-22 11:48:19.990260,Social Media,Social Media Campaign March,Awareness,Food & Beverages,54.1,1130,28
+2025-03-22 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign March,Retargeting,Apparel,38.7,1454,19
+2025-03-24 11:48:19.990260,Paid Search,Paid Search Campaign March,Retargeting,Apparel,146.95,2911,70
+2025-03-24 11:48:19.990260,Display Ads,Display Ads Campaign March,Awareness,Electronics,90.83,1609,144
+2025-03-25 11:48:19.990260,Paid Search,Paid Search Campaign March,Conversion,Beauty & Personal Care,248.16,3226,95
+2025-03-25 11:48:19.990260,Social Media,Social Media Campaign March,Awareness,Apparel,100.04,3406,100
+2025-03-25 11:48:19.990260,Email Marketing,Email Marketing Campaign March,Retargeting,Electronics,63.63,7869,223
+2025-03-28 11:48:19.990260,Social Media,Social Media Campaign March,Awareness,Home & Living,255.7,3294,171
+2025-03-29 11:48:19.990260,Paid Search,Paid Search Campaign March,Awareness,Food & Beverages,78.6,3055,62
+2025-03-30 11:48:19.990260,Affiliate Marketing,Affiliate Marketing Campaign March,Conversion,Beauty & Personal Care,58.87,1757,35
+2025-03-31 11:48:19.990260,Social Media,Social Media Campaign March,Awareness,Food & Beverages,201.09,9505,255
+2025-03-31 11:48:19.990260,Email Marketing,Email Marketing Campaign March,Awareness,Home & Living,35.59,3814,150

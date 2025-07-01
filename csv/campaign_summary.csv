@@ -1,0 +1,73 @@
+channel,campaign_type,target_category,spend,impressions,clicks
+Affiliate Marketing,Awareness,Apparel,419.04,9406,335
+Affiliate Marketing,Awareness,Electronics,120.79,1386,42
+Affiliate Marketing,Awareness,Food & Beverages,123.03,6253,96
+Affiliate Marketing,Awareness,Home & Living,249.01,9562,534
+Affiliate Marketing,Conversion,Apparel,263.65,11152,294
+Affiliate Marketing,Conversion,Beauty & Personal Care,507.8,16789,544
+Affiliate Marketing,Conversion,Electronics,135.36,9051,193
+Affiliate Marketing,Conversion,Home & Living,160.14,6709,174
+Affiliate Marketing,Retargeting,Apparel,232.9,7409,211
+Affiliate Marketing,Retargeting,Beauty & Personal Care,138.69,2100,72
+Affiliate Marketing,Retargeting,Electronics,286.34,5291,289
+Affiliate Marketing,Retargeting,Food & Beverages,469.52000000000004,15534,338
+Affiliate Marketing,Retargeting,Home & Living,247.51,11675,430
+Display Ads,Awareness,Apparel,541.0699999999999,28763,762
+Display Ads,Awareness,Beauty & Personal Care,306.6,26605,633
+Display Ads,Awareness,Electronics,264.51,7183,358
+Display Ads,Awareness,Food & Beverages,163.93,15152,285
+Display Ads,Awareness,Home & Living,149.14000000000001,10611,342
+Display Ads,Conversion,Apparel,225.22,11827,260
+Display Ads,Conversion,Beauty & Personal Care,26.32,6196,72
+Display Ads,Conversion,Electronics,80.81,2710,143
+Display Ads,Conversion,Food & Beverages,392.09000000000003,14610,545
+Display Ads,Conversion,Home & Living,633.02,14470,517
+Display Ads,Retargeting,Apparel,37.05,1149,32
+Display Ads,Retargeting,Beauty & Personal Care,111.59,7768,96
+Display Ads,Retargeting,Electronics,320.85,12273,356
+Display Ads,Retargeting,Food & Beverages,220.18,10427,361
+Display Ads,Retargeting,Home & Living,388.28000000000003,10367,390
+Email Marketing,Awareness,Apparel,179.21,22179,536
+Email Marketing,Awareness,Electronics,153.4,29862,935
+Email Marketing,Awareness,Food & Beverages,187.62,31148,597
+Email Marketing,Awareness,Home & Living,155.85,30874,639
+Email Marketing,Conversion,Apparel,415.6,54471,2510
+Email Marketing,Conversion,Beauty & Personal Care,178.91,18861,751
+Email Marketing,Conversion,Electronics,315.37,62251,1635
+Email Marketing,Conversion,Food & Beverages,184.39000000000001,25541,836
+Email Marketing,Conversion,Home & Living,135.45,14387,439
+Email Marketing,Retargeting,Apparel,36.97,3882,66
+Email Marketing,Retargeting,Beauty & Personal Care,97.89999999999999,12529,237
+Email Marketing,Retargeting,Electronics,95.05000000000001,18994,422
+Email Marketing,Retargeting,Food & Beverages,18.5,2469,43
+Email Marketing,Retargeting,Home & Living,17.8,1957,53
+Paid Search,Awareness,Apparel,732.7,25559,1018
+Paid Search,Awareness,Beauty & Personal Care,346.58,15656,476
+Paid Search,Awareness,Electronics,257.85,11935,474
+Paid Search,Awareness,Food & Beverages,437.93,11104,277
+Paid Search,Awareness,Home & Living,359.13,5448,150
+Paid Search,Conversion,Apparel,387.53,4668,165
+Paid Search,Conversion,Beauty & Personal Care,1126.38,20919,842
+Paid Search,Conversion,Electronics,703.65,24734,496
+Paid Search,Conversion,Food & Beverages,24.61,1775,48
+Paid Search,Conversion,Home & Living,231.44,2984,125
+Paid Search,Retargeting,Apparel,566.45,12690,332
+Paid Search,Retargeting,Beauty & Personal Care,137.06,3022,52
+Paid Search,Retargeting,Electronics,465.66,6146,205
+Paid Search,Retargeting,Food & Beverages,179.82999999999998,3151,80
+Paid Search,Retargeting,Home & Living,158.78,2211,68
+Social Media,Awareness,Apparel,238.36,6408,217
+Social Media,Awareness,Beauty & Personal Care,1594.26,49899,1729
+Social Media,Awareness,Electronics,265.2,4754,168
+Social Media,Awareness,Food & Beverages,935.5899999999999,22612,671
+Social Media,Awareness,Home & Living,842.53,33447,1011
+Social Media,Conversion,Apparel,581.24,27740,796
+Social Media,Conversion,Beauty & Personal Care,1702.8,54624,2171
+Social Media,Conversion,Electronics,598.69,9386,365
+Social Media,Conversion,Food & Beverages,743.4399999999999,28748,892
+Social Media,Conversion,Home & Living,186.2,7338,217
+Social Media,Retargeting,Apparel,570.9300000000001,25065,681
+Social Media,Retargeting,Beauty & Personal Care,96.85,5003,85
+Social Media,Retargeting,Electronics,400.78999999999996,11880,280
+Social Media,Retargeting,Food & Beverages,154.39,13617,431
+Social Media,Retargeting,Home & Living,63.9,4746,61

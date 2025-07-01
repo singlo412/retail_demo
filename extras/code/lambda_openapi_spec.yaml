@@ -1,0 +1,82 @@
+openapi: 3.0.0
+info:
+  title: DistributionCenterOrder
+  version: 1.0.0
+  description: order management API for Distribution Center orders
+servers:
+  - url: https://XXXXXXXXX.execute-api.us-east-1.amazonaws.com/Prod
+paths:
+  /dc_order_XXXXXXXX-XXXXXXXXX-XXXXXXXX-XXXXXXXXX-XXXXXXXX-XXXXXXXXX-XXXXXXXX-XXXXXXXXX:
+    post:
+      summary: Send the Distribution Center order
+      description: Submit an order to the Distribution Center.
+      operationId: sendDCOrder
+      requestBody:
+        description: Details of the order request.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  description: The content of the order.
+              required:
+                - content
+              example:
+                content: Here is the order for next week.
+      responses:
+        "200":
+          description: A JSON object indicating success.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Message:
+                    type: string
+                    description: Success message.
+                example:
+                  Message: Success! Your order has been sent to the DC.
+        "400":
+          description: Bad request due to invalid input.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Error:
+                    type: string
+                    description: Error message indicating the reason for failure.
+              examples:
+                InsufficientBalance:
+                  value:
+                    Error: Invalid order content
+                InvalidInput:
+                  value:
+                    Error: Invalid input data
+        "404":
+          description: destination distribution center not found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Error:
+                    type: string
+                    description: Error message indicating distribution center not found.
+                example:
+                  Error: distribution center not found
+        "500":
+          description: Internal server error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Error:
+                    type: string
+                    description: Detailed error message.
+                example:
+                  Error: Internal server error

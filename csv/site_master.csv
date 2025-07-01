@@ -1,0 +1,21 @@
+site_id,site_name,site_type,region,address,city,state,zip_code,capacity,is_active
+LOC001,Southwest Distribution Center 1,Distribution Center,Southwest,"PSC 6219, Box 8222, APO AP 51092",Lake Ricky,OH,51230,92155,True
+LOC002,Midwest Distribution Center 2,Distribution Center,Midwest,"PSC 6928, Box 8008, APO AP 55481",Tonyborough,HI,66523,20655,True
+LOC003,Midwest Warehouse 3,Warehouse,Midwest,"6284 Anderson Glen Apt. 315, South Joseph, MN 39738",Karenland,OK,87198,56325,True
+LOC004,Southwest Warehouse 4,Warehouse,Southwest,"739 Lee Knolls Suite 080, Richardfurt, OK 04406",Greentown,OR,30791,66352,True
+LOC005,West Retail Store 5,Retail Store,West,"892 Edwards Spring Suite 707, Thomaschester, WV 30796",Nguyenland,OK,03829,4371,True
+LOC006,Northeast Distribution Center 6,Distribution Center,Northeast,"5452 Ana Pines Apt. 480, South Christopher, MN 91732",West Herbert,MD,31818,43120,True
+LOC007,Northeast Warehouse 7,Warehouse,Northeast,"58397 Cody Cliffs, Georgeberg, FM 69537",Jasonshire,FL,10044,94700,True
+LOC008,Southeast Retail Store 8,Retail Store,Southeast,"5343 Angela Run, New William, OH 74817",Bassside,AK,70451,2461,True
+LOC009,West Retail Store 9,Retail Store,West,"590 Parker Corner Apt. 490, New Kelly, MA 05055",South Teresa,MS,10293,1480,True
+LOC010,Southwest Warehouse 10,Warehouse,Southwest,"PSC 3160, Box 9317, APO AA 96966",Port Rebeccaville,MN,30157,24963,False
+LOC011,Southeast Retail Store 11,Retail Store,Southeast,"54855 Brandon Corner Suite 543, Port Ryan, DE 96919",East Jessica,NH,60181,2563,True
+LOC012,Midwest Distribution Center 12,Distribution Center,Midwest,"PSC 8995, Box 6907, APO AP 71448",Evanshaven,WI,76462,71028,False
+LOC013,Southeast Retail Store 13,Retail Store,Southeast,"1801 Simmons Ramp, Brandtside, KY 64243",East Grace,ND,36026,2478,True
+LOC014,Southwest Distribution Center 14,Distribution Center,Southwest,"445 Hall Stravenue, Summersville, NH 07263",West Lisaberg,WV,24521,42945,True
+LOC015,Southeast Distribution Center 15,Distribution Center,Southeast,"011 White Forges, Diazchester, SC 42298",Lake Susan,NY,20053,34984,True
+LOC016,Northeast Warehouse 16,Warehouse,Northeast,"843 Warren Valley, Bruceview, WA 26443",Vanessachester,OH,73355,62249,True
+LOC017,West Distribution Center 17,Distribution Center,West,"3137 Derek Neck Suite 116, Kristinbury, IA 75913",Huffmanberg,SC,13253,77777,True
+LOC018,Southeast Distribution Center 18,Distribution Center,Southeast,"0130 Fischer Ferry, Samanthabury, PW 94221",West Deannastad,AK,21610,60871,True
+LOC019,West Distribution Center 19,Distribution Center,West,"3335 Gutierrez Mills Suite 407, North Seanside, KS 36104",Johnsonmouth,AS,35230,57299,False
+LOC020,Southeast Retail Store 20,Retail Store,Southeast,"5343 Thompson Alley, Jefferyborough, PW 81117",Delacruzland,AK,07513,2402,True

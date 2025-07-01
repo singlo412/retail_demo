@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CloudFormation template for Q Business Application with Index, S3 Bucket, and Q Apps'
+
+Resources:
+  # S3 Bucket
+  QBusinessDataBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Sub 'qbiz-asset-${AWS::AccountId}'
+      VersioningConfiguration:
+        Status: Enabled
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+Outputs:
+  S3BucketName:
+    Description: S3 Bucket Name
+    Value: !Ref QBusinessDataBucket

@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Ad Spend vs Revenue Analysis",
+        "description": "An app to analyze ad spend versus revenue by channel for the previous month",
+        "initialPrompt": "What was ad spend vs revenue last month by channel?",
+        "appVersion": 12,
+        "status": "PUBLISHED",
+        "createdAt": "2025-04-14 19:08:26.335000+00:00",
+        "createdBy": "a4185448-6051-7039-3611-89528b37379f",
+        "updatedAt": "2025-04-16 14:48:36.813000+00:00",
+        "updatedBy": "a4185448-6051-7039-3611-89528b37379f",
+        "requiredCapabilities": [
+            "RetrievalMode"
+        ],
+        "appDefinition": {
+            "cards": [
+                {
+                    "qQuery": {
+                        "id": "97666b1d-c9ed-42ce-989f-2785afaa10c8",
+                        "title": "Ad Spend vs Revenue Analysis",
+                        "type": "q-query",
+                        "prompt": "show top 5 channels from marketing_performance.csv",
+                        "outputSource": "approved-sources"
+                    }
+                }
+            ]
+        }
+    }
+]
