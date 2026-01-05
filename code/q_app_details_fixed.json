@@ -1,0 +1,231 @@
+[{
+    "title": "Product Sales Analysis App",
+    "description": "An app to analyze product sales rate by channel and customer segments",
+    "appDefinition": {
+        "cards": [
+            {
+                "qQuery": {
+                    "id": "15e761c5-0ba0-4ccd-9fcf-857e759b24ba",
+                    "title": "Sales Analysis",
+                    "type": "q-query",
+                    "prompt": "Show the top 5 and bottom 5 products by profit from product_sales_data.csv",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "Top 5 Products by Revenue",
+    "description": "Displays the top 5 products by revenue for each product category",
+    "appDefinition": {
+        "cards": [
+            {
+                "qQuery": {
+                    "id": "9a0fcb64-c7a7-44a0-963f-eeb943a01b67",
+                    "title": "Top 5 Products by Revenue",
+                    "type": "q-query",
+                    "prompt": "List the top 5 products by revenue from product_sales_data.csv",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "Top 5 Products by Profit",
+    "description": "Displays the top 5 products by profit for each product category",
+    "appDefinition": {
+        "cards": [
+            {
+                "qQuery": {
+                    "id": "1d67a8e4-e169-498e-b56e-d675c5dcdff3",
+                    "title": "Top 5 Products by Profit",
+                    "type": "q-query",
+                    "prompt": "List the top 5 products by profit from product_sales_data.csv",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "New Product Launch",
+    "description": "An app to view the 5 newest product launches",
+    "appDefinition": {
+        "cards": [
+            {
+                "qQuery": {
+                    "id": "c3a0c08b-affd-410f-bf24-ff6d920fcd95",
+                    "title": "5 New Products",
+                    "type": "q-query",
+                    "prompt": "Show the 5 newest products by launch_date from product_master.csv",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "Product Demand Planning",
+    "description": "Displays the forecasted product demands over the next 4-6 weeks",
+    "appDefinition": {
+        "cards": [
+            {
+                "qQuery": {
+                    "id": "ed70775a-a889-4100-81cc-9e604c89dbe1",
+                    "title": "Product Demand Forecast - 4 to 6 weeks",
+                    "type": "q-query",
+                    "prompt": "Show products with high and low forecasted demand from demand_forecast.csv",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "Inventory Status Checker",
+    "description": "An app to check the current inventory status, highlight safe products, and identify top products at stockout risk",
+    "appDefinition": {
+        "cards": [
+            {
+                "qQuery": {
+                    "id": "f64bb742-1235-4dd3-8db4-0fde8c967f7f",
+                    "title": "Inventory Status",
+                    "type": "q-query",
+                    "prompt": "From inventory_master.csv show products with low stock levels that are at risk of stockout",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "Customer Satisfaction Analysis",
+    "description": "An app to analyze and explain customer feedback data",
+    "appDefinition": {
+        "cards": [
+            {
+                "qQuery": {
+                    "id": "b3f18900-c275-480f-b183-98ede1ab1120",
+                    "title": "Customer Sentiments",
+                    "type": "q-query",
+                    "prompt": "From customer_feedback.csv, calculate the average rating and identify which category (Customer Service, Delivery Speed, or Overall Experience) has the lowest average rating.",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "Product Recommendation",
+    "description": "Suggests alternative products to customers",
+    "appDefinition": {
+        "cards": [
+            {
+                "textInput": {
+                    "id": "6a07d0b9-44b8-4e4a-bac9-95e75dbc77d6",
+                    "title": "Enter Product Type",
+                    "type": "text-input",
+                    "placeholder": "Storage",
+                    "defaultValue": "Storage"
+                }
+            },
+            {
+                "qQuery": {
+                    "id": "0fd2f753-2db4-491f-8736-d6ab865d34ab",
+                    "title": "Alternative Product Recommendations",
+                    "type": "q-query",
+                    "prompt": "From product_master.csv list products in the @6a07d0b9-44b8-4e4a-bac9-95e75dbc77d6 category",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "Ad Spend vs Revenue Analysis",
+    "description": "An app to analyze ad spend versus revenue by channel for the previous month",
+    "appDefinition": {
+        "cards": [
+            {
+                "qQuery": {
+                    "id": "97666b1d-c9ed-42ce-989f-2785afaa10c8",
+                    "title": "Ad Spend vs Revenue Analysis",
+                    "type": "q-query",
+                    "prompt": "Show the top 5 marketing channels by performance from marketing_performance.csv",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "Top Products Affected by Tariff Increase",
+    "description": "Identifies the top 5 products affected by tariff increase based on primary supplier country",
+    "appDefinition": {
+        "cards": [
+            {
+                "qQuery": {
+                    "id": "f79e22eb-f1e3-4762-9741-22ad85f28d15",
+                    "title": "Top Products Affected By Tarrif",
+                    "type": "q-query",
+                    "prompt": "From supplier_product_assignments.csv, list the top 5 products with the highest primary_supplier_tariff. Show product_name, primary_supplier_name, primary_supplier_country, and primary_supplier_tariff.",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "Alternative Supplier Recommendation",
+    "description": "Find alternative suppliers to reduce tariff impact on a given product",
+    "appDefinition": {
+        "cards": [
+            {
+                "textInput": {
+                    "id": "8bf76237-ad8a-4262-992d-b9896569f241",
+                    "title": "Product Name",
+                    "type": "text-input",
+                    "placeholder": "HP Visit Gaming",
+                    "defaultValue": "HP Visit Gaming"
+                }
+            },
+            {
+                "qQuery": {
+                    "id": "3999b551-254a-4e20-b254-0a61a91104af",
+                    "title": "Alternative Supplier Recommendations",
+                    "type": "q-query",
+                    "prompt": "From supplier_product_assignments.csv, find the product @8bf76237-ad8a-4262-992d-b9896569f241 and compare its primary_supplier_tariff with backup_supplier_tariff. Recommend switching to the backup supplier if it has a lower tariff.",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "Campaign Performance Analysis",
+    "description": "An app to explain campaign performance data",
+    "appDefinition": {
+        "cards": [
+            {
+                "qQuery": {
+                    "id": "3c8c099f-f4f4-488d-b027-7ad05781ee1e",
+                    "title": "Campaign Reach by channel",
+                    "type": "q-query",
+                    "prompt": "Show campaign impressions by channel from campaign_performance.csv",
+                    "outputSource": "approved-sources"
+                }
+            },
+            {
+                "qQuery": {
+                    "id": "20ad050f-85fe-4330-ad19-70efd0e485f7",
+                    "title": "Campaign Performance",
+                    "type": "q-query",
+                    "prompt": "List the top 5 campaigns by performance from campaign_performance.csv",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+}]

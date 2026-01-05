@@ -157,7 +157,7 @@ echo $QBIZ_CLOUDFRONT_FQDN
 ### Quick Start
 1. Once "retail-iq-qbusiness" stack is successfully deployed, open the newly created Q business application in the AWS console and add users from IDC in-order for them to get access to the application
 
-2. Add the CloudFront URL from "retail-iq-web" stack output(CloudFrontDomainName) in both Q Business and Quicksight to whitelist it for embedding
+2. Add the CloudFront URL from "retail-iq-web" stack output(CloudFrontDomainName) in both Q Business, QuickSight, and Quick Suite to whitelist it for embedding
 
 
 ![](images/describe_stack_retail_iq_web.png)
@@ -175,6 +175,63 @@ Go to the QuickSight console
 
 ![](images/quicksight_add_domain_embedded_dashboards.png)
 
+### Quick Suite Embedded Chat Setup (Optional Enhancement)
+
+The portal now supports Quick Suite embedded chat, which provides a unified conversational AI experience that can query both structured data (QuickSight dashboards/topics) and unstructured knowledge (documents) in a single conversation.
+
+#### Step 1: Create a QuickSight Topic
+1. Go to QuickSight Console → Topics → New topic
+2. Name it "Retail Intelligence Topic"
+3. Add your retail datasets (product_sales_data, inventory_master, etc.)
+4. Configure field synonyms for natural language queries:
+   - `revenue` → "sales", "total sales", "income"
+   - `profit` → "margin", "net profit"
+   - `quantity_sold` → "units sold", "sales volume"
+   - `site_id` → "store", "location", "branch"
+
+#### Step 2: Create a Quick Suite Space
+1. Quick Suite Console → Spaces → Create space
+2. Title: "Retail Intelligence Knowledge Space"
+3. Add knowledge sources:
+   - Your QuickSight Topic (from Step 1)
+   - QuickSight dashboards
+   - Any PDF documents from `extras/` folder
+
+#### Step 3: Create a Custom Chat Agent
+1. Quick Suite Console → Chat agents → Create chat agent
+2. Configure the agent:
+   ```
+   Title: Retail Intelligence Assistant
+   
+   Agent Identity: You are a Retail Intelligence Analyst specializing in 
+   product sales, inventory management, customer feedback, and marketing 
+   performance for a multi-location retail business.
+   
+   Instructions: Always cite data sources. Use bullet points for clarity.
+   Suggest follow-up questions. Flag inventory items below reorder point.
+   ```
+3. Link the Space created in Step 2
+4. Save and Publish the agent
+
+#### Step 4: Get Agent ARN and Update credentials.json
+1. In Chat agents list, click ⋮ menu → View chat agent details
+2. Copy the agent link, extract the agent ID from URL
+3. Format the ARN: `arn:aws:quicksight:<region>:<account-id>:agent/<agent-id>`
+4. Add to credentials.json:
+   ```json
+   "quickSuiteAgentArn": "arn:aws:quicksight:us-east-1:123456789012:agent/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+   ```
+
+#### Step 5: Whitelist Domain in Quick Suite
+1. Quick Suite Console → Settings → Security → Manage domains
+2. Add your CloudFront URL: `https://xxxxxx.cloudfront.net`
+
+#### Step 6: Deploy Updated Portal
+```bash
+python code/process_html_templates.py
+```
+
+The Dashboard tab will now show the Quick Suite unified chat instead of the basic Q Business chatbot.
 
 3. Share the newly created assets in Quicksight with the IDC user
 

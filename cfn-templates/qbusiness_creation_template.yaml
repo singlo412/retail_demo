@@ -131,6 +131,17 @@ Resources:
                   - 'qapps:*'
                 Resource: 
                   - '*'
+              # Quick Suite embedded chat permissions
+              - Effect: Allow
+                Action:
+                  - 'quicksight:GenerateEmbedUrlForRegisteredUser'
+                  - 'quicksight:GenerateEmbedUrlForRegisteredUserWithIdentity'
+                  - 'quicksight:GetDashboardEmbedUrl'
+                  - 'quicksight:GetSessionEmbedUrl'
+                  - 'quicksight:ListUsers'
+                  - 'quicksight:DescribeUser'
+                Resource: 
+                  - '*'
           PolicyName: WebExperiencePolicy
   
   # Q Data Source Role

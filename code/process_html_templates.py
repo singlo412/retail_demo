@@ -29,6 +29,83 @@ def get_cfront_client(creds="env"):
     cfclient = qbiz.get_client('cloudfront', creds)
     return cfclient
 
+def get_quicksuite_chat_embed_url(account_id, user_arn, allowed_domain, agent_arn=None):
+    """
+    Generate Quick Suite embedded chat URL using GenerateEmbedUrlForRegisteredUser API.
+    
+    Args:
+        account_id (str): AWS Account ID
+        user_arn (str): ARN of the registered QuickSight user
+        allowed_domain (str): Domain where embedding is allowed (CloudFront URL)
+        agent_arn (str, optional): ARN of custom chat agent. If None, uses default system agent.
+    
+    Returns:
+        str: Embed URL for Quick Suite chat, or None if generation fails
+    """
+    try:
+        qs_client = qbiz.get_client('quicksight', "env")
+        
+        experience_config = {'QuickChat': {}}
+        
+        response = qs_client.generate_embed_url_for_registered_user(
+            AwsAccountId=account_id,
+            UserArn=user_arn,
+            ExperienceConfiguration=experience_config,
+            AllowedDomains=[allowed_domain]
+        )
+        
+        embed_url = response.get('EmbedUrl')
+        logger.info(f"Generated Quick Suite chat embed URL successfully")
+        return embed_url
+        
+    except ClientError as e:
+        error_code = e.response['Error']['Code']
+        error_message = e.response['Error']['Message']
+        logger.error(f"Failed to generate Quick Suite embed URL: {error_code} - {error_message}")
+        
+        if error_code == 'ResourceNotFoundException':
+            logger.error("User not found. Ensure the user is registered in QuickSight.")
+        elif error_code == 'AccessDeniedException':
+            logger.error("Access denied. Check IAM permissions for quicksight:GenerateEmbedUrlForRegisteredUser")
+        
+        return None
+    except Exception as e:
+        logger.error(f"Unexpected error generating Quick Suite embed URL: {str(e)}")
+        return None
+
+def get_quicksight_user_arn(account_id, namespace='default'):
+    """
+    Get the QuickSight user ARN for the current user.
+    
+    Args:
+        account_id (str): AWS Account ID
+        namespace (str): QuickSight namespace (default: 'default')
+    
+    Returns:
+        str: User ARN or None if not found
+    """
+    try:
+        qs_client = qbiz.get_client('quicksight', "env")
+        
+        # List users and find the current one
+        response = qs_client.list_users(
+            AwsAccountId=account_id,
+            Namespace=namespace
+        )
+        
+        if response.get('UserList'):
+            # Return the first user's ARN (typically the admin/author)
+            user_arn = response['UserList'][0]['Arn']
+            logger.info(f"Found QuickSight user: {user_arn}")
+            return user_arn
+        
+        logger.warning("No QuickSight users found")
+        return None
+        
+    except ClientError as e:
+        logger.error(f"Failed to list QuickSight users: {e}")
+        return None
+
 def get_qapp_ids(q_instance_id):
     """
     Get the list of QApps for a given Q Business instance    
@@ -129,17 +206,53 @@ def process_templates(creds=None):
     qs_dashboard = get_quicksight_dashboard()
     qs_dashboard_url = get_quicksight_dashboard_url(qs_dashboard)
 
+    # Get AWS account ID for Quick Suite embed URL generation
+    sts_response = qbiz.get_client('sts', "env").get_caller_identity()
+    account_id = sts_response["Account"]
+    
+    # Get CloudFront domain for allowed domains
+    cfclient = get_cfront_client("env")
+    cf_response = cfclient.list_distributions()
+    cf_fqdn = cf_response['DistributionList']['Items'][0]['DomainName']
+    allowed_domain = f"https://{cf_fqdn}"
+    
+    # Get QuickSight user ARN for embed URL generation
+    user_arn = get_quicksight_user_arn(account_id)
+    
+    # Generate Quick Suite chat embed URL
+    quicksuite_chat_url = None
+    quicksuite_agent_arn = creds.get("quickSuiteAgentArn")  # Optional: from credentials.json
+    
+    if user_arn:
+        quicksuite_chat_url = get_quicksuite_chat_embed_url(
+            account_id=account_id,
+            user_arn=user_arn,
+            allowed_domain=allowed_domain,
+            agent_arn=quicksuite_agent_arn
+        )
+    
+    if not quicksuite_chat_url:
+        logger.warning("Quick Suite chat URL not generated. Falling back to Q Business chatbot.")
+        quicksuite_chat_url = q_webexp_url
+
     urls = {
         "embedded": {
             "quicksight_dashboard": qs_dashboard_url,
-            "qbusiness_chatbot": q_webexp_url
+            "qbusiness_chatbot": q_webexp_url,
+            "quicksuite_chat": quicksuite_chat_url,
+            "quicksuite_agent_arn": quicksuite_agent_arn
         },
         "qapp": {}
     }
 
-    appdata = get_qapp_ids(q_instance_id)
-    for a in appdata:
-        urls["qapp"][a] = f"{q_webexp_url}#/app/{appdata[a]}"
+    # Try to get Q Apps, but continue if it fails (e.g., expired credentials)
+    try:
+        appdata = get_qapp_ids(q_instance_id)
+        for a in appdata:
+            urls["qapp"][a] = f"{q_webexp_url}#/app/{appdata[a]}"
+    except Exception as e:
+        logger.warning(f"Failed to get Q Apps (credentials may be expired): {e}")
+        logger.warning("Continuing without Q Apps URLs. Other tabs may not work correctly.")
 
     tpl_environment = Environment(loader=FileSystemLoader("html_templates/"), autoescape=True)
     tpl_fname = "retail-qbizapp.html.j2"

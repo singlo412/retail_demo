@@ -1,0 +1,54 @@
+[
+{
+    "title": "Test 5 - ID Reference",
+    "description": "Test using card ID in reference",
+    "appDefinition": {
+        "cards": [
+            {
+                "textInput": {
+                    "id": "55555555-5555-4555-8555-555555555551",
+                    "title": "input",
+                    "type": "text-input",
+                    "placeholder": "Enter something",
+                    "defaultValue": "Hello World"
+                }
+            },
+            {
+                "qQuery": {
+                    "id": "55555555-5555-4555-8555-555555555552",
+                    "title": "Echo Test",
+                    "type": "q-query",
+                    "prompt": "Simply repeat back this text: @55555555-5555-4555-8555-555555555551",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+},
+{
+    "title": "Test 6 - ID with Brackets",
+    "description": "Test using card ID with brackets",
+    "appDefinition": {
+        "cards": [
+            {
+                "textInput": {
+                    "id": "66666666-6666-4666-8666-666666666661",
+                    "title": "input",
+                    "type": "text-input",
+                    "placeholder": "Enter something",
+                    "defaultValue": "Hello World"
+                }
+            },
+            {
+                "qQuery": {
+                    "id": "66666666-6666-4666-8666-666666666662",
+                    "title": "Echo Test",
+                    "type": "q-query",
+                    "prompt": "Simply repeat back this text: @[55555555-5555-4555-8555-555555555551]",
+                    "outputSource": "approved-sources"
+                }
+            }
+        ]
+    }
+}
+]
