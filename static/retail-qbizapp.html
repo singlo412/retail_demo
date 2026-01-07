@@ -4,6 +4,119 @@
   <meta charset="UTF-8">
   <title>Q Business for Retail Intelligence Portal</title>
   <link rel="stylesheet" href="retail-qbizapp.css">
+  <!-- QuickSight Embedding SDK v2.7.0+ for GenerativeQnA -->
+  <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@2.7.0/dist/quicksight-embedding-js-sdk.min.js"></script>
+  <style>
+    .agent-tab-container {
+      padding: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .topic-container, .agent-wrapper {
+      width: 60%;
+      height: 900px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      position: relative;
+      background: #fafafa;
+    }
+    .agent-wrapper {
+      width: 30%;
+    }
+    .agent-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+    .loading-indicator {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+    /* Spinner Animation */
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #e0e0e0;
+      border-top: 4px solid #0073bb;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 15px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .loading-text {
+      color: #666;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .error-message {
+      color: #d32f2f;
+      padding: 20px;
+      text-align: center;
+    }
+    /* Hide spinner when iframe loads */
+    .agent-wrapper.loaded .loading-indicator {
+      display: none;
+    }
+    /* Q&A Tab Styles */
+    .qa-container {
+      padding: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .qa-section {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .qa-section h3 {
+      margin: 0 0 15px 0;
+      color: #232f3e;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .qa-section ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #444;
+      line-height: 1.8;
+    }
+    .qa-section p {
+      margin: 10px 0;
+      color: #444;
+      line-height: 1.6;
+    }
+    .qa-link {
+      color: #0073bb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .qa-link:hover {
+      text-decoration: underline;
+    }
+    .aws-service {
+      display: inline-block;
+      background: #f0f4f8;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin: 3px;
+      font-size: 13px;
+      color: #232f3e;
+    }
+  </style>
 </head>
 <body>
   <div style="padding-left: 2%;">
@@ -17,28 +130,45 @@
     <!-- Tab selectors -->
     <input type="radio" id="tab1" name="tabgroup" checked>
     <label for="tab1">Dashboard</label>
-    <input type="radio" id="tab2" name="tabgroup">
-    <label for="tab2">Product Insights</label>
-    <input type="radio" id="tab3" name="tabgroup">
-    <label for="tab3">Sales Insights</label>
-    <input type="radio" id="tab4" name="tabgroup">
-    <label for="tab4">Inventory and Supply Chain</label>
-    <input type="radio" id="tab5" name="tabgroup">
-    <label for="tab5">Customer Service</label>
-    <input type="radio" id="tab6" name="tabgroup">
-    <label for="tab6">Marketing Performance</label>
-    <input type="radio" id="tab7" name="tabgroup">
-    <label for="tab7">Vendor Management</label>
+    
+    <!-- Hidden tabs (Q Apps - credentials expired) -->
+    <input type="radio" id="tab2" name="tabgroup" style="display:none;">
+    <label for="tab2" style="display:none;">Product Insights</label>
+    <input type="radio" id="tab3" name="tabgroup" style="display:none;">
+    <label for="tab3" style="display:none;">Sales Insights</label>
+    <input type="radio" id="tab4" name="tabgroup" style="display:none;">
+    <label for="tab4" style="display:none;">Inventory and Supply Chain</label>
+    <input type="radio" id="tab5" name="tabgroup" style="display:none;">
+    <label for="tab5" style="display:none;">Customer Service</label>
+    <input type="radio" id="tab6" name="tabgroup" style="display:none;">
+    <label for="tab6" style="display:none;">Marketing Performance</label>
+    <input type="radio" id="tab7" name="tabgroup" style="display:none;">
+    <label for="tab7" style="display:none;">Vendor Management</label>
+    
+    <!-- Agent tabs -->
+    <input type="radio" id="tab8" name="tabgroup">
+    <label for="tab8">💰 Sales Agent</label>
+    <input type="radio" id="tab9" name="tabgroup">
+    <label for="tab9">📦 Inventory Agent</label>
+    <input type="radio" id="tab10" name="tabgroup">
+    <label for="tab10">📣 Marketing Agent</label>
+    <input type="radio" id="tab11" name="tabgroup">
+    <label for="tab11">🔮 Demand Forecast Agent</label>
+    <input type="radio" id="tab12" name="tabgroup">
+    <label for="tab12">👥 Customer Insights Agent</label>
+    
+    <!-- Q&A tab -->
+    <input type="radio" id="tab13" name="tabgroup">
+    <label for="tab13">❓ Q&A</label>
 
     <!-- Tab contents -->
     <div id="content1" class="tab-content">
       <div class="iframes-row">
         <iframe width="60%" height="1000" src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572990652154/dashboards/import86596ebd-a1aa-4598-ae5d-2cd8dfbba9d6" title="Dashboard"></iframe>
-        <!-- Quick Suite Chat Agent - One-Click Embed -->
         <iframe 
           width="30%" 
           height="1000" 
-          allow="clipboard-read https://us-east-1.quicksight.aws.amazon.com; clipboard-write https://us-east-1.quicksight.aws.amazon.com"
+          allow="clipboard-read *; clipboard-write *; fullscreen"
           src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572990652154/chatagents/a8305c40-62d9-4173-92a3-0353994989e0?directory_alias=masterconcept" 
           title="Quick Suite Chat Agent"
           style="border: 1px solid #e0e0e0; border-radius: 8px;">
@@ -47,41 +177,353 @@
     </div>
     <div id="content2" class="tab-content">
       <div class="iframes-row">
-        <iframe width="40%" height="650" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/0c7d7917-eb89-48e3-b661-dd2ddf3544f2" title="Top 5 products by Profit"></iframe>
-        <iframe width="40%" height="650" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/6ad3cf22-3532-4468-9605-ad8f0833596d" title="Top 5 products by Revenue"></iframe>
+        <iframe width="40%" height="650" src="" title="Top 5 products by Profit"></iframe>
+        <iframe width="40%" height="650" src="" title="Top 5 products by Revenue"></iframe>
       </div>
     </div>
     <div id="content3" class="tab-content">
       <div class="iframes-row">
-        <iframe width="40%" height="650" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/be84b44c-560f-4368-9974-71a106dd545c" title="New Product Launch"></iframe>
-        <iframe width="40%" height="650" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/2e6bb479-c86a-4c42-aa26-2b19bbda050e" title="Product Sales Analysis"></iframe>
+        <iframe width="40%" height="650" src="" title="New Product Launch"></iframe>
+        <iframe width="40%" height="650" src="" title="Product Sales Analysis"></iframe>
       </div>
     </div>
     <div id="content4" class="tab-content">
       <div class="iframes-row">
-        <iframe width="40%" height="1000" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/1816c05e-8d14-40c1-a454-5db0083a5f89" title="Inventory Status"></iframe>
-        <iframe width="40%" height="1000" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/8ad68466-c9ee-49c0-a1b9-ed2d9c41f2fb" title="Product Demand Forecast"></iframe>
+        <iframe width="40%" height="1000" src="" title="Inventory Status"></iframe>
+        <iframe width="40%" height="1000" src="" title="Product Demand Forecast"></iframe>
       </div>
     </div>
     <div id="content5" class="tab-content">
       <div class="iframes-row">
-        <iframe width="40%" height="1000" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/a7ebea41-6102-4f0c-9449-38efa5e6bcd7" title="Customer Sentiment Analysis"></iframe>
-        <iframe width="40%" height="1000" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/7507f3b8-e82c-4d86-9b42-e8918502b7af" title="Alternate Product Recommendation"></iframe>
+        <iframe width="40%" height="1000" src="" title="Customer Sentiment Analysis"></iframe>
+        <iframe width="40%" height="1000" src="" title="Alternate Product Recommendation"></iframe>
       </div>
     </div>
     <div id="content6" class="tab-content">
       <div class="iframes-row">
-        <iframe width="40%" height="1000" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/592b69a7-c7ff-450c-a1af-cc0019aad2c5" title="Ad Spend vs Revenue"></iframe>
-        <iframe width="40%" height="1000" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/0adaf237-0401-4ffe-b672-7c3f8632a41c" title="Campaign Performance"></iframe>
+        <iframe width="40%" height="1000" src="" title="Ad Spend vs Revenue"></iframe>
+        <iframe width="40%" height="1000" src="" title="Campaign Performance"></iframe>
       </div>
     </div>
     <div id="content7" class="tab-content">
       <div class="iframes-row">
-        <iframe width="40%" height="1000" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/c150f68e-3da2-4fec-9c34-5e031383f49b" title="Products affected by tarrif"></iframe>
-        <iframe width="40%" height="1000" src="https://hfadflfi.chat.qbusiness.us-east-1.on.aws/#/app/cd9f65d0-d7fc-4bf9-bd22-76cd8fbbbd0f" title="Alternate Supplier Search"></iframe>
+        <iframe width="40%" height="1000" src="" title="Products affected by tarrif"></iframe>
+        <iframe width="40%" height="1000" src="" title="Alternate Supplier Search"></iframe>
       </div>
+    </div>
+
+    <!-- Sales Agent Tab -->
+    <div id="content8" class="tab-content">
+      <div class="iframes-row">
+        <div id="sales-topic-container" class="topic-container">
+          <div class="loading-indicator">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading Sales Analytics...</div>
+          </div>
+        </div>
+        <div class="agent-wrapper" id="sales-agent-wrapper">
+          <div class="loading-indicator">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading Sales Agent...</div>
+          </div>
+          <iframe 
+            allow="clipboard-read *; clipboard-write *; fullscreen"
+            src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572990652154/chatagents/230809cd-c2ac-4455-85fe-a5968a29980b?directory_alias=masterconcept" 
+            title="Sales & Revenue Analyst"
+            onload="this.parentElement.classList.add('loaded')">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inventory Agent Tab -->
+    <div id="content9" class="tab-content">
+      <div class="iframes-row">
+        <div id="inventory-topic-container" class="topic-container">
+          <div class="loading-indicator">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading Inventory Analytics...</div>
+          </div>
+        </div>
+        <div class="agent-wrapper" id="inventory-agent-wrapper">
+          <div class="loading-indicator">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading Inventory Agent...</div>
+          </div>
+          <iframe 
+            allow="clipboard-read *; clipboard-write *; fullscreen"
+            src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572990652154/chatagents/9eb08ace-ab20-4a9a-ba23-52344a345f2f?directory_alias=masterconcept" 
+            title="Inventory & Supply Chain Manager"
+            onload="this.parentElement.classList.add('loaded')">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marketing Agent Tab -->
+    <div id="content10" class="tab-content">
+      <div class="iframes-row">
+        <div id="marketing-topic-container" class="topic-container">
+          <div class="loading-indicator">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading Marketing Analytics...</div>
+          </div>
+        </div>
+        <div class="agent-wrapper" id="marketing-agent-wrapper">
+          <div class="loading-indicator">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading Marketing Agent...</div>
+          </div>
+          <iframe 
+            allow="clipboard-read *; clipboard-write *; fullscreen"
+            src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572990652154/chatagents/9926d31d-aea7-4e3f-ac6e-ea2eb36ab748?directory_alias=masterconcept" 
+            title="Marketing Performance Analyst"
+            onload="this.parentElement.classList.add('loaded')">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demand Forecast Agent Tab -->
+    <div id="content11" class="tab-content">
+      <div class="iframes-row">
+        <div id="forecast-topic-container" class="topic-container">
+          <div class="loading-indicator">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading Forecast Analytics...</div>
+          </div>
+        </div>
+        <div class="agent-wrapper" id="forecast-agent-wrapper">
+          <div class="loading-indicator">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading Forecast Agent...</div>
+          </div>
+          <iframe 
+            allow="clipboard-read *; clipboard-write *; fullscreen"
+            src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572990652154/chatagents/9b8f0d26-16c2-4b0f-8da5-4af1ffd903e1?directory_alias=masterconcept" 
+            title="Demand Forecasting Specialist"
+            onload="this.parentElement.classList.add('loaded')">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Insights Agent Tab -->
+    <div id="content12" class="tab-content">
+      <div class="iframes-row">
+        <div id="customer-topic-container" class="topic-container">
+          <div class="loading-indicator">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading Customer Analytics...</div>
+          </div>
+        </div>
+        <div class="agent-wrapper" id="customer-agent-wrapper">
+          <div class="loading-indicator">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading Customer Agent...</div>
+          </div>
+          <iframe 
+            allow="clipboard-read *; clipboard-write *; fullscreen"
+            src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572990652154/chatagents/b4f53f86-be25-420e-b698-251d5c677d8d?directory_alias=masterconcept" 
+            title="Customer Insights Analyst"
+            onload="this.parentElement.classList.add('loaded')">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q&A Tab -->
+    <div id="content13" class="tab-content">
+      <div class="qa-container">
+        <!-- How to Use Section -->
+        <div class="qa-section">
+          <h3>📖 How to Use This Portal</h3>
+          <ul>
+            <li><strong>Dashboard Tab:</strong> View retail KPIs and interact with the main chat agent</li>
+            <li><strong>Agent Tabs:</strong> Each tab features a Q Topic (left) for visual analytics and a Chat Agent (right) for conversational AI</li>
+            <li><strong>Ask Questions:</strong> Try queries like "Show me top products by revenue" or "What are the sales trends?"</li>
+            <li><strong>Generate Visuals:</strong> The Q Topic can create charts and graphs based on your questions</li>
+            <li><strong>Chat with Agents:</strong> Get insights and recommendations from specialized AI agents</li>
+          </ul>
+        </div>
+
+        <!-- Agent Roles Section -->
+        <div class="qa-section">
+          <h3>🤖 Meet the AI Agents</h3>
+          <p>Each agent has a specific role and tone tailored for their domain:</p>
+          <ul>
+            <li><strong>💰 Sales Agent:</strong> Analyzes revenue trends, product performance, and sales metrics with a results-driven, business-focused tone</li>
+            <li><strong>📦 Inventory Agent:</strong> Monitors stock levels, supply chain efficiency, and logistics with a detail-oriented, operational tone</li>
+            <li><strong>📣 Marketing Agent:</strong> Evaluates campaign performance, ROI, and customer engagement with a creative, growth-minded tone</li>
+            <li><strong>🔮 Demand Forecast Agent:</strong> Predicts future demand patterns and seasonal trends with an analytical, forward-looking tone</li>
+            <li><strong>👥 Customer Insights Agent:</strong> Understands customer behavior, preferences, and satisfaction with an empathetic, customer-centric tone</li>
+          </ul>
+        </div>
+
+        <!-- AWS Services Section -->
+        <div class="qa-section">
+          <h3>🛠️ AWS Services Used</h3>
+          <p>This portal leverages the following AWS services:</p>
+          <div style="margin-top: 10px;">
+            <span class="aws-service">Amazon QuickSight</span>
+            <span class="aws-service">Q Topics</span>
+            <span class="aws-service">Chat Agents</span>
+            <span class="aws-service">Amazon S3</span>
+            <span class="aws-service">Amazon CloudFront</span>
+            <span class="aws-service">AWS Lambda</span>
+            <span class="aws-service">Amazon API Gateway</span>
+          </div>
+          <ul style="margin-top: 15px;">
+            <li><strong>Amazon QuickSight:</strong> Dashboards, Q Topics for visual Q&A, Chat Agents for conversational BI</li>
+            <li><strong>Amazon S3:</strong> Static website hosting</li>
+            <li><strong>Amazon CloudFront:</strong> CDN for fast global delivery</li>
+            <li><strong>AWS Lambda + API Gateway:</strong> Backend API for embed URL generation</li>
+          </ul>
+        </div>
+
+        <!-- About Section -->
+        <div class="qa-section">
+          <h3>🔗 About This Portal</h3>
+          <p>
+            <strong>📂 GitHub Repository:</strong><br>
+            <a href="https://github.com/aws-samples/sample-amazon-qbusiness-and-quicksight-for-retail-intelligence" target="_blank" class="qa-link">
+              https://github.com/aws-samples/sample-amazon-qbusiness-and-quicksight-for-retail-intelligence
+            </a>
+          </p>
+          <p>
+            Modified by <a href="https://www.digitalactionlab.co/" target="_blank" class="qa-link">Digital Action Lab</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
+
+  <script type="text/javascript">
+    // ============================================================
+    // CONFIGURATION - Q Topics for GenerativeQnA (SDK)
+    // ============================================================
+    const CONFIG = {
+      apiEndpoint: 'https://fxai0d13a7.execute-api.us-east-1.amazonaws.com/prod/embed-url',
+      accountId: '572990652154',
+      userArn: 'arn:aws:quicksight:us-east-1:572990652154:user/default/james.lindsay@hkmci.com',
+      
+      topics: {
+        sales: {
+          containerId: 'sales-topic-container',
+          topicId: '8QgzbV6wlSoRl8WWvQLYRv6wOPBW6uDz',
+          name: 'Sales & Revenue Analytics'
+        },
+        inventory: {
+          containerId: 'inventory-topic-container',
+          topicId: 'k7iqlXZH7mL2xoe3yePqOSWfSuIWdNu4',
+          name: 'Inventory & Supply Chain'
+        },
+        marketing: {
+          containerId: 'marketing-topic-container',
+          topicId: 'YDcxoWIkks9Oplyxddcdaqk8GBSyRrYI',
+          name: 'Marketing Performance'
+        },
+        forecast: {
+          containerId: 'forecast-topic-container',
+          topicId: 'N5xe2a69qZmZrJMjHKCa3uNf1yACsgHD',
+          name: 'Demand Forecasting'
+        },
+        customer: {
+          containerId: 'customer-topic-container',
+          topicId: 'KmYrZ1DyRHKBXbXB0vZhsw5F6FU3lNS3',
+          name: 'Customer Insights'
+        }
+      }
+    };
+
+    // Fetch embed URL from API for GenerativeQnA
+    async function getGenerativeQnAEmbedUrl(topicId) {
+      const response = await fetch(CONFIG.apiEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userArn: CONFIG.userArn,
+          embedType: 'GenerativeQnA',
+          topicId: topicId
+        })
+      });
+      
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || `API error: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      return data.embedUrl;
+    }
+
+    // Embed GenerativeQnA using SDK
+    async function embedGenerativeQnA(containerId, topicId, name) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      try {
+        console.log(`Loading ${name}...`);
+        const embedUrl = await getGenerativeQnAEmbedUrl(topicId);
+        container.innerHTML = '';
+        
+        const { createEmbeddingContext } = QuickSightEmbedding;
+        const embeddingContext = await createEmbeddingContext();
+
+        const frameOptions = {
+          url: embedUrl,
+          container: container,
+          height: '100%',
+          width: '100%'
+        };
+
+        const contentOptions = {
+          panelOptions: { panelType: 'FULL', showQIcon: true },
+          showTopicName: true,
+          showPinboard: true,
+          allowTopicSelection: false,
+          allowFullscreen: true
+        };
+
+        await embeddingContext.embedGenerativeQnA(frameOptions, contentOptions);
+        console.log(`${name}: Embedded successfully`);
+      } catch (error) {
+        console.error(`Failed to embed ${name}:`, error);
+        container.innerHTML = `<div class="error-message">
+          <p>Failed to load ${name}</p>
+          <p style="font-size: 12px; color: #666;">${error.message}</p>
+        </div>`;
+      }
+    }
+
+    // Track loaded topics
+    const loadedTopics = new Set();
+
+    function loadTopicForTab(tabId) {
+      const topicMap = {
+        'tab8': 'sales',
+        'tab9': 'inventory',
+        'tab10': 'marketing',
+        'tab11': 'forecast',
+        'tab12': 'customer'
+      };
+
+      const topicKey = topicMap[tabId];
+      if (topicKey && !loadedTopics.has(topicKey)) {
+        const topic = CONFIG.topics[topicKey];
+        if (topic) {
+          loadedTopics.add(topicKey);
+          embedGenerativeQnA(topic.containerId, topic.topicId, topic.name);
+        }
+      }
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('input[name="tabgroup"]').forEach(radio => {
+        radio.addEventListener('change', (e) => loadTopicForTab(e.target.id));
+      });
+    });
+  </script>
 </body>
 </html>

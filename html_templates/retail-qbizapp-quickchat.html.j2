@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q Business for Retail Intelligence Portal</title>
+  <link rel="stylesheet" href="retail-qbizapp.css">
+  <!-- QuickSight Embedding SDK v2.11.0+ for QuickChat (Chat Agents) -->
+  <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@2.11.0/dist/quicksight-embedding-js-sdk.min.js"></script>
+  <style>
+    .agent-tab-container {
+      padding: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .agent-container {
+      width: 100%;
+      height: 900px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      position: relative;
+      background: #fafafa;
+    }
+    .loading-indicator {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #666;
+      font-size: 14px;
+    }
+    .error-message {
+      color: #d32f2f;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div style="padding-left: 2%;">
+    <h2> Welcome to the Q Business for Retail Intelligence Portal! </h2>
+    <p><i>An AI-Powered Retail Intelligence Platform, Empowering retail 
+    decision-makers with real-time insights and predictive analytics 
+    across the entire retail value chain</i></p>
+  </div>
+  <br/>
+  <div class="tabs" style="padding-left: 2%">
+    <!-- Tab selectors -->
+    <input type="radio" id="tab1" name="tabgroup" checked>
+    <label for="tab1">Dashboard</label>
+    
+    <!-- Hidden tabs (Q Apps - credentials expired) -->
+    <input type="radio" id="tab2" name="tabgroup" style="display:none;">
+    <label for="tab2" style="display:none;">Product Insights</label>
+    <input type="radio" id="tab3" name="tabgroup" style="display:none;">
+    <label for="tab3" style="display:none;">Sales Insights</label>
+    <input type="radio" id="tab4" name="tabgroup" style="display:none;">
+    <label for="tab4" style="display:none;">Inventory and Supply Chain</label>
+    <input type="radio" id="tab5" name="tabgroup" style="display:none;">
+    <label for="tab5" style="display:none;">Customer Service</label>
+    <input type="radio" id="tab6" name="tabgroup" style="display:none;">
+    <label for="tab6" style="display:none;">Marketing Performance</label>
+    <input type="radio" id="tab7" name="tabgroup" style="display:none;">
+    <label for="tab7" style="display:none;">Vendor Management</label>
+    
+    <!-- Chat Agent tabs (QuickChat) -->
+    <input type="radio" id="tab8" name="tabgroup">
+    <label for="tab8">💰 Sales Agent</label>
+    <input type="radio" id="tab9" name="tabgroup">
+    <label for="tab9">📦 Inventory Agent</label>
+    <input type="radio" id="tab10" name="tabgroup">
+    <label for="tab10">📣 Marketing Agent</label>
+    <input type="radio" id="tab11" name="tabgroup">
+    <label for="tab11">🔮 Demand Forecast Agent</label>
+    <input type="radio" id="tab12" name="tabgroup">
+    <label for="tab12">👥 Customer Insights Agent</label>
+
+    <!-- Tab contents -->
+    <div id="content1" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="60%" height="1000" src="{{urls["embedded"]["quicksight_dashboard"]}}" title="Dashboard"></iframe>
+        <!-- Main Chat Agent using QuickChat SDK -->
+        <div id="main-chat" class="agent-container" style="width: 30%; height: 1000px;">
+          <div class="loading-indicator">Loading Chat Agent...</div>
+        </div>
+      </div>
+    </div>
+    <div id="content2" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="650" src="{{urls["qapp"]["Top 5 Products by Profit"]}}" title="Top 5 products by Profit"></iframe>
+        <iframe width="40%" height="650" src="{{urls["qapp"]["Top 5 Products by Revenue"]}}" title="Top 5 products by Revenue"></iframe>
+      </div>
+    </div>
+    <div id="content3" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="650" src="{{urls["qapp"]["New Product Launch"]}}" title="New Product Launch"></iframe>
+        <iframe width="40%" height="650" src="{{urls["qapp"]["Product Sales Analysis App"]}}" title="Product Sales Analysis"></iframe>
+      </div>
+    </div>
+    <div id="content4" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Inventory Status Checker"]}}" title="Inventory Status"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Product Demand Planning"]}}" title="Product Demand Forecast"></iframe>
+      </div>
+    </div>
+    <div id="content5" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Customer Satisfaction Analysis"]}}" title="Customer Sentiment Analysis"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Product Recommendation"]}}" title="Alternate Product Recommendation"></iframe>
+      </div>
+    </div>
+    <div id="content6" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Ad Spend vs Revenue Analysis"]}}" title="Ad Spend vs Revenue"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Campaign Performance Analysis"]}}" title="Campaign Performance"></iframe>
+      </div>
+    </div>
+    <div id="content7" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Top Products Affected by Tariff Increase"]}}" title="Products affected by tarrif"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Alternative Supplier Recommendation"]}}" title="Alternate Supplier Search"></iframe>
+      </div>
+    </div>
+
+    <!-- Sales Agent Tab -->
+    <div id="content8" class="tab-content">
+      <div class="agent-tab-container">
+        <div id="sales-chat-container" class="agent-container">
+          <div class="loading-indicator">Loading Sales & Revenue Agent...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inventory Agent Tab -->
+    <div id="content9" class="tab-content">
+      <div class="agent-tab-container">
+        <div id="inventory-chat-container" class="agent-container">
+          <div class="loading-indicator">Loading Inventory & Supply Chain Agent...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marketing Agent Tab -->
+    <div id="content10" class="tab-content">
+      <div class="agent-tab-container">
+        <div id="marketing-chat-container" class="agent-container">
+          <div class="loading-indicator">Loading Marketing Performance Agent...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demand Forecast Agent Tab -->
+    <div id="content11" class="tab-content">
+      <div class="agent-tab-container">
+        <div id="forecast-chat-container" class="agent-container">
+          <div class="loading-indicator">Loading Demand Forecasting Agent...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Insights Agent Tab -->
+    <div id="content12" class="tab-content">
+      <div class="agent-tab-container">
+        <div id="customer-chat-container" class="agent-container">
+          <div class="loading-indicator">Loading Customer Insights Agent...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    // ============================================================
+    // CONFIGURATION - Using QuickChat for Chat Agents
+    // ============================================================
+    const CONFIG = {
+      // API endpoint from CloudFormation
+      apiEndpoint: 'https://fxai0d13a7.execute-api.us-east-1.amazonaws.com/prod/embed-url',
+      
+      // Your AWS Account ID
+      accountId: '572990652154',
+      
+      // QuickSight User ARN for registered user embedding
+      userArn: 'arn:aws:quicksight:us-east-1:572990652154:user/default/james.lindsay@hkmci.com',
+      
+      // Chat Agents with QuickChat embedding
+      agents: {
+        mainChat: {
+          containerId: 'main-chat',
+          agentId: 'a8305c40-62d9-4173-92a3-0353994989e0',  // Main Retail Intelligence Agent
+          name: 'Retail Intelligence Agent'
+        },
+        sales: {
+          containerId: 'sales-chat-container',
+          agentId: '230809cd-c2ac-4455-85fe-a5968a29980b',  // Sales & Revenue Analyst
+          name: 'Sales & Revenue Analyst'
+        },
+        inventory: {
+          containerId: 'inventory-chat-container',
+          agentId: '9eb08ace-ab20-4a9a-ba23-52344a345f2f',  // Inventory & Supply Chain Manager
+          name: 'Inventory & Supply Chain Manager'
+        },
+        marketing: {
+          containerId: 'marketing-chat-container',
+          agentId: '9926d31d-aea7-4e3f-ac6e-ea2eb36ab748',  // Marketing Performance Analyst
+          name: 'Marketing Performance Analyst'
+        },
+        forecast: {
+          containerId: 'forecast-chat-container',
+          agentId: '9b8f0d26-16c2-4b0f-8da5-4af1ffd903e1',  // Demand Forecasting Specialist
+          name: 'Demand Forecasting Specialist'
+        },
+        customer: {
+          containerId: 'customer-chat-container',
+          agentId: 'b4f53f86-be25-420e-b698-251d5c677d8d',  // Customer Insights Analyst
+          name: 'Customer Insights Analyst'
+        }
+      }
+    };
+
+    // ============================================================
+    // EMBEDDING FUNCTIONS - QuickChat for Chat Agents
+    // ============================================================
+
+    // Fetch embed URL from backend API for QuickChat
+    async function getQuickChatEmbedUrl() {
+      console.log('Calling API for QuickChat embed URL...');
+      
+      const response = await fetch(CONFIG.apiEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userArn: CONFIG.userArn,
+          embedType: 'QuickChat'  // Use QuickChat embedding type
+        })
+      });
+      
+      if (!response.ok) {
+        const error = await response.json();
+        console.error('API Error:', error);
+        throw new Error(error.error || `API error: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      console.log('Got QuickChat embed URL successfully');
+      return data.embedUrl;
+    }
+
+    // Embed a Chat Agent using QuickChat SDK
+    async function embedChatAgent(containerId, agentId, name) {
+      const container = document.getElementById(containerId);
+      if (!container) {
+        console.error(`Container ${containerId} not found`);
+        return;
+      }
+
+      try {
+        console.log(`Loading ${name}...`);
+        const embedUrl = await getQuickChatEmbedUrl();
+        
+        // Clear loading indicator
+        container.innerHTML = '';
+        
+        // Create embedding context
+        const { createEmbeddingContext } = QuickSightEmbedding;
+        const embeddingContext = await createEmbeddingContext({
+          onChange: (changeEvent, metadata) => {
+            console.log('Context change:', changeEvent.eventName);
+          }
+        });
+
+        // Frame options
+        const frameOptions = {
+          url: embedUrl,
+          container: container,
+          height: '100%',
+          width: '100%',
+          onChange: (changeEvent, metadata) => {
+            if (changeEvent.eventName === 'FRAME_LOADED') {
+              console.log(`${name}: Frame loaded`);
+            }
+          }
+        };
+
+        // Content options for QuickChat - specify the agent ARN
+        const contentOptions = {
+          // Specify which chat agent to load
+          agentArn: `arn:aws:quicksight:us-east-1:${CONFIG.accountId}:agent/${agentId}`,
+          onMessage: async (messageEvent, experienceMetadata) => {
+            if (messageEvent.eventName === 'CONTENT_LOADED') {
+              console.log(`${name}: Content loaded`);
+            }
+            if (messageEvent.eventName === 'ERROR_OCCURRED') {
+              console.error(`${name}: Error`, messageEvent);
+            }
+          }
+        };
+
+        // Embed the QuickChat experience
+        const embeddedChat = await embeddingContext.embedQuickChat(frameOptions, contentOptions);
+        console.log(`${name}: Embedded successfully`);
+        
+        return embeddedChat;
+      } catch (error) {
+        console.error(`Failed to embed ${name}:`, error);
+        container.innerHTML = `<div class="error-message">
+          <p>Failed to load ${name}</p>
+          <p style="font-size: 12px; color: #666;">${error.message}</p>
+        </div>`;
+      }
+    }
+
+    // Track which agents have been loaded
+    const loadedAgents = new Set();
+
+    // Load agent when tab is selected
+    function loadAgentForTab(tabId) {
+      const agentMap = {
+        'tab1': 'mainChat',
+        'tab8': 'sales',
+        'tab9': 'inventory',
+        'tab10': 'marketing',
+        'tab11': 'forecast',
+        'tab12': 'customer'
+      };
+
+      const agentKey = agentMap[tabId];
+      if (agentKey && !loadedAgents.has(agentKey)) {
+        const agent = CONFIG.agents[agentKey];
+        if (agent) {
+          loadedAgents.add(agentKey);
+          embedChatAgent(agent.containerId, agent.agentId, agent.name);
+        }
+      }
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load main chat agent immediately (tab1 is checked by default)
+      loadAgentForTab('tab1');
+
+      // Add listeners for tab changes
+      document.querySelectorAll('input[name="tabgroup"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          loadAgentForTab(e.target.id);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

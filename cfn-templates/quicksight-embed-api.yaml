@@ -1,0 +1,198 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'API Gateway + Lambda for Quick Suite Chat Agent Embedding'
+
+Parameters:
+  AllowedDomain:
+    Type: String
+    Default: 'https://d2eqf0cnca9394.cloudfront.net'
+    Description: Domain allowed to embed Quick Suite (your CloudFront URL)
+
+Resources:
+  # IAM Role for Lambda
+  EmbedLambdaRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: !Sub '${AWS::StackName}-embed-lambda-role'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+      Policies:
+        - PolicyName: QuickSuiteEmbedPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'quicksight:GenerateEmbedUrlForRegisteredUser'
+                  - 'quicksight:GenerateEmbedUrlForRegisteredUserWithIdentity'
+                  - 'quicksight:RegisterUser'
+                  - 'quicksight:DescribeUser'
+                Resource: '*'
+
+  # Lambda Function for Quick Suite Chat Agent Embedding
+  EmbedUrlLambda:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-generate-embed-url'
+      Runtime: python3.11
+      Handler: index.handler
+      Role: !GetAtt EmbedLambdaRole.Arn
+      Timeout: 30
+      # Use Lambda layer with latest boto3 for QuickChat support
+      Layers:
+        - arn:aws:lambda:us-east-1:572990652154:layer:boto3-latest:1
+      Environment:
+        Variables:
+          ALLOWED_DOMAIN: !Ref AllowedDomain
+      Code:
+        ZipFile: |
+          import json
+          import boto3
+          import os
+          from botocore.exceptions import ClientError
+
+          quicksight = boto3.client('quicksight')
+
+          def handler(event, context):
+              # CORS headers
+              headers = {
+                  'Access-Control-Allow-Origin': os.environ['ALLOWED_DOMAIN'],
+                  'Access-Control-Allow-Headers': 'Content-Type,Authorization',
+                  'Access-Control-Allow-Methods': 'POST,OPTIONS'
+              }
+              
+              # Handle preflight
+              if event.get('httpMethod') == 'OPTIONS':
+                  return {'statusCode': 200, 'headers': headers, 'body': ''}
+              
+              try:
+                  body = json.loads(event.get('body', '{}'))
+                  user_arn = body.get('userArn')
+                  embed_type = body.get('embedType', 'QuickChat')  # Default to QuickChat
+                  topic_id = body.get('topicId')  # Optional: Q Topic ID for GenerativeQnA
+                  account_id = context.invoked_function_arn.split(':')[4]
+                  allowed_domain = os.environ['ALLOWED_DOMAIN']
+                  
+                  if not user_arn:
+                      return {
+                          'statusCode': 400,
+                          'headers': headers,
+                          'body': json.dumps({'error': 'userArn is required'})
+                      }
+                  
+                  # Build experience configuration based on embed type
+                  if embed_type == 'QuickChat':
+                      # QuickChat - for embedding chat agents with full visual support
+                      experience_config = {'QuickChat': {}}
+                  elif embed_type == 'GenerativeQnA':
+                      # GenerativeQnA - for Q Topics
+                      if not topic_id:
+                          return {
+                              'statusCode': 400,
+                              'headers': headers,
+                              'body': json.dumps({'error': 'topicId is required for GenerativeQnA'})
+                          }
+                      experience_config = {'GenerativeQnA': {'InitialTopicId': topic_id}}
+                  else:
+                      return {
+                          'statusCode': 400,
+                          'headers': headers,
+                          'body': json.dumps({'error': f'Invalid embedType: {embed_type}'})
+                      }
+                  
+                  # Generate embed URL
+                  response = quicksight.generate_embed_url_for_registered_user(
+                      AwsAccountId=account_id,
+                      UserArn=user_arn,
+                      ExperienceConfiguration=experience_config,
+                      AllowedDomains=[allowed_domain],
+                      SessionLifetimeInMinutes=600
+                  )
+                  
+                  return {
+                      'statusCode': 200,
+                      'headers': headers,
+                      'body': json.dumps({
+                          'embedUrl': response['EmbedUrl'],
+                          'embedType': embed_type
+                      })
+                  }
+                  
+              except ClientError as e:
+                  return {
+                      'statusCode': 500,
+                      'headers': headers,
+                      'body': json.dumps({'error': str(e)})
+                  }
+              except Exception as e:
+                  return {
+                      'statusCode': 500,
+                      'headers': headers,
+                      'body': json.dumps({'error': str(e)})
+                  }
+
+  # API Gateway
+  EmbedApi:
+    Type: 'AWS::ApiGateway::RestApi'
+    Properties:
+      Name: !Sub '${AWS::StackName}-embed-api'
+      Description: 'API for QuickSight embed URL generation'
+
+  EmbedResource:
+    Type: 'AWS::ApiGateway::Resource'
+    Properties:
+      RestApiId: !Ref EmbedApi
+      ParentId: !GetAtt EmbedApi.RootResourceId
+      PathPart: 'embed-url'
+
+  EmbedMethod:
+    Type: 'AWS::ApiGateway::Method'
+    Properties:
+      RestApiId: !Ref EmbedApi
+      ResourceId: !Ref EmbedResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${EmbedUrlLambda.Arn}/invocations'
+
+  EmbedOptionsMethod:
+    Type: 'AWS::ApiGateway::Method'
+    Properties:
+      RestApiId: !Ref EmbedApi
+      ResourceId: !Ref EmbedResource
+      HttpMethod: OPTIONS
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${EmbedUrlLambda.Arn}/invocations'
+
+  LambdaPermission:
+    Type: 'AWS::Lambda::Permission'
+    Properties:
+      FunctionName: !Ref EmbedUrlLambda
+      Action: 'lambda:InvokeFunction'
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${EmbedApi}/*'
+
+  ApiDeployment:
+    Type: 'AWS::ApiGateway::Deployment'
+    DependsOn:
+      - EmbedMethod
+      - EmbedOptionsMethod
+    Properties:
+      RestApiId: !Ref EmbedApi
+      StageName: prod
+
+Outputs:
+  ApiEndpoint:
+    Description: 'API endpoint for generating embed URLs'
+    Value: !Sub 'https://${EmbedApi}.execute-api.${AWS::Region}.amazonaws.com/prod/embed-url'

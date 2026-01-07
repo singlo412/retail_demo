@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q Business for Retail Intelligence Portal</title>
+  <link rel="stylesheet" href="retail-qbizapp.css">
+  <!-- QuickSight Embedding SDK v2.7.0+ for GenerativeQnA -->
+  <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@2.7.0/dist/quicksight-embedding-js-sdk.min.js"></script>
+  <style>
+    .agent-tab-container {
+      padding: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .agent-container {
+      width: 100%;
+      height: 900px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      position: relative;
+      background: #fafafa;
+    }
+    .loading-indicator {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #666;
+      font-size: 14px;
+    }
+    .error-message {
+      color: #d32f2f;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div style="padding-left: 2%;">
+    <h2> Welcome to the Q Business for Retail Intelligence Portal! </h2>
+    <p><i>An AI-Powered Retail Intelligence Platform, Empowering retail 
+    decision-makers with real-time insights and predictive analytics 
+    across the entire retail value chain</i></p>
+  </div>
+  <br/>
+  <div class="tabs" style="padding-left: 2%">
+    <!-- Tab selectors -->
+    <input type="radio" id="tab1" name="tabgroup" checked>
+    <label for="tab1">Dashboard</label>
+    
+    <!-- Hidden tabs (Q Apps - credentials expired) -->
+    <input type="radio" id="tab2" name="tabgroup" style="display:none;">
+    <label for="tab2" style="display:none;">Product Insights</label>
+    <input type="radio" id="tab3" name="tabgroup" style="display:none;">
+    <label for="tab3" style="display:none;">Sales Insights</label>
+    <input type="radio" id="tab4" name="tabgroup" style="display:none;">
+    <label for="tab4" style="display:none;">Inventory and Supply Chain</label>
+    <input type="radio" id="tab5" name="tabgroup" style="display:none;">
+    <label for="tab5" style="display:none;">Customer Service</label>
+    <input type="radio" id="tab6" name="tabgroup" style="display:none;">
+    <label for="tab6" style="display:none;">Marketing Performance</label>
+    <input type="radio" id="tab7" name="tabgroup" style="display:none;">
+    <label for="tab7" style="display:none;">Vendor Management</label>
+    
+    <!-- Q Topic tabs (GenerativeQnA) -->
+    <input type="radio" id="tab8" name="tabgroup">
+    <label for="tab8">💰 Sales Analytics</label>
+    <input type="radio" id="tab9" name="tabgroup">
+    <label for="tab9">📦 Inventory & Supply Chain</label>
+    <input type="radio" id="tab10" name="tabgroup">
+    <label for="tab10">📣 Marketing Performance</label>
+    <input type="radio" id="tab11" name="tabgroup">
+    <label for="tab11">🔮 Demand Forecasting</label>
+    <input type="radio" id="tab12" name="tabgroup">
+    <label for="tab12">👥 Customer Insights</label>
+
+    <!-- Tab contents -->
+    <div id="content1" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="60%" height="1000" src="{{urls["embedded"]["quicksight_dashboard"]}}" title="Dashboard"></iframe>
+        <!-- General Retail Intelligence Q&A -->
+        <div id="main-qna" class="agent-container" style="width: 30%; height: 1000px;">
+          <div class="loading-indicator">Loading Q&A...</div>
+        </div>
+      </div>
+    </div>
+    <div id="content2" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="650" src="{{urls["qapp"]["Top 5 Products by Profit"]}}" title="Top 5 products by Profit"></iframe>
+        <iframe width="40%" height="650" src="{{urls["qapp"]["Top 5 Products by Revenue"]}}" title="Top 5 products by Revenue"></iframe>
+      </div>
+    </div>
+    <div id="content3" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="650" src="{{urls["qapp"]["New Product Launch"]}}" title="New Product Launch"></iframe>
+        <iframe width="40%" height="650" src="{{urls["qapp"]["Product Sales Analysis App"]}}" title="Product Sales Analysis"></iframe>
+      </div>
+    </div>
+    <div id="content4" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Inventory Status Checker"]}}" title="Inventory Status"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Product Demand Planning"]}}" title="Product Demand Forecast"></iframe>
+      </div>
+    </div>
+    <div id="content5" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Customer Satisfaction Analysis"]}}" title="Customer Sentiment Analysis"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Product Recommendation"]}}" title="Alternate Product Recommendation"></iframe>
+      </div>
+    </div>
+    <div id="content6" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Ad Spend vs Revenue Analysis"]}}" title="Ad Spend vs Revenue"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Campaign Performance Analysis"]}}" title="Campaign Performance"></iframe>
+      </div>
+    </div>
+    <div id="content7" class="tab-content">
+      <div class="iframes-row">
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Top Products Affected by Tariff Increase"]}}" title="Products affected by tarrif"></iframe>
+        <iframe width="40%" height="1000" src="{{urls["qapp"]["Alternative Supplier Recommendation"]}}" title="Alternate Supplier Search"></iframe>
+      </div>
+    </div>
+
+    <!-- Sales Analytics Tab -->
+    <div id="content8" class="tab-content">
+      <div class="agent-tab-container">
+        <div id="sales-qna-container" class="agent-container">
+          <div class="loading-indicator">Loading Sales & Revenue Analytics...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inventory & Supply Chain Tab -->
+    <div id="content9" class="tab-content">
+      <div class="agent-tab-container">
+        <div id="inventory-qna-container" class="agent-container">
+          <div class="loading-indicator">Loading Inventory & Supply Chain...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marketing Performance Tab -->
+    <div id="content10" class="tab-content">
+      <div class="agent-tab-container">
+        <div id="marketing-qna-container" class="agent-container">
+          <div class="loading-indicator">Loading Marketing Performance...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demand Forecasting Tab -->
+    <div id="content11" class="tab-content">
+      <div class="agent-tab-container">
+        <div id="forecast-qna-container" class="agent-container">
+          <div class="loading-indicator">Loading Demand Forecasting...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Insights Tab -->
+    <div id="content12" class="tab-content">
+      <div class="agent-tab-container">
+        <div id="customer-qna-container" class="agent-container">
+          <div class="loading-indicator">Loading Customer Insights...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    // ============================================================
+    // CONFIGURATION - Using GenerativeQnA with Q Topics
+    // ============================================================
+    const CONFIG = {
+      // API endpoint from CloudFormation
+      apiEndpoint: 'https://fxai0d13a7.execute-api.us-east-1.amazonaws.com/prod/embed-url',
+      
+      // Your AWS Account ID
+      accountId: '572990652154',
+      
+      // QuickSight User ARN for registered user embedding
+      userArn: 'arn:aws:quicksight:us-east-1:572990652154:user/default/james.lindsay@hkmci.com',
+      
+      // Q Topics with GenerativeQnA (NEW_READER_EXPERIENCE)
+      topics: {
+        mainQnA: {
+          containerId: 'main-qna',
+          topicId: '4bkuUjNOjPpRDjRYUrEHzJjlJLv0hd5p',  // General Retail Intelligence Topic
+          name: 'General Retail Intelligence'
+        },
+        sales: {
+          containerId: 'sales-qna-container',
+          topicId: '8QgzbV6wlSoRl8WWvQLYRv6wOPBW6uDz',  // Sales & Revenue Analytics
+          name: 'Sales & Revenue Analytics'
+        },
+        inventory: {
+          containerId: 'inventory-qna-container',
+          topicId: 'k7iqlXZH7mL2xoe3yePqOSWfSuIWdNu4',  // Inventory & Supply Chain
+          name: 'Inventory & Supply Chain'
+        },
+        marketing: {
+          containerId: 'marketing-qna-container',
+          topicId: 'YDcxoWIkks9Oplyxddcdaqk8GBSyRrYI',  // Marketing Performance
+          name: 'Marketing Performance'
+        },
+        forecast: {
+          containerId: 'forecast-qna-container',
+          topicId: 'N5xe2a69qZmZrJMjHKCa3uNf1yACsgHD',  // Demand Forecasting
+          name: 'Demand Forecasting'
+        },
+        customer: {
+          containerId: 'customer-qna-container',
+          topicId: 'KmYrZ1DyRHKBXbXB0vZhsw5F6FU3lNS3',  // Customer Insights
+          name: 'Customer Insights'
+        }
+      }
+    };
+
+    // ============================================================
+    // EMBEDDING FUNCTIONS
+    // ============================================================
+
+    // Fetch embed URL from backend API for GenerativeQnA
+    async function getGenerativeQnAEmbedUrl(topicId) {
+      console.log('Calling API for topic:', topicId);
+      
+      const response = await fetch(CONFIG.apiEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userArn: CONFIG.userArn,
+          topicId: topicId
+        })
+      });
+      
+      if (!response.ok) {
+        const error = await response.json();
+        console.error('API Error:', error);
+        throw new Error(error.error || `API error: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      console.log('Got embed URL successfully');
+      return data.embedUrl;
+    }
+
+    // Embed a GenerativeQnA experience using SDK
+    async function embedGenerativeQnA(containerId, topicId, name) {
+      const container = document.getElementById(containerId);
+      if (!container) {
+        console.error(`Container ${containerId} not found`);
+        return;
+      }
+
+      try {
+        console.log(`Loading ${name}...`);
+        const embedUrl = await getGenerativeQnAEmbedUrl(topicId);
+        
+        // Clear loading indicator
+        container.innerHTML = '';
+        
+        // Create embedding context
+        const { createEmbeddingContext } = QuickSightEmbedding;
+        const embeddingContext = await createEmbeddingContext({
+          onChange: (changeEvent, metadata) => {
+            console.log('Context change:', changeEvent.eventName);
+          }
+        });
+
+        // Frame options
+        const frameOptions = {
+          url: embedUrl,
+          container: container,
+          height: '100%',
+          width: '100%',
+          onChange: (changeEvent, metadata) => {
+            if (changeEvent.eventName === 'FRAME_LOADED') {
+              console.log(`${name}: Loaded`);
+            }
+          }
+        };
+
+        // Content options for GenerativeQnA
+        const contentOptions = {
+          panelOptions: {
+            panelType: 'FULL',
+            showQIcon: true
+          },
+          showTopicName: true,
+          showPinboard: true,
+          allowTopicSelection: false,  // Keep user on the specific topic
+          allowFullscreen: true,
+          onMessage: async (messageEvent, experienceMetadata) => {
+            if (messageEvent.eventName === 'CONTENT_LOADED') {
+              console.log(`${name}: Content loaded`);
+            }
+            if (messageEvent.eventName === 'ERROR_OCCURRED') {
+              console.error(`${name}: Error`, messageEvent);
+            }
+          }
+        };
+
+        // Embed the GenerativeQnA experience
+        const embeddedQnA = await embeddingContext.embedGenerativeQnA(frameOptions, contentOptions);
+        console.log(`${name}: Embedded successfully`);
+        
+        return embeddedQnA;
+      } catch (error) {
+        console.error(`Failed to embed ${name}:`, error);
+        container.innerHTML = `<div class="error-message">
+          <p>Failed to load ${name}</p>
+          <p style="font-size: 12px; color: #666;">${error.message}</p>
+        </div>`;
+      }
+    }
+
+    // Track which topics have been loaded
+    const loadedTopics = new Set();
+
+    // Load topic when tab is selected
+    function loadTopicForTab(tabId) {
+      const topicMap = {
+        'tab1': 'mainQnA',
+        'tab8': 'sales',
+        'tab9': 'inventory',
+        'tab10': 'marketing',
+        'tab11': 'forecast',
+        'tab12': 'customer'
+      };
+
+      const topicKey = topicMap[tabId];
+      if (topicKey && !loadedTopics.has(topicKey)) {
+        const topic = CONFIG.topics[topicKey];
+        if (topic) {
+          loadedTopics.add(topicKey);
+          embedGenerativeQnA(topic.containerId, topic.topicId, topic.name);
+        }
+      }
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load main Q&A immediately (tab1 is checked by default)
+      loadTopicForTab('tab1');
+
+      // Add listeners for tab changes
+      document.querySelectorAll('input[name="tabgroup"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          loadTopicForTab(e.target.id);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

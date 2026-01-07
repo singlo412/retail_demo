@@ -255,8 +255,9 @@ def process_templates(creds=None):
         logger.warning("Continuing without Q Apps URLs. Other tabs may not work correctly.")
 
     tpl_environment = Environment(loader=FileSystemLoader("html_templates/"), autoescape=True)
+    # Use traditional iframe embed for chat agents
     tpl_fname = "retail-qbizapp.html.j2"
-    out_fname = "static/"+tpl_fname[:-3]
+    out_fname = "static/retail-qbizapp.html"
     css_fname = "static/retail-qbizapp.css"
     template = tpl_environment.get_template(tpl_fname)
 
