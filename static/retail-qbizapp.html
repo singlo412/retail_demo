@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Q Business for Retail Intelligence Portal</title>
+  <title>MasterChoice Retail - Intelligence Portal</title>
   <link rel="stylesheet" href="retail-qbizapp.css">
   <!-- QuickSight Embedding SDK v2.7.0+ for GenerativeQnA -->
   <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@2.7.0/dist/quicksight-embedding-js-sdk.min.js"></script>
+  <!-- Google Fonts for elegant typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
     .agent-tab-container {
       padding: 10px;
@@ -15,10 +17,11 @@
     .topic-container, .agent-wrapper {
       width: 60%;
       height: 900px;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
+      border: 2px solid #d4e5f0;
+      border-radius: 10px;
       position: relative;
-      background: #fafafa;
+      background: linear-gradient(135deg, #fafcfd 0%, #f0f6fa 100%);
+      box-shadow: 0 4px 15px rgba(37, 99, 168, 0.1);
     }
     .agent-wrapper {
       width: 30%;
@@ -35,15 +38,15 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      color: #666;
+      color: #3a5a7c;
       font-size: 14px;
     }
-    /* Spinner Animation */
+    /* Spinner Animation - Elegant Blue */
     .spinner {
       width: 50px;
       height: 50px;
-      border: 4px solid #e0e0e0;
-      border-top: 4px solid #0073bb;
+      border: 4px solid #d4e5f0;
+      border-top: 4px solid #2563a8;
       border-radius: 50%;
       animation: spin 1s linear infinite;
       margin: 0 auto 15px auto;
@@ -53,77 +56,157 @@
       100% { transform: rotate(360deg); }
     }
     .loading-text {
-      color: #666;
+      color: #3a5a7c;
       font-size: 14px;
       margin-top: 10px;
+      font-weight: 500;
     }
     .error-message {
-      color: #d32f2f;
+      color: #c53030;
       padding: 20px;
       text-align: center;
+      background: #fff5f5;
+      border-radius: 8px;
+      border: 1px solid #feb2b2;
     }
     /* Hide spinner when iframe loads */
     .agent-wrapper.loaded .loading-indicator {
       display: none;
     }
-    /* Q&A Tab Styles */
+    /* Q&A Tab Styles - Elegant Porcelain Theme */
     .qa-container {
       padding: 30px;
       max-width: 900px;
       margin: 0 auto;
     }
     .qa-section {
-      background: #fff;
-      border: 1px solid #e0e0e0;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border: 2px solid #d4e5f0;
       border-radius: 12px;
       padding: 25px;
       margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 15px rgba(37, 99, 168, 0.08);
+      position: relative;
+    }
+    .qa-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2563a8 0%, #c9a962 50%, #2563a8 100%);
+      border-radius: 12px 12px 0 0;
     }
     .qa-section h3 {
       margin: 0 0 15px 0;
-      color: #232f3e;
+      color: #1e3a5f;
       font-size: 18px;
       display: flex;
       align-items: center;
       gap: 10px;
+      font-weight: 600;
     }
     .qa-section ul {
       margin: 0;
       padding-left: 20px;
-      color: #444;
-      line-height: 1.8;
+      color: #3a5a7c;
+      line-height: 1.9;
     }
     .qa-section p {
       margin: 10px 0;
-      color: #444;
-      line-height: 1.6;
+      color: #3a5a7c;
+      line-height: 1.7;
     }
     .qa-link {
-      color: #0073bb;
+      color: #2563a8;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      transition: color 0.2s;
     }
     .qa-link:hover {
+      color: #c9a962;
       text-decoration: underline;
     }
     .aws-service {
       display: inline-block;
-      background: #f0f4f8;
-      padding: 4px 10px;
-      border-radius: 4px;
-      margin: 3px;
+      background: linear-gradient(135deg, #e8f4f8 0%, #d4e5f0 100%);
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin: 4px;
       font-size: 13px;
-      color: #232f3e;
+      color: #1e3a5f;
+      border: 1px solid #c5d9e8;
+      font-weight: 500;
+    }
+    /* Dashboard Width Control - Elegant Style */
+    .width-control {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #f0f6fa 0%, #e8f4f8 100%);
+      border-radius: 10px;
+      font-size: 14px;
+      border: 1px solid #d4e5f0;
+      box-shadow: 0 2px 8px rgba(37, 99, 168, 0.08);
+    }
+    .width-control label {
+      color: #1e3a5f;
+      font-weight: 600;
+      background: transparent;
+      padding: 0;
+      cursor: default;
+    }
+    .width-slider {
+      width: 200px;
+      height: 6px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: linear-gradient(90deg, #d4e5f0 0%, #c5d9e8 100%);
+      border-radius: 3px;
+      outline: none;
+      cursor: pointer;
+    }
+    .width-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, #2563a8 0%, #1e4d7a 100%);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(37, 99, 168, 0.3);
+      border: 2px solid #c9a962;
+    }
+    .width-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, #2563a8 0%, #1e4d7a 100%);
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #c9a962;
+      box-shadow: 0 2px 6px rgba(37, 99, 168, 0.3);
+    }
+    .width-value {
+      min-width: 45px;
+      color: #2563a8;
+      font-weight: 700;
     }
   </style>
 </head>
 <body>
   <div style="padding-left: 2%;">
-    <h2> Welcome to the Q Business for Retail Intelligence Portal! </h2>
-    <p><i>An AI-Powered Retail Intelligence Platform, Empowering retail 
-    decision-makers with real-time insights and predictive analytics 
-    across the entire retail value chain</i></p>
+    <h2 style="display: flex; align-items: center; gap: 12px; font-family: 'Cinzel', Georgia, serif;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; background: linear-gradient(135deg, #2563a8 0%, #1e3a5f 100%); border-radius: 8px; border: 2px solid #c9a962; box-shadow: 0 3px 10px rgba(37, 99, 168, 0.3);">
+        <span style="color: #c9a962; font-size: 22px; font-weight: 600; font-family: 'Cinzel', Georgia, serif;">M</span>
+      </span>
+      <span>MasterChoice Retail <span style="color: #c9a962;">✦</span> Intelligence Portal</span>
+    </h2>
+    <p style="font-family: 'Cinzel', Georgia, serif; font-size: 15px; color: #3a5a7c; letter-spacing: 0.5px;">
+      <span style="color: #c9a962;">❖</span> <i>Empowering decision-makers with AI-driven insights and predictive analytics across sales, inventory, marketing, and customer experience</i> <span style="color: #c9a962;">❖</span>
+    </p>
   </div>
   <br/>
   <div class="tabs" style="padding-left: 2%">
@@ -163,10 +246,16 @@
 
     <!-- Tab contents -->
     <div id="content1" class="tab-content">
+      <div class="width-control">
+        <label>📊 Dashboard Width:</label>
+        <input type="range" class="width-slider" id="dashboardWidthSlider" min="40" max="90" value="50">
+        <span class="width-value" id="dashboardWidthValue">50%</span>
+      </div>
       <div class="iframes-row">
-        <iframe width="60%" height="1000" src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572990652154/dashboards/import86596ebd-a1aa-4598-ae5d-2cd8dfbba9d6" title="Dashboard"></iframe>
+        <iframe id="dashboardIframe" width="50%" height="1000" src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572990652154/dashboards/import86596ebd-a1aa-4598-ae5d-2cd8dfbba9d6" title="Dashboard"></iframe>
         <iframe 
-          width="30%" 
+          id="mainAgentIframe"
+          width="45%" 
           height="1000" 
           allow="clipboard-read *; clipboard-write *; fullscreen"
           src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572990652154/chatagents/a8305c40-62d9-4173-92a3-0353994989e0?directory_alias=masterconcept" 
@@ -339,11 +428,11 @@
         <div class="qa-section">
           <h3>📖 How to Use This Portal</h3>
           <ul>
-            <li><strong>Dashboard Tab:</strong> View retail KPIs and interact with the main chat agent</li>
+            <li><strong>Dashboard Tab:</strong> View MasterChoice retail KPIs and interact with the main chat agent</li>
             <li><strong>Agent Tabs:</strong> Each tab features a Q Topic (left) for visual analytics and a Chat Agent (right) for conversational AI</li>
             <li><strong>Ask Questions:</strong> Try queries like "Show me top products by revenue" or "What are the sales trends?"</li>
             <li><strong>Generate Visuals:</strong> The Q Topic can create charts and graphs based on your questions</li>
-            <li><strong>Chat with Agents:</strong> Get insights and recommendations from specialized AI agents</li>
+            <li><strong>Chat with Agents:</strong> Get insights and recommendations from MasterChoice's specialized AI agents</li>
           </ul>
         </div>
 
@@ -385,13 +474,13 @@
         <div class="qa-section">
           <h3>🔗 About This Portal</h3>
           <p>
-            <strong>📂 GitHub Repository:</strong><br>
+            <strong>📂 Based on AWS Sample:</strong><br>
             <a href="https://github.com/aws-samples/sample-amazon-qbusiness-and-quicksight-for-retail-intelligence" target="_blank" class="qa-link">
-              https://github.com/aws-samples/sample-amazon-qbusiness-and-quicksight-for-retail-intelligence
+              sample-amazon-qbusiness-and-quicksight-for-retail-intelligence
             </a>
           </p>
           <p>
-            Modified by <a href="https://www.digitalactionlab.co/" target="_blank" class="qa-link">Digital Action Lab</a>
+            Customized by <a href="https://www.digitalactionlab.co/" target="_blank" class="qa-link">Digital Action Lab</a>
           </p>
         </div>
       </div>
@@ -523,6 +612,23 @@
       document.querySelectorAll('input[name="tabgroup"]').forEach(radio => {
         radio.addEventListener('change', (e) => loadTopicForTab(e.target.id));
       });
+
+      // Dashboard width slider
+      const slider = document.getElementById('dashboardWidthSlider');
+      const valueDisplay = document.getElementById('dashboardWidthValue');
+      const dashboardIframe = document.getElementById('dashboardIframe');
+      const agentIframe = document.getElementById('mainAgentIframe');
+
+      if (slider && dashboardIframe && agentIframe) {
+        slider.addEventListener('input', (e) => {
+          const dashboardWidth = parseInt(e.target.value);
+          const agentWidth = 95 - dashboardWidth; // Total ~95% with gap
+          
+          dashboardIframe.style.width = dashboardWidth + '%';
+          agentIframe.style.width = agentWidth + '%';
+          valueDisplay.textContent = dashboardWidth + '%';
+        });
+      }
     });
   </script>
 </body>
